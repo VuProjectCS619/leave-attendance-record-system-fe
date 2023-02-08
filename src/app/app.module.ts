@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AccountModule} from "./account/account.module";
 import {SharedModule} from "./shared/shared.module";
+import {EmployeeModule} from "./employee/employee.module";
+import {AdminModule} from "./admin/admin.module";
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import {SharedModule} from "./shared/shared.module";
     BrowserAnimationsModule,
     AccountModule,
     SharedModule,
+    EmployeeModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,7 @@ import { AttendanceComponent } from './attendance/attendance.component';
 import { ApplyForLeaveComponent } from './apply-for-leave/apply-for-leave.component';
 import { RecordComponent } from './record/record.component';
 import { AccountSettingComponent } from './account-setting/account-setting.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -17,9 +18,10 @@ import { AccountSettingComponent } from './account-setting/account-setting.compo
     RecordComponent,
     AccountSettingComponent
   ],
-  imports: [
-    CommonModule,
-    EmployeeRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        EmployeeRoutingModule,
+        SharedModule
+    ]
 })
 export class EmployeeModule { }
