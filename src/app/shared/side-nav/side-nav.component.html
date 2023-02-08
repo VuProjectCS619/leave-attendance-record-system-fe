@@ -1,19 +1,19 @@
 <mat-drawer-container class="w-screen h-screen">
+<!-- drawer options -->
   <mat-drawer mode="side" opened class="w-60 ">
     <p class="text-lg font-semibold p-2">Company ABC</p>
     <mat-list>
       <div class="flex flex-col gap-4 w-full">
-      <mat-list-item><p class="cursor-pointer">Option 1</p></mat-list-item>
-      <mat-list-item><p class="cursor-pointer">Option 2</p></mat-list-item>
-      <mat-list-item><p class="cursor-pointer">Option 3</p></mat-list-item>
-      <mat-list-item> <p class="cursor-pointer">Leave/Attendance Record</p></mat-list-item>
-      <mat-list-item> <p class="cursor-pointer">Logout</p></mat-list-item>
+      <ng-content></ng-content>
       </div>
     </mat-list>
-
   </mat-drawer>
+<!-- main content -->
   <mat-drawer-content class="flex flex-col">
     <p class="p-2 text-xl font-semibold">Welcome {{title}} </p>
   <mat-divider> </mat-divider>
+    <div class="p-4">
+    <ng-content></ng-content>
+    </div>
   </mat-drawer-content>
 </mat-drawer-container>

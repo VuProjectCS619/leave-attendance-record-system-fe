@@ -6,14 +6,13 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 
-
 @NgModule({
     declarations: [
         SideNavComponent
     ],
-    exports: [
-        SideNavComponent
-    ],
+  exports: [
+    SideNavComponent,
+  ],
   imports: [
     CommonModule,
     SharedRoutingModule,
