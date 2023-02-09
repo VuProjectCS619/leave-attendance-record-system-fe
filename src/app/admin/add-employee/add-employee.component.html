@@ -1,1 +1,48 @@
-<p>add-employee works!</p>
+<div class="flex flex-col gap-2">
+<div>
+  <p class=" text-lg font-semibold">Add Employee </p>
+</div>
+<!--Card-->
+  <div>
+    <mat-card class="w-96 h-auto shadow-xl ">
+      <mat-card-header>
+        <mat-card-title>Employee Registration</mat-card-title>
+        <mat-card-subtitle>Please fill the form to add an employee.</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <!--Form -->
+        <div class="flex flex-col p-2 w-full">
+        <!--Name -->
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="John Doe" >
+          </mat-form-field>
+          <!--Create Password-->
+          <mat-form-field appearance="fill">
+            <mat-label>Create Password</mat-label>
+            <input matInput placeholder="Secret">
+          </mat-form-field>
+          <!--Contact Number -->
+          <mat-form-field appearance="fill">
+            <mat-label>Contact Number</mat-label>
+            <input matInput placeholder="00123243831">
+          </mat-form-field>
+          <!--Designation -->
+          <mat-form-field appearance="fill">
+            <mat-label>Designation</mat-label>
+            <input matInput placeholder="Junior Developer">
+          </mat-form-field>
+          <!--Salary -->
+          <mat-form-field appearance="fill">
+            <mat-label>Salary</mat-label>
+            <input type="number" matInput placeholder="10,00">
+          </mat-form-field>
+          <!--Button -->
+          <div class="flex justify-end" >
+            <button  mat-raised-button color="primary">ADD</button>
+          </div>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

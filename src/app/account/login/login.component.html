@@ -13,6 +13,7 @@
         <mat-card-actions>
           <!--Form -->
           <div class="flex flex-col p-2 w-full">
+            <!--ID -->
             <mat-form-field appearance="fill">
               <mat-label>Enter Your ID</mat-label>
               <input matInput placeholder="EM1111111" [formControl]="id" required>
@@ -26,6 +27,7 @@
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
             </mat-form-field>
+            <!--Button -->
             <div class="flex justify-end" >
               <button  mat-raised-button color="primary">Sign In</button>
             </div>

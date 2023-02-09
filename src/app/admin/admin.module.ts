@@ -8,6 +8,9 @@ import { EmployeeManagementComponent } from './employee-management/employee-mana
 import { LeaveManagementComponent } from './leave-management/leave-management.component';
 import { RecordComponent } from './record/record.component';
 import {SharedModule} from "../shared/shared.module";
+import {MatCardModule} from "@angular/material/card";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -18,10 +21,13 @@ import {SharedModule} from "../shared/shared.module";
     LeaveManagementComponent,
     RecordComponent
   ],
-    imports: [
-        CommonModule,
-        AdminRoutingModule,
-        SharedModule
-    ]
+  imports: [
+    CommonModule,
+    AdminRoutingModule,
+    SharedModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule
+  ]
 })
 export class AdminModule { }
