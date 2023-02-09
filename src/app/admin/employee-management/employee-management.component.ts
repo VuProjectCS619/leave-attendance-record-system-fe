@@ -6,5 +6,48 @@ import { Component } from '@angular/core';
   styleUrls: ['./employee-management.component.css']
 })
 export class EmployeeManagementComponent {
-
+ employeesManagement = [
+   {
+     name: "Muhammad Osama Iftikhar",
+     employeeID: "EM100000",
+     salary: 90000,
+     designation: "Angular Developer",
+     contact: "+923136784434"
+   },
+   {
+     name: "Muhammad Osama Iftikhar",
+     employeeID: "EM100000",
+     salary: 90000,
+     designation: "Angular Developer",
+     contact: "+923136784434"
+   },
+   {
+     name: "Muhammad Osama Iftikhar",
+     employeeID: "EM100000",
+     salary: 90000,
+     designation: "Angular Developer",
+     contact: "+923136784434"
+   },
+   {
+     name: "Muhammad Osama Iftikhar",
+     employeeID: "EM100000",
+     salary: 90000,
+     designation: "Angular Developer",
+     contact: "+923136784434"
+   },
+   {
+     name: "Muhammad Osama Iftikhar",
+     employeeID: "EM100000",
+     salary: 90000,
+     designation: "Angular Developer",
+     contact: "+923136784434"
+   },
+   {
+     name: "Muhammad Osama Iftikhar",
+     employeeID: "EM100000",
+     salary: 90000,
+     designation: "Angular Developer",
+     contact: "+923136784434"
+   },
+ ]
 }
