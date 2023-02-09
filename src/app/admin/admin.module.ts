@@ -7,6 +7,7 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { EmployeeManagementComponent } from './employee-management/employee-management.component';
 import { LeaveManagementComponent } from './leave-management/leave-management.component';
 import { RecordComponent } from './record/record.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -17,9 +18,10 @@ import { RecordComponent } from './record/record.component';
     LeaveManagementComponent,
     RecordComponent
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        SharedModule
+    ]
 })
 export class AdminModule { }
