@@ -8,6 +8,7 @@ import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
 import { LoginRoutingModule } from './login-routing.module';
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -18,14 +19,15 @@ import { LoginRoutingModule } from './login-routing.module';
   exports: [
     LoginComponent
   ],
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    MatCardModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    LoginRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        MatCardModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        LoginRoutingModule,
+        MatButtonModule
+    ]
 })
 export class AccountModule { }

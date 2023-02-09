@@ -1,15 +1,15 @@
 <mat-drawer-container class="w-screen h-screen">
 <!-- drawer options -->
   <mat-drawer mode="side" opened class="w-60 ">
-    <p class="text-lg font-semibold p-2">Company ABC</p>
+    <p class="text-lg font-semibold p-4">Company ABC</p>
     <mat-list>
-      <div *ngIf="user === 'employee'" class="flex flex-col gap-4 w-full">
+      <div *ngIf="user === 'employee'" class="flex flex-col gap-12 p-4  w-full">
       <a routerLink="/employee/account-setting">Account setting</a>
       <a routerLink="/employee/apply-for-leave">Apply for leave</a>
       <a routerLink="/employee/attendance">Attendance</a>
       <a routerLink="/employee/record">Record</a>
       </div>
-      <div *ngIf="user === 'admin'" class="flex flex-col gap-4 w-full">
+      <div *ngIf="user === 'admin'" class="flex flex-col gap-12 p-4 w-full">
         <a routerLink="/admin/add-employee">Add employee</a>
         <a routerLink="/admin/employee-management">Employee management</a>
         <a routerLink="/admin/leave-management">Leave management</a>

@@ -1,21 +1,24 @@
 <div class="w-screen h-screen">
-  <div class="w-full h-full flex justify-center items-center">
-    <div>
-      <mat-card class="w-96 h-auto">
-
+  <div class="w-full h-full flex flex-col justify-center items-center">
+<!--  card  -->
+      <div>
+        <div class="mb-2">
+        <p class="font-semibold text-xl" > Welcome</p>
+        </div>
+      <mat-card class="w-96 h-auto shadow-xl ">
         <mat-card-header>
           <mat-card-title>Employee Login</mat-card-title>
           <mat-card-subtitle>Please enter your login credentials.</mat-card-subtitle>
         </mat-card-header>
         <mat-card-actions>
-          <!-- -->
+          <!--Form -->
           <div class="flex flex-col p-2 w-full">
             <mat-form-field appearance="fill">
               <mat-label>Enter Your ID</mat-label>
               <input matInput placeholder="EM1111111" [formControl]="id" required>
               <mat-error *ngIf="id.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
-            <!-- -->
+            <!-- Password-->
             <mat-form-field appearance="fill">
               <mat-label>Enter your password</mat-label>
               <input matInput [type]="hide ? 'password' : 'text'">
@@ -24,7 +27,7 @@
               </button>
             </mat-form-field>
             <div class="flex justify-end" >
-              <button disabled="true" mat-raised-button color="primary">Sign In</button>
+              <button  mat-raised-button color="primary">Sign In</button>
             </div>
           </div>
         </mat-card-actions>
