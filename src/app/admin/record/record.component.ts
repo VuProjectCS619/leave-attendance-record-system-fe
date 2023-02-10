@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./record.component.css']
 })
 export class RecordComponent {
+
   viewAttendance = [
     {
       name: "Muhammad Osama Iftikhar",

@@ -20,7 +20,6 @@
     </mat-list>
   </mat-drawer>
 <!-- main content -->
-
   <mat-drawer-content class="flex flex-col " >
     <div *ngIf="user === 'admin'" class="sticky top-0 z-10 bg-slate-50">
     <p class="p-4 text-xl font-semibold ">Welcome Admin </p>
@@ -30,10 +29,8 @@
       <p class="p-4 text-xl font-semibold">Welcome: {{greeting}}  </p>
       <mat-divider> </mat-divider>
     </div>
-
     <div class="p-4">
     <ng-content></ng-content>
     </div>
   </mat-drawer-content>
->
 </mat-drawer-container>

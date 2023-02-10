@@ -12,6 +12,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTabsModule} from "@angular/material/tabs";
+import {MatTableModule} from "@angular/material/table";
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {MatTabsModule} from "@angular/material/tabs";
         MatCardModule,
         MatInputModule,
         MatButtonModule,
-        MatTabsModule
+        MatTabsModule,
+        MatTableModule
     ]
 })
 export class AdminModule { }
