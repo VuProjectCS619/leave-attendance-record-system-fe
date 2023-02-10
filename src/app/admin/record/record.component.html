@@ -7,8 +7,28 @@
     <!--Tab 1 Leave Request-->
     <mat-tab label="LEAVE RECORD" >
     <!--   Table    -->
-      <div class="flex flex-col gap-4 flex-wrap p-10 " >
-        <p>Table</p>
+      <div class="flex flex-col gap-2 flex-wrap p-10 " >
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let employee of employeeRecord" >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Name/ID
+              </mat-panel-title>
+              <mat-panel-description >
+                {{employee.name}}, {{employee.employeeID}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="flex gap-4 flex-wrap p-10" >
+              <mat-card class="w-96 h-auto shadow-xl p-4 mt-6 " *ngFor="let record of leaveRecord">
+                <div class="flex flex-col gap-4">
+                  <mat-card-title>{{record.monthYear}}</mat-card-title>
+                  <p class=" text-xs font-semibold">Leaves:{{" "}}<span class="font-normal ">{{record.leaves}}</span> </p>
+                  <p class=" text-xs font-semibold">Working Hours:{{" "}}<span class="font-normal ">{{record.workingHours}}</span> </p>
+                </div>
+              </mat-card>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
       </div>
 
     </mat-tab>
@@ -16,7 +36,7 @@
     <mat-tab label="ATTENDANCE RECORD">
       <!-- Card -->
       <div class="flex gap-4 flex-wrap p-10" >
-        <mat-card class="w-96 h-auto shadow-xl p-4 mt-6 " *ngFor="let attendance of viewAttendance">
+        <mat-card class="w-96 h-auto shadow-xl p-4 mt-6 " *ngFor="let attendance of attendanceRecord">
           <div class="flex flex-col gap-4">
             <mat-card-title>Attendance</mat-card-title>
             <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{attendance.name}}</span> </p>

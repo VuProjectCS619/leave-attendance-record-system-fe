@@ -13,6 +13,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatTableModule} from "@angular/material/table";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 
 @NgModule({
@@ -23,15 +24,16 @@ import {MatTableModule} from "@angular/material/table";
     LeaveManagementComponent,
     RecordComponent
   ],
-    imports: [
-        CommonModule,
-        AdminRoutingModule,
-        SharedModule,
-        MatCardModule,
-        MatInputModule,
-        MatButtonModule,
-        MatTabsModule,
-        MatTableModule
-    ]
+  imports: [
+    CommonModule,
+    AdminRoutingModule,
+    SharedModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatTableModule,
+    MatExpansionModule
+  ]
 })
 export class AdminModule { }
