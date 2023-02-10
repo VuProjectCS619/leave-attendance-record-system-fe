@@ -1,1 +1,56 @@
-<p>apply-for-leave works!</p>
+<div class=" flex flex-col gap-4">
+  <div>
+    <p class="text-lg font-semibold">Leave Management </p>
+  </div>
+  <!--Tabs-->
+  <mat-tab-group  dynamicHeight  >
+    <!--Tab 1 Apply for leave-->
+    <mat-tab label="APPLY FOR LEAVE" >
+      <!-- Card -->
+      <div class="flex gap-10 flex-col p-10 " >
+        <mat-card class="w-96 h-auto shadow-xl p-4 " >
+          <div class="flex flex-col gap-4">
+            <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{userName}}</span> </p>
+            <p class=" text-xs font-semibold">ID:{{" "}}<span class="font-normal ">{{id}}</span> </p>
+            <p class=" text-xs font-semibold">Allowed Leaves:{{" "}}<span class="font-normal ">{{allowedLeaves}}</span> </p>
+            <p class=" text-xs font-semibold">Consumed Leaves:{{" "}}<span class="font-normal ">{{consumedLeaves}}</span> </p>
+          </div>
+        </mat-card>
+      <!--Apply for leave -->
+        <mat-card class="w-96 h-auto shadow-xl p-4">
+          <div class="flex flex-col gap-4">
+        <!-- Date Picker-->
+<!--            <mat-form-field appearance="fill">-->
+<!--              <mat-label>Choose a date</mat-label>-->
+<!--              <input matInput [formControl]="selectedDate" [matDatepicker]="picker">-->
+<!--              <mat-hint>MM/DD/YYYY</mat-hint>-->
+<!--              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>-->
+<!--              <mat-datepicker #picker></mat-datepicker>-->
+<!--            </mat-form-field>-->
+              <!--  Reason for Leave   -->
+            <mat-form-field>
+              <mat-label>Reason</mat-label>
+              <textarea  matInput placeholder="Description for Leave"></textarea>
+            </mat-form-field>
+          </div>
+        </mat-card>
+      </div>
+    </mat-tab>
+    <!-- Tab 2 leave Status     -->
+    <mat-tab label="LEAVE STATUS">
+      <!-- Card -->
+      <div class="flex gap-4 flex-wrap p-10" >
+        <mat-card class="w-96 h-auto shadow-xl p-4 " >
+          <div class="flex flex-col gap-4">
+            <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{userName}}</span> </p>
+            <p class=" text-xs font-semibold">ID:{{" "}}<span class="font-normal ">{{id}}</span> </p>
+            <p class=" text-xs font-semibold">Applied for Leave:{{" "}}<span class="font-normal ">{{appliedForLeave}}</span> </p>
+            <p class=" text-xs font-semibold">Status:{{" "}}<span class="font-normal ">{{status}}</span> </p>
+          </div>
+        </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+

@@ -8,7 +8,7 @@
       <mat-tab label="LEAVE REQUEST" >
      <!-- Card -->
         <div class="flex gap-4 flex-wrap p-10 " >
-          <mat-card class="w-96 h-auto shadow-xl p-4 mt-6 " *ngFor="let employeeLeaveReq of leaveRequests">
+          <mat-card class="w-96 h-auto shadow-xl p-4 " *ngFor="let employeeLeaveReq of leaveRequests">
             <div class="flex flex-col gap-4">
               <mat-card-title>Leave: Day 1</mat-card-title>
               <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{employeeLeaveReq.name}}</span> </p>
@@ -29,7 +29,7 @@
       <mat-tab label="ADD LEAVE">
         <!-- Card -->
         <div class="flex gap-4 flex-wrap p-10" >
-          <mat-card class="w-96 h-auto shadow-xl p-4 mt-6 " *ngFor="let allowedLeave of addLeaves">
+          <mat-card class="w-96 h-auto shadow-xl p-4 " *ngFor="let allowedLeave of addLeaves">
             <div class="flex flex-col gap-4">
               <mat-card-title>Add Leave (Per Year)</mat-card-title>
               <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{allowedLeave.name}}</span> </p>

@@ -8,6 +8,13 @@ import { ApplyForLeaveComponent } from './apply-for-leave/apply-for-leave.compon
 import { RecordComponent } from './record/record.component';
 import { AccountSettingComponent } from './account-setting/account-setting.component';
 import {SharedModule} from "../shared/shared.module";
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {ReactiveFormsModule} from "@angular/forms";
+
 
 
 @NgModule({
@@ -18,10 +25,16 @@ import {SharedModule} from "../shared/shared.module";
     RecordComponent,
     AccountSettingComponent
   ],
-    imports: [
-        CommonModule,
-        EmployeeRoutingModule,
-        SharedModule
-    ]
+  imports: [
+    CommonModule,
+    EmployeeRoutingModule,
+    SharedModule,
+    MatCardModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+  ]
 })
 export class EmployeeModule { }

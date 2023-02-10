@@ -19,7 +19,7 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
             <div class="flex gap-4 flex-wrap p-10" >
-              <mat-card class="w-96 h-auto shadow-xl p-4 mt-6 " *ngFor="let record of leaveRecord">
+              <mat-card class="w-96 h-auto shadow-xl p-4" *ngFor="let record of leaveRecord">
                 <div class="flex flex-col gap-4">
                   <mat-card-title>{{record.monthYear}}</mat-card-title>
                   <p class=" text-xs font-semibold">Leaves:{{" "}}<span class="font-normal ">{{record.leaves}}</span> </p>
@@ -36,7 +36,7 @@
     <mat-tab label="ATTENDANCE RECORD">
       <!-- Card -->
       <div class="flex gap-4 flex-wrap p-10" >
-        <mat-card class="w-96 h-auto shadow-xl p-4 mt-6 " *ngFor="let attendance of attendanceRecord">
+        <mat-card class="w-96 h-auto shadow-xl p-4" *ngFor="let attendance of attendanceRecord">
           <div class="flex flex-col gap-4">
             <mat-card-title>Attendance</mat-card-title>
             <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{attendance.name}}</span> </p>
