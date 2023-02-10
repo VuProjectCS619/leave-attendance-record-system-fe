@@ -38,9 +38,50 @@ export class LeaveManagementComponent {
       employeeID: "EM100000",
       reason: "I have an emergency."
     },
+    {
+      name: "Muhammad Osama Iftikhar",
+      employeeID: "EM100000",
+      reason: "I have an emergency."
+    },
+    {
+      name: "Muhammad Osama Iftikhar",
+      employeeID: "EM100000",
+      reason: "I have an emergency."
+    },
+    {
+      name: "Muhammad Osama Iftikhar",
+      employeeID: "EM100000",
+      reason: "I have an emergency."
+    },
+    {
+      name: "Muhammad Osama Iftikhar",
+      employeeID: "EM100000",
+      reason: "I have an emergency."
+    },
+
   ]
 
   addLeaves = [
+    {
+      name: "Muhammad Osama Iftikhar",
+      employeeID: "EM100000",
+      allowedLeave: 3
+    },
+    {
+      name: "Muhammad Osama Iftikhar",
+      employeeID: "EM100000",
+      allowedLeave: 3
+    },
+    {
+      name: "Muhammad Osama Iftikhar",
+      employeeID: "EM100000",
+      allowedLeave: 3
+    },
+    {
+      name: "Muhammad Osama Iftikhar",
+      employeeID: "EM100000",
+      allowedLeave: 3
+    },
     {
       name: "Muhammad Osama Iftikhar",
       employeeID: "EM100000",

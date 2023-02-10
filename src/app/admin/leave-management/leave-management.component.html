@@ -1,13 +1,13 @@
 <div class=" flex flex-col gap-4">
   <div>
-    <p class=" text-lg font-semibold">Leave Management </p>
+    <p class="text-lg font-semibold">Leave Management </p>
   </div>
-    <!--Tab 1 Leave Request-->
-  <div>
-    <mat-tab-group>
-      <mat-tab label="LEAVE REQUEST">
+    <!--Tabs-->
+    <mat-tab-group  dynamicHeight  >
+      <!--Tab 1 Leave Request-->
+      <mat-tab label="LEAVE REQUEST" >
      <!-- Card -->
-        <div class="flex gap-4 flex-wrap" >
+        <div class="flex gap-4 flex-wrap p-10 " >
           <mat-card class="w-96 h-auto shadow-xl p-4 mt-6 " *ngFor="let employeeLeaveReq of leaveRequests">
             <div class="flex flex-col gap-4">
               <mat-card-title>Leave: Day 1</mat-card-title>
@@ -28,10 +28,10 @@
     <!-- Tab 2 Add Leave     -->
       <mat-tab label="ADD LEAVE">
         <!-- Card -->
-        <div class="flex gap-4 flex-wrap" >
+        <div class="flex gap-4 flex-wrap p-10" >
           <mat-card class="w-96 h-auto shadow-xl p-4 mt-6 " *ngFor="let allowedLeave of addLeaves">
             <div class="flex flex-col gap-4">
-              <mat-card-title>Add Leave (Per day)</mat-card-title>
+              <mat-card-title>Add Leave (Per Year)</mat-card-title>
               <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{allowedLeave.name}}</span> </p>
               <p class=" text-xs font-semibold">ID:{{" "}}<span class="font-normal ">{{allowedLeave.employeeID}}</span> </p>
               <p class=" text-xs font-semibold">Allowed Leaves:{{" "}}<span class="font-normal ">{{allowedLeave.allowedLeave}}</span> </p>
@@ -47,7 +47,7 @@
 
       </mat-tab>
     </mat-tab-group>
-  </div>
+
 </div>
 
 

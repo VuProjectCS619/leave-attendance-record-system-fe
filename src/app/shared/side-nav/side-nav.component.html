@@ -7,7 +7,7 @@
         <a routerLink="/admin/add-employee">Add Employee</a>
         <a routerLink="/admin/employee-management">Employee Management</a>
         <a routerLink="/admin/leave-management">Leave Management</a>
-        <a routerLink="/employee/attendance">Leave/Attendance Record</a>
+        <a routerLink="/admin/record">Leave/Attendance Record</a>
         <a routerLink="">Logout</a>
       </div>
       <div *ngIf="user === 'employee'" class="flex flex-col gap-12 p-4  w-full">
@@ -20,16 +20,20 @@
     </mat-list>
   </mat-drawer>
 <!-- main content -->
-  <mat-drawer-content class="flex flex-col">
-    <div *ngIf="user === 'admin'">
-    <p class="p-4 text-xl font-semibold">Welcome Admin </p>
+
+  <mat-drawer-content class="flex flex-col " >
+    <div *ngIf="user === 'admin'" class="sticky top-0 z-10 bg-slate-50">
+    <p class="p-4 text-xl font-semibold ">Welcome Admin </p>
+      <mat-divider> </mat-divider>
     </div>
-    <div *ngIf="user === 'employee'">
+    <div *ngIf="user === 'employee'" class="sticky top-0 z-10 bg-slate-50">
       <p class="p-4 text-xl font-semibold">Welcome: {{greeting}}  </p>
+      <mat-divider> </mat-divider>
     </div>
-  <mat-divider> </mat-divider>
-    <div class="p-4 w-full h-auto">
+
+    <div class="p-4">
     <ng-content></ng-content>
     </div>
   </mat-drawer-content>
+>
 </mat-drawer-container>
