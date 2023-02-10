@@ -1,1 +1,53 @@
-<p>leave-management works!</p>
+<div class=" flex flex-col gap-4">
+  <div>
+    <p class=" text-lg font-semibold">Leave Management </p>
+  </div>
+    <!--Tab 1 Leave Request-->
+  <div>
+    <mat-tab-group>
+      <mat-tab label="LEAVE REQUEST">
+     <!-- Card -->
+        <div class="flex gap-4 flex-wrap" >
+          <mat-card class="w-96 h-auto shadow-xl p-4 mt-6 " *ngFor="let employeeLeaveReq of leaveRequests">
+            <div class="flex flex-col gap-4">
+              <mat-card-title>Leave: Day 1</mat-card-title>
+              <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{employeeLeaveReq.name}}</span> </p>
+              <p class=" text-xs font-semibold">ID:{{" "}}<span class="font-normal ">{{employeeLeaveReq.employeeID}}</span> </p>
+              <p class=" text-xs font-semibold">Reason:{{" "}}<span class="font-normal ">{{employeeLeaveReq.reason}}</span> </p>
+            </div>
+            <mat-card-actions>
+              <!--Button -->
+              <div class="flex w-full justify-end gap-2" >
+                <button  mat-raised-button  color="primary">ACCEPT</button>
+                <button  mat-raised-button  color="warn">REJECT</button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </mat-tab>
+    <!-- Tab 2 Add Leave     -->
+      <mat-tab label="ADD LEAVE">
+        <!-- Card -->
+        <div class="flex gap-4 flex-wrap" >
+          <mat-card class="w-96 h-auto shadow-xl p-4 mt-6 " *ngFor="let allowedLeave of addLeaves">
+            <div class="flex flex-col gap-4">
+              <mat-card-title>Leave: Day 1</mat-card-title>
+              <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{allowedLeave.name}}</span> </p>
+              <p class=" text-xs font-semibold">ID:{{" "}}<span class="font-normal ">{{allowedLeave.employeeID}}</span> </p>
+              <p class=" text-xs font-semibold">Allowed Leaves:{{" "}}<span class="font-normal ">{{allowedLeave.allowedLeave}}</span> </p>
+            </div>
+            <mat-card-actions>
+              <!--Button -->
+              <div class="flex w-full justify-end gap-2" >
+                <button  mat-raised-button  color="primary">ADD</button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+

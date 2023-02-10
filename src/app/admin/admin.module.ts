@@ -11,6 +11,7 @@ import {SharedModule} from "../shared/shared.module";
 import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import {MatTabsModule} from "@angular/material/tabs";
 
 
 @NgModule({
@@ -21,13 +22,14 @@ import {MatButtonModule} from "@angular/material/button";
     LeaveManagementComponent,
     RecordComponent
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    SharedModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule
-  ]
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        SharedModule,
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule,
+        MatTabsModule
+    ]
 })
 export class AdminModule { }
