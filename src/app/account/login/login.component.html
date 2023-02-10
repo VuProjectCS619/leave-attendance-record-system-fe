@@ -17,12 +17,13 @@
             <mat-form-field appearance="fill">
               <mat-label>Enter Your ID</mat-label>
               <input matInput placeholder="EM1111111" [formControl]="id" required>
-              <mat-error *ngIf="id.invalid">{{getErrorMessage()}}</mat-error>
+              <mat-error *ngIf="id.hasError('required')">You must enter your ID</mat-error>
             </mat-form-field>
             <!-- Password-->
             <mat-form-field appearance="fill">
               <mat-label>Enter your password</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'">
+              <input matInput [type]="hide ? 'password' : 'text'"  [formControl]="password" required >
+              <mat-error *ngIf="password.hasError('required')">Password must not be empty</mat-error>
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>

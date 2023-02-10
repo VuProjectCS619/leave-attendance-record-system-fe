@@ -9,13 +9,6 @@ export class LoginComponent {
   empty = true
   hide= true
 
-  id = new FormControl('', [Validators.required, Validators.email]);
-
-  getErrorMessage() {
-    if (this.id.hasError('required')) {
-      return 'You must enter your ID  ';
-    }
-
-    return this.id.hasError('id') ? 'Not a valid ID' : '';
-  }
+  id = new FormControl('', [Validators.required]);
+  password = new FormControl('', [Validators.required]);
 }
