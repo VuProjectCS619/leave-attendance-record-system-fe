@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent {
-  user: string = "employee"
+  user: string = "admin"
   greeting:string = "Muhammad Osama Iftikhar"
 }

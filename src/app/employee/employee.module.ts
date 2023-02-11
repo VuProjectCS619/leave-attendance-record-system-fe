@@ -15,6 +15,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import { MatNativeDateModule } from '@angular/material/core';
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 
 
@@ -27,17 +28,18 @@ import {ReactiveFormsModule} from "@angular/forms";
     AccountSettingComponent,
 
   ],
-  imports: [
-    CommonModule,
-    EmployeeRoutingModule,
-    SharedModule,
-    MatCardModule,
-    MatButtonModule,
-    MatTabsModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    ReactiveFormsModule,
-  ]
+    imports: [
+        CommonModule,
+        EmployeeRoutingModule,
+        SharedModule,
+        MatCardModule,
+        MatButtonModule,
+        MatTabsModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        ReactiveFormsModule,
+        MatExpansionModule,
+    ]
 })
 export class EmployeeModule { }

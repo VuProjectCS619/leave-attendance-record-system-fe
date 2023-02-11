@@ -9,15 +9,15 @@ export class RecordComponent {
 
   employeeRecord =[
     {
-      name: "Muhammad Osama Iftkhar",
+      name: "Muhammad Osama Iftikhar",
       employeeID: "EM1000000"
     },
     {
-      name: "Muhammad Osama Iftkhar",
+      name: "Muhammad Osama Iftikhar",
       employeeID: "EM1000000"
     },
     {
-      name: "Muhammad Osama Iftkhar",
+      name: "Muhammad Osama Iftikhar",
       employeeID: "EM1000000"
     },
   ]
