@@ -13,6 +13,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
+import { MatNativeDateModule } from '@angular/material/core';
 import {ReactiveFormsModule} from "@angular/forms";
 
 
@@ -23,7 +24,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     AttendanceComponent,
     ApplyForLeaveComponent,
     RecordComponent,
-    AccountSettingComponent
+    AccountSettingComponent,
+
   ],
   imports: [
     CommonModule,
@@ -34,6 +36,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatTabsModule,
     MatInputModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     ReactiveFormsModule,
   ]
 })
