@@ -65,51 +65,61 @@ export class LeaveManagementComponent {
     {
       name: "Muhammad Osama Iftikhar",
       employeeID: "EM100000",
+      employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
       employeeID: "EM100000",
+      employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
       employeeID: "EM100000",
+      employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
       employeeID: "EM100000",
+      employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
       employeeID: "EM100000",
+      employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
       employeeID: "EM100000",
+      employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
       employeeID: "EM100000",
+      employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
       employeeID: "EM100000",
+      employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
       employeeID: "EM100000",
+      employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
       employeeID: "EM100000",
+      employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
   ]

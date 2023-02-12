@@ -32,9 +32,10 @@
           <mat-card class="w-96 h-auto shadow-xl p-4 " *ngFor="let allowedLeave of addLeaves">
             <div class="flex flex-col gap-4">
               <mat-card-title>Add Leave (Per Year)</mat-card-title>
-              <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{allowedLeave.name}}</span> </p>
-              <p class=" text-xs font-semibold">ID:{{" "}}<span class="font-normal ">{{allowedLeave.employeeID}}</span> </p>
-              <p class=" text-xs font-semibold">Allowed Leaves:{{" "}}<span class="font-normal ">{{allowedLeave.allowedLeave}}</span> </p>
+              <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{allowedLeave.name}}</span></p>
+              <p class=" text-xs font-semibold">ID:{{" "}}<span class="font-normal ">{{allowedLeave.employeeID}}</span></p>
+              <p class=" text-xs font-semibold">Designation:{{" "}}<span class="font-normal ">{{allowedLeave.employeeDesignation}}</span></p>
+              <p class=" text-xs font-semibold">Allowed Leaves:{{" "}}<span class="font-normal ">{{allowedLeave.allowedLeave}}</span></p>
             </div>
             <mat-card-actions>
               <!--Button -->
