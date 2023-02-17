@@ -14,6 +14,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatTableModule} from "@angular/material/table";
 import {MatExpansionModule} from "@angular/material/expansion";
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -22,18 +23,19 @@ import {MatExpansionModule} from "@angular/material/expansion";
     AddEmployeeComponent,
     EmployeeManagementComponent,
     LeaveManagementComponent,
-    RecordComponent
+    RecordComponent,
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    SharedModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule,
-    MatTabsModule,
-    MatTableModule,
-    MatExpansionModule
-  ]
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        SharedModule,
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule,
+        MatTabsModule,
+        MatTableModule,
+        MatExpansionModule,
+        MatDialogModule
+    ]
 })
 export class AdminModule { }

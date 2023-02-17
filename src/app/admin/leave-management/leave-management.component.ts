@@ -1,5 +1,13 @@
 import { Component } from '@angular/core';
 
+
+export interface leave {
+  name: string,
+  employeeID: string,
+  employeeDesignation: string,
+  allowedLeave: number
+}
+
 @Component({
   selector: 'app-leave-management',
   templateUrl: './leave-management.component.html',
