@@ -8,6 +8,8 @@ import {AccountModule} from "./account/account.module";
 import {SharedModule} from "./shared/shared.module";
 import {EmployeeModule} from "./employee/employee.module";
 import {AdminModule} from "./admin/admin.module";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {BaseUrlInterceptor} from "./interceptors/base-url.interceptor";
 
 
 @NgModule({
@@ -21,9 +23,16 @@ import {AdminModule} from "./admin/admin.module";
     AccountModule,
     SharedModule,
     EmployeeModule,
-    AdminModule
+    AdminModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: BaseUrlInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
