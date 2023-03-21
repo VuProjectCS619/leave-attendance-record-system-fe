@@ -8,12 +8,33 @@
     <mat-tab label="APPLY FOR LEAVE" >
       <!-- Card -->
       <div class="flex gap-10 flex-col p-10 " >
-        <mat-card class="w-96 h-auto shadow-xl p-4 " >
+        <mat-card class="w-auto h-auto shadow-xl p-4 " >
           <div class="flex flex-col gap-4">
             <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{userName}}</span> </p>
             <p class=" text-xs font-semibold">ID:{{" "}}<span class="font-normal ">{{id}}</span> </p>
-            <p class=" text-xs font-semibold">Allowed Leaves:{{" "}}<span class="font-normal ">{{allowedLeaves}}</span> </p>
-            <p class=" text-xs font-semibold">Consumed Leaves:{{" "}}<span class="font-normal ">{{consumedLeaves}}</span> </p>
+            <mat-tab-group>
+              <mat-tab label="Casual Leaves">
+                <div class="flex justify-evenly mt-4">
+                <p class=" text-xs font-semibold">Allowed Leaves:{{" "}}<span class="font-normal ">{{allowedLeaves}}</span> </p>
+                <p class=" text-xs font-semibold">Consumed Leaves:{{" "}}<span class="font-normal ">{{consumedLeaves}}</span> </p>
+                <p class=" text-xs font-semibold">Balance:{{" "}}<span class="font-normal ">{{balance}}</span> </p>
+                </div>
+              </mat-tab>
+              <mat-tab label="Compensatory Leaves">
+                <div class="flex justify-evenly mt-4">
+                  <p class=" text-xs font-semibold">Allowed Leaves:{{" "}}<span class="font-normal ">{{allowedLeaves}}</span> </p>
+                  <p class=" text-xs font-semibold">Consumed Leaves:{{" "}}<span class="font-normal ">{{consumedLeaves}}</span> </p>
+                  <p class=" text-xs font-semibold">Balance:{{" "}}<span class="font-normal ">{{balance}}</span> </p>
+                </div>
+              </mat-tab>
+              <mat-tab label="Earned Leaves">
+                <div class="flex justify-evenly mt-4">
+                  <p class=" text-xs font-semibold">Allowed Leaves:{{" "}}<span class="font-normal ">{{allowedLeaves}}</span> </p>
+                  <p class=" text-xs font-semibold">Consumed Leaves:{{" "}}<span class="font-normal ">{{consumedLeaves}}</span> </p>
+                  <p class=" text-xs font-semibold">Balance:{{" "}}<span class="font-normal ">{{balance}}</span> </p>
+                </div>
+              </mat-tab>
+            </mat-tab-group>
           </div>
         </mat-card>
       <!--Apply for leave -->
@@ -21,11 +42,34 @@
           <div class="flex flex-col gap-4">
         <!-- Date Picker-->
             <mat-form-field appearance="fill">
-              <mat-label>Choose a date</mat-label>
-              <input matInput [formControl]="selectedDate" [matDatepicker]="picker">
+              <mat-label>To Date</mat-label>
+              <input matInput [matDatepicker]="toPicker">
               <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+              <mat-datepicker-toggle matIconSuffix [for]="toPicker"></mat-datepicker-toggle>
+              <mat-datepicker #toPicker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>From Date</mat-label>
+              <input matInput [matDatepicker]="fromPicker">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="fromPicker"></mat-datepicker-toggle>
+              <mat-datepicker #fromPicker></mat-datepicker>
+            </mat-form-field>
+      <!--Dropdown -->
+            <mat-form-field appearance="fill">
+              <mat-label>Type of Leave</mat-label>
+              <mat-select>
+                <mat-option value="Full">Full</mat-option>
+                <mat-option value="Half">Half</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Description of Leave</mat-label>
+              <mat-select>
+                <mat-option value="Casual">Casual</mat-option>
+                <mat-option value="Compensatory">Compensatory</mat-option>
+                <mat-option value="Earned">Earned</mat-option>
+              </mat-select>
             </mat-form-field>
               <!--  Reason for Leave   -->
             <mat-form-field>

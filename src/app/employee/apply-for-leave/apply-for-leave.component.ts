@@ -7,13 +7,16 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./apply-for-leave.component.css']
 })
 export class ApplyForLeaveComponent {
-  selectedDate = new FormControl(new Date());
+  // toDate = new FormControl(new Date());
+  // fromDate = new FormControl(new Date());
   userName:string = "Muhamamd Osama Iftikhar"
   id:string = "EM100000"
-  allowedLeaves: number = 3
-  consumedLeaves:number = 1
+  allowedLeaves: number = 5
+  consumedLeaves:number = 5
+  balance:number = 0
   appliedForLeave:string = "Jan, 05, 2023"
   status:string = "Pending"
+
 
   leaveStatus = [
     {
