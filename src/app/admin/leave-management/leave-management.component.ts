@@ -18,52 +18,52 @@ export class LeaveManagementComponent {
   leaveRequests = [
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       reason: "I have an emergency."
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       reason: "I have an emergency."
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       reason: "I have an emergency."
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       reason: "I have an emergency."
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       reason: "I have an emergency."
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       reason: "I have an emergency."
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       reason: "I have an emergency."
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       reason: "I have an emergency."
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       reason: "I have an emergency."
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       reason: "I have an emergency."
     },
 
@@ -72,61 +72,61 @@ export class LeaveManagementComponent {
   addLeaves = [
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
       employeeDesignation: "Angular Developer",
       allowedLeave: 3
     },

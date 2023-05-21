@@ -15,7 +15,7 @@
                 Name/ID
               </mat-panel-title>
               <mat-panel-description >
-                {{employee.name}}, {{employee.employeeID}}
+                {{employee.name}}, {{employee.employeeEmail}}
               </mat-panel-description>
             </mat-expansion-panel-header>
             <div class="flex gap-4 flex-wrap p-10" >
@@ -40,7 +40,7 @@
           <div class="flex flex-col gap-4">
             <mat-card-title>Attendance</mat-card-title>
             <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{attendance.name}}</span> </p>
-            <p class=" text-xs font-semibold">ID:{{" "}}<span class="font-normal ">{{attendance.employeeID}}</span> </p>
+            <p class=" text-xs font-semibold">Email:{{" "}}<span class="font-normal ">{{attendance.employeeEmail}}</span> </p>
           </div>
           <mat-card-actions>
             <!--Button -->

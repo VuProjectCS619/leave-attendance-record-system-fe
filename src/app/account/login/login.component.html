@@ -7,7 +7,7 @@
         </div>
       <mat-card class="w-96 h-auto shadow-xl ">
         <mat-card-header>
-          <mat-card-title>Employee Login</mat-card-title>
+          <mat-card-title>Login</mat-card-title>
           <mat-card-subtitle>Please enter your login credentials.</mat-card-subtitle>
         </mat-card-header>
         <mat-card-actions>
@@ -15,9 +15,9 @@
           <div class="flex flex-col p-2 w-full">
             <!--ID -->
             <mat-form-field appearance="fill">
-              <mat-label>Enter Your ID</mat-label>
-              <input matInput placeholder="EM1111111" [formControl]="id" required>
-              <mat-error *ngIf="id.hasError('required')">You must enter your ID</mat-error>
+              <mat-label>Enter Your Email</mat-label>
+              <input matInput placeholder="johndoe@example.com" [formControl]="id" required>
+              <mat-error *ngIf="id.hasError('required')">You must enter your email</mat-error>
             </mat-form-field>
             <!-- Password-->
             <mat-form-field appearance="fill">

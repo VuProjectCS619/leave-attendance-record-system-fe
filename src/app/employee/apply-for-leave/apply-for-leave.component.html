@@ -11,7 +11,7 @@
         <mat-card class="w-auto h-auto shadow-xl p-4 " >
           <div class="flex flex-col gap-4">
             <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{userName}}</span> </p>
-            <p class=" text-xs font-semibold">ID:{{" "}}<span class="font-normal ">{{id}}</span> </p>
+            <p class=" text-xs font-semibold">Email:{{" "}}<span class="font-normal ">{{email}}</span> </p>
             <mat-tab-group>
               <mat-tab label="Casual Leaves">
                 <div class="flex justify-evenly mt-4">
@@ -34,11 +34,13 @@
                   <p class=" text-xs font-semibold">Balance:{{" "}}<span class="font-normal ">{{balance}}</span> </p>
                 </div>
               </mat-tab>
-            </mat-tab-group>
+            </mat-tab-group> 
+            
+            
           </div>
         </mat-card>
       <!--Apply for leave -->
-        <mat-card class="w-96 h-auto shadow-xl p-4">
+        <mat-card class="w-96 h-auto shadow-xl p-4 ">
           <div class="flex flex-col gap-4">
         <!-- Date Picker-->
             <mat-form-field appearance="fill">
@@ -62,6 +64,7 @@
                 <mat-option value="Full">Full</mat-option>
                 <mat-option value="Half">Half</mat-option>
               </mat-select>
+        
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>Description of Leave</mat-label>
@@ -93,7 +96,7 @@
         <mat-card class="w-96 h-auto shadow-xl p-4 " *ngFor="let employeeLeaveStatus of leaveStatus" >
           <div class="flex flex-col gap-4">
             <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{employeeLeaveStatus.userName}}</span> </p>
-            <p class=" text-xs font-semibold">ID:{{" "}}<span class="font-normal ">{{employeeLeaveStatus.id}}</span> </p>
+            <p class=" text-xs font-semibold">Email:{{" "}}<span class="font-normal ">{{employeeLeaveStatus.email}}</span> </p>
             <p class=" text-xs font-semibold">Applied for Leave:{{" "}}<span class="font-normal ">{{employeeLeaveStatus.appliedForLeave}}</span> </p>
             <p class=" text-xs font-semibold">Status:{{" "}}<span class="font-normal ">{{employeeLeaveStatus.status}}</span> </p>
           </div>

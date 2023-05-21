@@ -9,42 +9,42 @@ export class EmployeeManagementComponent {
  employeesManagement = [
    {
      name: "Muhammad Osama Iftikhar",
-     employeeID: "EM100000",
+     employeeEmail: "osama@abc.com",
      salary: 90000,
      designation: "Angular Developer",
      contact: "+923136784434"
    },
    {
      name: "Muhammad Osama Iftikhar",
-     employeeID: "EM100000",
+     employeeEmail: "osama@abc.com",
      salary: 90000,
      designation: "Angular Developer",
      contact: "+923136784434"
    },
    {
      name: "Muhammad Osama Iftikhar",
-     employeeID: "EM100000",
+     employeeEmail: "osama@abc.com",
      salary: 90000,
      designation: "Angular Developer",
      contact: "+923136784434"
    },
    {
      name: "Muhammad Osama Iftikhar",
-     employeeID: "EM100000",
+     employeeEmail: "osama@abc.com",
      salary: 90000,
      designation: "Angular Developer",
      contact: "+923136784434"
    },
    {
      name: "Muhammad Osama Iftikhar",
-     employeeID: "EM100000",
+     employeeEmail: "osama@abc.com",
      salary: 90000,
      designation: "Angular Developer",
      contact: "+923136784434"
    },
    {
      name: "Muhammad Osama Iftikhar",
-     employeeID: "EM100000",
+     employeeEmail: "osama@abc.com",
      salary: 90000,
      designation: "Angular Developer",
      contact: "+923136784434"

@@ -10,15 +10,15 @@ export class RecordComponent {
   employeeRecord =[
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM1000000"
+      employeeEmail: "osama@abc.com"
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM1000000"
+      employeeEmail: "osama@abc.com"
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM1000000"
+      employeeEmail: "osama@abc.com"
     },
   ]
   leaveRecord = [
@@ -97,43 +97,43 @@ export class RecordComponent {
   attendanceRecord = [
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com"
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com"
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com"
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com"
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com"
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com"
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com"
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com"
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com"
     },
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com"
     },
   ]
 }

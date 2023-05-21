@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AttendanceComponent {
   userName:string = "Muhamamd Osama Iftikhar"
-  id:string = "EM100000"
+  email:string = "osama@abc.com"
   timeIn: string = "11:00 AM"
   timeOut:string = "8:00 PM"
 }
