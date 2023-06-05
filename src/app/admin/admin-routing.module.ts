@@ -5,6 +5,7 @@ import {AddEmployeeComponent} from "./add-employee/add-employee.component";
 import {EmployeeManagementComponent} from "./employee-management/employee-management.component";
 import {RecordComponent} from "./record/record.component";
 import {LeaveManagementComponent} from "./leave-management/leave-management.component";
+import {SideNavAdminComponent} from "../shared/side-nav-admin/side-nav-admin.component";
 
 const routes: Routes = [
   {

@@ -2,16 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
-import { SideNavComponent } from './side-nav/side-nav.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
+import { SideNavAdminComponent } from './side-nav-admin/side-nav-admin.component';
+import { SideNavEmployeeComponent } from './side-nav-employee/side-nav-employee.component';
 
 @NgModule({
     declarations: [
-        SideNavComponent
+        SideNavAdminComponent,
+        SideNavEmployeeComponent
     ],
   exports: [
-    SideNavComponent,
+    SideNavAdminComponent,
+    SideNavEmployeeComponent,
   ],
   imports: [
     CommonModule,

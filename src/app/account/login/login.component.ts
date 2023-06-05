@@ -24,18 +24,31 @@ export class LoginComponent {
   })
 
 
-  onClick (){
-    // console.log(this.form.value)
-    this.service.adminLogin(this.form.value).subscribe({
-      next: value => {
-        console.log(value)
-        this.route.navigateByUrl("/admin")
-      },
-      error: err => {
-        console.log(err)
-      }
-      }
-    )
+
+  navigate() {
+    // Check the user's role here (example: admin)
+    let userRole = "employee";
+
+    if (userRole === 'admin') {
+      this.route.navigate(['/admin/add-employee']).then(r => true );
+    } else if(userRole === 'employee') {
+      this.route.navigate(['/employee/attendance']).then(r => true);
+    } else{
+      this.route.navigate(['http://localhost:4200/']).then(r => false);
+    }
   }
+  // onClick (){
+  //   // console.log(this.form.value)
+  //   this.service.adminLogin(this.form.value).subscribe({
+  //     next: value => {
+  //       console.log(value)
+  //       this.route.navigateByUrl("/admin")
+  //     },
+  //     error: err => {
+  //       console.log(err)
+  //     }
+  //     }
+  //   )
+  // }
 
 }
