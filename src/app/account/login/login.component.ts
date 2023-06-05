@@ -26,7 +26,7 @@ export class LoginComponent {
 
 
   navigate() {
-    // Check the user's role here (example: admin)
+    // Check the user's role here
     let userRole = "employee";
 
     if (userRole === 'admin') {

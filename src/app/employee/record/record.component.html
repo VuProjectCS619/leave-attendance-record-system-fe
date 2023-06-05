@@ -9,13 +9,13 @@
       <!--   Table    -->
       <div class="flex flex-col gap-2 flex-wrap p-10 " >
         <mat-accordion>
-          <mat-expansion-panel *ngFor="let employee of employeePanel" >
+          <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Name/ID
+                Name/Email
               </mat-panel-title>
               <mat-panel-description >
-                {{employee.name}}, {{employee.employeeID}}
+                {{name}}, {{email}}
               </mat-panel-description>
             </mat-expansion-panel-header>
             <div class="flex gap-4 flex-wrap p-10" >

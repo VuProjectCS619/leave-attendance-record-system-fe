@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AccountSettingComponent {
 myName:string="Muhammad Osama Iftikhar"
-  myId:string="EM100000"
+  myEmail:string="osama@abc.com"
   mySalary:number=100000
   myDesignation:string="Angular Developer"
   myContact:string="+923136784434"

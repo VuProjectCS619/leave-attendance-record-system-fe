@@ -6,14 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./record.component.css']
 })
 export class RecordComponent {
+  name:string = "Muhammad Osama Iftikhar"
+  email:string="osama@abc.com"
 
-  employeePanel =[
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeID: "EM1000000"
-    },
-  ]
-  leaveEmployeeRecord = [
+  leaveEmployeeRecord= [
     {
       monthYear:"Jan, 2023",
       name: "Muhammad Osama Iftikhar",
