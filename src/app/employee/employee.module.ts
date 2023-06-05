@@ -17,6 +17,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatSelectModule} from "@angular/material/select";
+import { ViewRecordDialogComponent } from './view-record-dialog/view-record-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 
@@ -29,22 +31,24 @@ import {MatSelectModule} from "@angular/material/select";
     ApplyForLeaveComponent,
     RecordComponent,
     AccountSettingComponent,
+    ViewRecordDialogComponent,
 
   ],
-    imports: [
-        CommonModule,
-        EmployeeRoutingModule,
-        SharedModule,
-        MatCardModule,
-        MatButtonModule,
-        MatTabsModule,
-        MatInputModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        ReactiveFormsModule,
-        MatExpansionModule,
-        MatSelectModule,
-        
-    ]
+  imports: [
+    CommonModule,
+    EmployeeRoutingModule,
+    SharedModule,
+    MatCardModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatExpansionModule,
+    MatSelectModule,
+    MatDialogModule,
+
+  ]
 })
 export class EmployeeModule { }

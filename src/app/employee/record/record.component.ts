@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ViewRecordDialogComponent} from "../view-record-dialog/view-record-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-record',
@@ -8,6 +10,13 @@ import { Component } from '@angular/core';
 export class RecordComponent {
   name:string = "Muhammad Osama Iftikhar"
   email:string="osama@abc.com"
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(ViewRecordDialogComponent);
+  }
+
 
   leaveEmployeeRecord= [
     {
@@ -42,7 +51,7 @@ export class RecordComponent {
     {
       monthYear:"Jun, 2023",
       name: "Muhammad Osama Iftikhar",
-      eworkingHours: 115,
+      workingHours: 115,
       leaves: 3
     },
     {

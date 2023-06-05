@@ -19,11 +19,11 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
             <div class="flex gap-4 flex-wrap p-10" >
-              <mat-card class="w-96 h-auto shadow-xl p-4" *ngFor="let employeeRecord of leaveEmployeeRecord">
+              <mat-card class="w-96 h-auto shadow-xl p-4" *ngFor="let employee of leaveEmployeeRecord">
                 <div class="flex flex-col gap-4">
-                  <mat-card-title>{{employeeRecord.monthYear}}</mat-card-title>
-                  <p class=" text-xs font-semibold">Leaves:{{" "}}<span class="font-normal ">{{employeeRecord.leaves}}</span> </p>
-                  <p class=" text-xs font-semibold">Working Hours:{{" "}}<span class="font-normal ">{{employeeRecord.workingHours}}</span> </p>
+                  <mat-card-title>{{employee.monthYear}}</mat-card-title>
+                  <p class=" text-xs font-semibold">Leaves:{{" "}}<span class="font-normal ">{{employee.leaves}}</span> </p>
+                  <p class=" text-xs font-semibold">Working Hours:{{" "}}<span class="font-normal ">{{employee.workingHours}}</span> </p>
                 </div>
               </mat-card>
             </div>
@@ -45,7 +45,7 @@
           <mat-card-actions>
             <!--Button -->
             <div class="flex w-full justify-center" >
-              <button class="w-full" mat-raised-button  color="primary">VIEW RECORD</button>
+              <button class="w-full" mat-raised-button  color="primary" (click)="openDialog()">VIEW RECORD</button>
             </div>
           </mat-card-actions>
         </mat-card>

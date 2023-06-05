@@ -1,14 +1,29 @@
 <mat-drawer-container class="w-screen h-screen">
   <!-- drawer options -->
-  <mat-drawer mode="side" opened class="w-60 ">
+  <mat-drawer mode="side" opened class="w-72">
     <p class="text-lg font-semibold p-4">Company ABC</p>
     <mat-list>
       <div class="flex flex-col gap-12 p-4 w-full">
-        <a routerLink="/admin/add-employee">Add Employee</a>
-        <a routerLink="/admin/employee-management">Employee Management</a>
-        <a routerLink="/admin/leave-management">Leave Management</a>
-        <a routerLink="/admin/record">Leave/Attendance Record</a>
-        <a routerLink="">Logout</a>
+        <div class="flex items-center gap-2">
+          <mat-icon>note_add</mat-icon>
+          <a routerLink="/admin/add-employee">Add Employee</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <mat-icon>supervised_user_circle</mat-icon>
+          <a routerLink="/admin/employee-management">Employee Management</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <mat-icon>build</mat-icon>
+          <a routerLink="/admin/leave-management">Leave Management</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <mat-icon>receipt</mat-icon>
+          <a routerLink="/admin/record">Leave/Attendance Record</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <mat-icon>exit_to_app</mat-icon>
+          <a routerLink="">Logout</a>
+        </div>
       </div>
     </mat-list>
   </mat-drawer>
