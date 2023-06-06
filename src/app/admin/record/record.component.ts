@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {AddLeaveDialogComponent} from "../add-leave-dialog/add-leave-dialog.component";
+import {ViewRecordDialogComponent} from "../view-record-dialog/view-record-dialog.component";
 
 @Component({
   selector: 'app-record',
@@ -6,6 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./record.component.css']
 })
 export class RecordComponent {
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(ViewRecordDialogComponent);
+  }
 
   employeeRecord =[
     {

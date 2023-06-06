@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {ViewRecordDialogComponent} from "../../employee/view-record-dialog/view-record-dialog.component";
+import {AddLeaveDialogComponent} from "../add-leave-dialog/add-leave-dialog.component";
 
 
 export interface leave {
@@ -14,6 +17,12 @@ export interface leave {
   styleUrls: ['./leave-management.component.css']
 })
 export class LeaveManagementComponent {
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(AddLeaveDialogComponent);
+  }
 
   leaveRequests = [
     {

@@ -27,7 +27,7 @@ export class LoginComponent {
 
   navigate() {
     // Check the user's role here
-    let userRole = "employee";
+    let userRole = "admin";
 
     if (userRole === 'admin') {
       this.route.navigate(['/admin/add-employee']).then(r => true );

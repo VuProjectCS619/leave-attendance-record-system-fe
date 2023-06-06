@@ -15,6 +15,9 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatTableModule} from "@angular/material/table";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatDialogModule} from "@angular/material/dialog";
+import { AddLeaveDialogComponent } from './add-leave-dialog/add-leave-dialog.component';
+import { ViewRecordDialogComponent } from './view-record-dialog/view-record-dialog.component';
+import { UpdateEmployeeDialogComponent } from './update-employee-dialog/update-employee-dialog.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import {MatDialogModule} from "@angular/material/dialog";
     EmployeeManagementComponent,
     LeaveManagementComponent,
     RecordComponent,
+    AddLeaveDialogComponent,
+    ViewRecordDialogComponent,
+    UpdateEmployeeDialogComponent,
   ],
     imports: [
         CommonModule,
