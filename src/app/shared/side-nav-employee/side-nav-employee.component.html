@@ -1,7 +1,10 @@
-<mat-drawer-container class="w-screen h-screen">
+<mat-drawer-container class="w-screen h-screen" autosize>
   <!-- drawer options -->
-  <mat-drawer mode="side" opened class="w-72 ">
-    <p class="text-lg font-semibold p-4">Company ABC</p>
+  <mat-drawer #drawer mode="side" opened class="w-72 ">
+    <div class="flex  justify-between p-4 ">
+      <p class="text-lg font-semibold ">Company ABC</p>
+
+    </div>
     <mat-list>
       <div class="flex flex-col gap-12 p-4 w-full">
         <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
@@ -28,9 +31,12 @@
     </mat-list>
   </mat-drawer>
   <!-- main content -->
-  <mat-drawer-content class="flex flex-col " >
-    <div class="sticky top-0 z-10 bg-slate-50">
-      <p class="p-4 text-xl font-semibold">Welcome: {{greeting}}  </p>
+  <mat-drawer-content>
+    <div class="sticky top-0 z-10 bg-white ">
+      <div class="flex gap-2 items-center  p-1">
+        <mat-icon class="cursor-pointer " (click)="drawer.toggle()">tune</mat-icon>
+        <p class="p-4 text-xl font-semibold">Welcome: {{greeting}}</p>
+      </div>
       <mat-divider> </mat-divider>
     </div>
     <div class="p-4"> <ng-content></ng-content> </div>
