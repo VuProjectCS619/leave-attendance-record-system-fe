@@ -4,24 +4,24 @@
     <p class="text-lg font-semibold p-4">Company ABC</p>
     <mat-list>
       <div class="flex flex-col gap-12 p-4 w-full">
-        <div class="flex items-center gap-2">
-          <mat-icon>note_add</mat-icon>
+        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
+          <a routerLink="/admin/add-employee"><mat-icon>note_add</mat-icon></a>
           <a routerLink="/admin/add-employee">Add Employee</a>
         </div>
-        <div class="flex items-center gap-2">
-          <mat-icon>supervised_user_circle</mat-icon>
+        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
+          <a routerLink="/admin/employee-management"><mat-icon>supervised_user_circle</mat-icon></a>
           <a routerLink="/admin/employee-management">Employee Management</a>
         </div>
-        <div class="flex items-center gap-2">
-          <mat-icon>build</mat-icon>
+        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
+          <a routerLink="/admin/leave-management"><mat-icon>build</mat-icon></a>
           <a routerLink="/admin/leave-management">Leave Management</a>
         </div>
-        <div class="flex items-center gap-2">
-          <mat-icon>receipt</mat-icon>
+        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
+          <a routerLink="/admin/record"><mat-icon>receipt</mat-icon></a>
           <a routerLink="/admin/record">Leave/Attendance Record</a>
         </div>
-        <div class="flex items-center gap-2">
-          <mat-icon>exit_to_app</mat-icon>
+        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
+          <a routerLink=""><mat-icon>exit_to_app</mat-icon></a>
           <a routerLink="">Logout</a>
         </div>
       </div>

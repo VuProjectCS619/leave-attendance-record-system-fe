@@ -1,7 +1,4 @@
 <div class=" flex flex-col gap-4">
-  <div>
-    <p class="text-lg font-semibold">Leave/Attendance Record</p>
-  </div>
   <!--Tabs-->
   <mat-tab-group  dynamicHeight  >
     <!--Tab 1 Leave Request-->
@@ -12,10 +9,10 @@
           <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Name/Email
+                  Your Leave Record
               </mat-panel-title>
-              <mat-panel-description >
-                {{name}}, {{email}}
+              <mat-panel-description class="text-fuchsia-800/80" >
+                Click me to view your leave record.
               </mat-panel-description>
             </mat-expansion-panel-header>
             <div class="flex gap-4 flex-wrap p-10" >
@@ -38,16 +35,17 @@
       <div class="flex gap-4 flex-wrap p-10" >
         <mat-card class="w-96 h-auto shadow-xl p-4" *ngFor="let attendance of attendanceRecord">
           <div class="flex flex-col gap-4">
-            <mat-card-title>Attendance</mat-card-title>
-            <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{attendance.name}}</span> </p>
-            <p class=" text-xs font-semibold">ID:{{" "}}<span class="font-normal ">{{attendance.employeeID}}</span> </p>
+            <mat-card-title>Attendance Record</mat-card-title>
+            <mat-card-subtitle class="text-fuchsia-700/80">Here you can check your attendance record.</mat-card-subtitle>
+
+            <mat-card-actions>
+              <!--Button -->
+              <div class="flex w-full justify-center" >
+                <button class="w-full uppercase" mat-raised-button  color="primary" (click)="openDialog()">Click to view</button>
+              </div>
+            </mat-card-actions>
           </div>
-          <mat-card-actions>
-            <!--Button -->
-            <div class="flex w-full justify-center" >
-              <button class="w-full" mat-raised-button  color="primary" (click)="openDialog()">VIEW RECORD</button>
-            </div>
-          </mat-card-actions>
+
         </mat-card>
       </div>
 

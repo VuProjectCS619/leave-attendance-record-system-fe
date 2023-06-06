@@ -3,25 +3,25 @@
   <mat-drawer mode="side" opened class="w-72 ">
     <p class="text-lg font-semibold p-4">Company ABC</p>
     <mat-list>
-      <div class="flex flex-col gap-12 p-4  w-full">
-        <div class="flex items-center gap-2">
-          <mat-icon>book</mat-icon>
+      <div class="flex flex-col gap-12 p-4 w-full">
+        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
+          <a routerLink="/employee/attendance"><mat-icon>book</mat-icon></a>
           <a routerLink="/employee/attendance">Attendance</a>
         </div>
-        <div class="flex items-center gap-2">
-          <mat-icon>time_to_leave</mat-icon>
+        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
+          <a routerLink="/employee/apply-for-leave"><mat-icon>time_to_leave</mat-icon></a>
           <a routerLink="/employee/apply-for-leave">Apply for Leave</a>
         </div>
-        <div class="flex items-center gap-2">
-          <mat-icon>receipt</mat-icon>
+        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
+          <a routerLink="/employee/record"><mat-icon>build</mat-icon></a>
           <a routerLink="/employee/record">Leave/Attendance Record</a>
         </div>
-        <div class="flex items-center gap-2">
-          <mat-icon>settings</mat-icon>
+        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
+          <a routerLink="/employee/account-setting"><mat-icon>settings</mat-icon></a>
           <a routerLink="/employee/account-setting">Account Settings</a>
         </div>
-        <div class="flex items-center gap-2">
-          <mat-icon>exit_to_app</mat-icon>
+        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
+          <a routerLink=""><mat-icon>exit_to_app</mat-icon></a>
           <a routerLink="">Logout</a>
         </div>
       </div>

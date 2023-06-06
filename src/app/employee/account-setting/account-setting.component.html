@@ -5,11 +5,11 @@
   <!--Card-->
     <mat-card class="w-96 h-auto shadow-xl p-4 ">
       <div class="flex flex-col gap-4">
-        <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{myName}}</span> </p>
-        <p class=" text-xs font-semibold">Email:{{" "}}<span class="font-normal ">{{myEmail}}</span> </p>
-        <p class=" text-xs font-semibold">Salary:{{" "}}<span class="font-normal ">{{mySalary}}</span> </p>
-        <p class=" text-xs font-semibold">Designation:{{" "}}<span class="font-normal ">{{myDesignation}}</span> </p>
-        <p class=" text-xs font-semibold">Contact:{{" "}}<span class="font-normal ">{{myContact}}</span></p>
+        <div class="flex flex-col gap-2">
+          <mat-card-title>Update Profile Settings</mat-card-title>
+          <mat-card-subtitle class="text-fuchsia-800/80">Here you can update your profile information</mat-card-subtitle>
+          <mat-card-subtitle class="text-red-800/80 ">Note: To update your other credentials, contact your admin.</mat-card-subtitle>
+        </div>
         <!--Update Name-->
         <div class="flex flex-col" >
         <mat-form-field appearance="fill">
@@ -32,19 +32,6 @@
         <mat-card-actions>
           <!--Button -->
           <div class="flex w-full justify-end">
-            <button  mat-raised-button  color="primary">UPDATE</button>
-          </div>
-        </mat-card-actions>
-        </div>
-        <!--Contact Number -->
-        <div class="flex  flex-col" >
-        <mat-form-field appearance="fill">
-          <mat-label>Update Contact</mat-label>
-          <input matInput placeholder="00123243831">
-        </mat-form-field>
-        <mat-card-actions>
-          <!--Button -->
-          <div class="flex w-full justify-end ">
             <button  mat-raised-button  color="primary">UPDATE</button>
           </div>
         </mat-card-actions>

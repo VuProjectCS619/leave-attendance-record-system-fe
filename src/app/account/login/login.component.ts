@@ -27,14 +27,14 @@ export class LoginComponent {
 
   navigate() {
     // Check the user's role here
-    let userRole = "admin";
+    let userRole = "employee";
 
     if (userRole === 'admin') {
       this.route.navigate(['/admin/add-employee']).then(r => true );
     } else if(userRole === 'employee') {
       this.route.navigate(['/employee/attendance']).then(r => true);
     } else{
-      this.route.navigate(['http://localhost:4200/']).then(r => false);
+      this.route.navigate(['']).then(r => false);
     }
   }
   // onClick (){
