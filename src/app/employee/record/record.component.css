@@ -1,0 +1,10 @@
+mat-card{
+  @apply
+  bg-gray-200
+}
+
+mat-expansion-panel{
+  @apply
+  bg-gray-100
+
+}

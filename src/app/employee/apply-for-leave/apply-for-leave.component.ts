@@ -39,21 +39,15 @@ export class ApplyForLeaveComponent {
 
   leaveStatus = [
     {
-      userName : "Muhamamd Osama Iftikhar",
-      email: "osama@abc.com",
-      appliedForLeave:"Jan, 05, 2023",
+      appliedForLeave:"Jan, 05, 2023 - Jan, 07, 2023",
       status:"Pending"
     },
     {
-      userName : "Muhamamd Osama Iftikhar",
-      email: "osama@abc.com",
-      appliedForLeave:"Jan, 15, 2023",
+      appliedForLeave:"Jan, 05, 2023 - Jan, 07, 2023",
       status:"Pending"
     },
     {
-      userName : "Muhamamd Osama Iftikhar",
-      email: "osama@abc.com",
-      appliedForLeave:"Jan, 25, 2023",
+      appliedForLeave:"Jan, 05, 2023 - Jan, 07, 2023",
       status:"Pending"
     }
   ]

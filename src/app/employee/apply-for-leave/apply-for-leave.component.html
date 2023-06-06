@@ -9,8 +9,8 @@
           <div class="flex flex-col gap-6">
             <div class="flex flex-col gap-2">
               <mat-card-title >Leave Count Manager:</mat-card-title>
-              <mat-card-subtitle class="text-fuchsia-800/80" >These are your leave limit (Managed by Admin).</mat-card-subtitle>
-              <mat-card-subtitle class="text-red-800/80">Note: In any case contact admin to reschedule your leave limit.</mat-card-subtitle>
+              <mat-card-subtitle class="text-fuchsia-800" >These are your leave limit (Managed by Admin).</mat-card-subtitle>
+              <mat-card-subtitle class="text-red-800">Note: In any case contact admin to reschedule your leave limit.</mat-card-subtitle>
             </div>
             <mat-tab-group>
               <mat-tab label="Casual Leaves">
@@ -42,7 +42,7 @@
           <div class="flex flex-col gap-4">
             <div class="flex flex-col gap-2">
               <mat-card-title >Apply For Leave</mat-card-title>
-              <mat-card-subtitle class="text-red-800/80">Note: Check your Leave limit before applying for leave.</mat-card-subtitle>
+              <mat-card-subtitle class="text-red-800">Note: Check your Leave limit before applying for leave.</mat-card-subtitle>
             </div>
             <!-- Date Picker-->
             <mat-form-field appearance="fill">
@@ -53,9 +53,9 @@
               <mat-datepicker #toPicker></mat-datepicker>
             </mat-form-field>
             <mat-form-field appearance="fill">
-              <mat-label>From Date</mat-label>
-              <input matInput [matDatepicker]="fromPicker">
-              <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-label>From Date</mat-label>
+                <input matInput [matDatepicker]="fromPicker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matIconSuffix [for]="fromPicker"></mat-datepicker-toggle>
               <mat-datepicker #fromPicker></mat-datepicker>
             </mat-form-field>
@@ -95,10 +95,12 @@
     <mat-tab label="LEAVE STATUS">
       <!-- Card -->
       <div class="flex gap-4 flex-wrap p-10" >
-        <mat-card class="w-96 h-auto shadow-xl p-4 " *ngFor="let employeeLeaveStatus of leaveStatus" >
+        <mat-card class="w-96 h-auto shadow-xl p-4 flex-col gap-4 " *ngFor="let employeeLeaveStatus of leaveStatus" >
+          <div class="flex flex-col gap-2">
+            <mat-card-title >Leave Status</mat-card-title>
+            <mat-card-subtitle class="text-red-800">Note: In any case contact your admin for leave approval.</mat-card-subtitle>
+          </div>
           <div class="flex flex-col gap-4">
-            <p class=" text-xs font-semibold">Name:{{" "}}<span class="font-normal ">{{employeeLeaveStatus.userName}}</span> </p>
-            <p class=" text-xs font-semibold">Email:{{" "}}<span class="font-normal ">{{employeeLeaveStatus.email}}</span> </p>
             <p class=" text-xs font-semibold">Applied for Leave:{{" "}}<span class="font-normal ">{{employeeLeaveStatus.appliedForLeave}}</span> </p>
             <p class=" text-xs font-semibold">Status:{{" "}}<span class="font-normal ">{{employeeLeaveStatus.status}}</span> </p>
           </div>

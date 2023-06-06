@@ -21,72 +21,60 @@ export class RecordComponent {
   leaveEmployeeRecord= [
     {
       monthYear:"Jan, 2023",
-      name: "Muhammad Osama Iftikhar",
       workingHours: 115,
       leaves: 3
     },
     { monthYear:"Feb, 2023",
-      name: "Muhammad Osama Iftikhar",
       workingHours: 115,
       leaves: 3
     },
     {
       monthYear:"Mar, 2023",
-      name: "Muhammad Osama Iftikhar",
       workingHours: 115,
       leaves: 3
     },
     {
       monthYear:"Apr, 2023",
-      name: "Muhammad Osama Iftikhar",
       workingHours: 115,
       leaves: 3
     },
     {
       monthYear:"May, 2023",
-      name: "Muhammad Osama Iftikhar",
       workingHours: 115,
       leaves: 3
     },
     {
       monthYear:"Jun, 2023",
-      name: "Muhammad Osama Iftikhar",
       workingHours: 115,
       leaves: 3
     },
     {
       monthYear:"Jul, 2023",
-      name: "Muhammad Osama Iftikhar",
       workingHours: 115,
       leaves: 3
     },
     {
       monthYear:"Aug, 2023",
-      name: "Muhammad Osama Iftikhar",
       workingHours: 115,
       leaves: 3
     },
     {
       monthYear:"Sep, 2023",
-      name: "Muhammad Osama Iftikhar",
       workingHours: 115,
       leaves: 3
     },
     {
       monthYear:"Oct, 2023",
-      name: "Muhammad Osama Iftikhar",
       workingHours: 115,
       leaves: 3
     },
     {
       monthYear:"Nov, 2023",
-      name: "Muhammad Osama Iftikhar",
       workingHours: 115,
       leaves: 3
     },
     {
       monthYear:"Dec, 2023",
-      name: "Muhammad Osama Iftikhar",
       workingHours: 115,
       leaves: 3
     },
@@ -94,7 +82,7 @@ export class RecordComponent {
   attendanceRecord = [
     {
       name: "Muhammad Osama Iftikhar",
-      employeeID: "EM100000",
+      employeeEmail: "osama@abc.com",
     },
   ]
 }
