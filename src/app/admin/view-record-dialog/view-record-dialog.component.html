@@ -1,7 +1,28 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
+<div class="w-96 h-80 flex-col flex justify-between">
+  <div>
+    <h1 mat-dialog-title>{{employeeName}}</h1>
+    <mat-accordion>
+      <div class="flex flex-col gap-2">
+        <div class="w-full p-2">
+          <mat-expansion-panel *ngFor="let employeeRecord of employeeAttendanceRecord"  >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{employeeRecord.date}}
+              </mat-panel-title>
+              <mat-panel-description class="text-fuchsia-800">
+                {{employeeRecord.day}}
+              </mat-panel-description>
+            </mat-expansion-panel-header >
+            <div class="flex flex-col gap-4">
+              <p class="font-mono text-sm text-fuchsia-800">TIME IN:{{" "}}<span class="text-red-800">{{employeeRecord.TimeLog.timeIn}}</span> </p>
+              <p class="font-mono text-sm text-fuchsia-800">TIME OUT:{{" "}} <span class="text-red-800 ">{{employeeRecord.TimeLog.timeOut}}</span></p>
+            </div>
+          </mat-expansion-panel>
+        </div>
+      </div>
+    </mat-accordion>
+  </div>
+  <div class="self-center mb-2">
+    <button mat-button color="warn" mat-dialog-close>Close</button>
+  </div>
 </div>
-
-<h1>Admin</h1>
