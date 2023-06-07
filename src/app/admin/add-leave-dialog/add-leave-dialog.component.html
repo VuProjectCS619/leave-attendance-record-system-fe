@@ -1,7 +1,25 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
-<div mat-dialog-actions>
-  <h1>ADmin</h1>
-  <button mat-button mat-dialog-close>Close</button>
-
+<div class="flex flex-col gap-2">
+  <!--Card-->
+  <div>
+    <mat-card class="w-96 h-auto shadow-xl ">
+      <mat-card-header>
+        <mat-card-title>Update Employee</mat-card-title>
+        <mat-card-subtitle class="text-fuchsia-800 ">Number of leaves will be allocated to an employee.</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <!--Form -->
+        <div class="flex flex-col p-2 w-full">
+          <!--Add Leave -->
+          <mat-form-field appearance="fill">
+            <mat-label>Add leave</mat-label>
+            <input type="number" matInput placeholder="ex: 1">
+          </mat-form-field>
+          <!--Button -->
+          <div class="flex justify-end" >
+            <button mat-raised-button mat-dialog-close color="primary">ADD</button>
+          </div>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>
