@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {AddLeaveDialogComponent} from "../add-leave-dialog/add-leave-dialog.component";
 import {UpdateEmployeeDialogComponent} from "../update-employee-dialog/update-employee-dialog.component";
+import {
+  DeleteEmployeeConfirmationDialogComponent
+} from "../delete-employee-confirmation-dialog/delete-employee-confirmation-dialog.component";
 
 @Component({
   selector: 'app-employee-management',
@@ -14,6 +17,9 @@ export class EmployeeManagementComponent {
 
   openDialog() {
     this.dialog.open(UpdateEmployeeDialogComponent);
+  }
+  openDeleteDialog() {
+    this.dialog.open(DeleteEmployeeConfirmationDialogComponent);
   }
  employeesManagement = [
    {

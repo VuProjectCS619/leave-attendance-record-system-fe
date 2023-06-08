@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-leave-dialog.component.css']
 })
 export class AddLeaveDialogComponent {
-
+  empName:string = "Muhammad Osama Iftikhar"
 }

@@ -1,13 +1,10 @@
-<!--Card-->
-  <div>
-    <mat-card class=" w-96 h-auto">
-      <mat-card-header>
-        <mat-card-title>Update Employee</mat-card-title>
-        <mat-card-subtitle class="text-fuchsia-800 text-xs">Please fill any field you want to update.</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-actions>
+  <div class=" w-96 h-auto">
+        <div class="flex flex-col">
+          <h1 mat-dialog-title>Update Employee</h1>
+          <div mat-dialog-content>Please fill any field you want to update.</div>
+        </div>
         <!--Form -->
-        <div class="flex flex-col p-2 w-full">
+        <div class="flex flex-col p-3 w-full">
           <!--Name -->
           <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
@@ -39,10 +36,8 @@
             <input type="number" matInput placeholder="10,00">
           </mat-form-field>
           <!--Button -->
-          <div class="flex justify-end" >
-            <button mat-raised-button mat-dialog-close color="primary">UPDATE</button>
+          <div mat-dialog-actions>
+            <button mat-button mat-dialog-close color="primary">UPDATE</button>
           </div>
         </div>
-      </mat-card-actions>
-    </mat-card>
   </div>
