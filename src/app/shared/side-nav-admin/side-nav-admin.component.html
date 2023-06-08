@@ -1,38 +1,33 @@
 <mat-drawer-container class="w-screen h-screen" autosize>
   <!-- drawer options -->
-  <mat-drawer #drawer mode="side" opened class="w-72">
+  <mat-drawer  mode="side" opened class="w-72 drawer-container">
     <p class="text-lg font-semibold p-4">Company ABC</p>
     <mat-list>
-      <div class="flex flex-col gap-12 p-4 w-full">
-        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
-          <a routerLink="/admin/add-employee"><mat-icon>note_add</mat-icon></a>
-          <a routerLink="/admin/add-employee">Add an Employee</a>
-        </div>
-        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
-          <a routerLink="/admin/employee-management"><mat-icon>supervised_user_circle</mat-icon></a>
-          <a routerLink="/admin/employee-management">Employee Management</a>
-        </div>
-        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
-          <a routerLink="/admin/leave-management"><mat-icon>build</mat-icon></a>
-          <a routerLink="/admin/leave-management">Leave Management</a>
-        </div>
-        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
-          <a routerLink="/admin/record"><mat-icon>receipt</mat-icon></a>
-          <a routerLink="/admin/record">Leave/Attendance Record</a>
-        </div>
-        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
-          <a routerLink=""><mat-icon>exit_to_app</mat-icon></a>
-          <a routerLink="">Logout</a>
-        </div>
+      <div class="flex flex-col gap-6  w-full">
+      <button mat-menu-item routerLink="/admin/add-employee">Add An Employee<mat-icon>note_add</mat-icon></button>
+      <button mat-menu-item routerLink="/admin/employee-management">Employee Management <mat-icon>supervised_user_circle</mat-icon></button>
+      <button mat-menu-item routerLink="/admin/leave-management">Leave Management <mat-icon>build</mat-icon></button>
+      <button mat-menu-item routerLink="/admin/record">Leave/Attendance Record <mat-icon>receipt</mat-icon></button>
+      <button mat-menu-item routerLink="">Logout<mat-icon>exit_to_app</mat-icon></button>
       </div>
     </mat-list>
   </mat-drawer>
   <!-- main content -->
   <mat-drawer-content>
     <div class="sticky top-0 z-10 bg-white">
-      <div class="flex gap-2 items-center  p-1">
-        <mat-icon class="cursor-pointer ml-2 " (click)="drawer.toggle()">tune</mat-icon>
+      <div class="flex gap-2 justify-between items-center p-1">
         <p class="p-4 text-xl font-semibold">Welcome: Admin</p>
+        <!-- Show on small and medium screen -->
+        <div class="show-icon mr-2">
+          <button mat-button [matMenuTriggerFor]="menu"><mat-icon>tune</mat-icon></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/admin/add-employee">Add An Employee<mat-icon>note_add</mat-icon></button>
+            <button mat-menu-item routerLink="/admin/employee-management">Employee Management <mat-icon>supervised_user_circle</mat-icon></button>
+            <button mat-menu-item routerLink="/admin/leave-management">Leave Management <mat-icon>build</mat-icon></button>
+            <button mat-menu-item routerLink="/admin/record">Leave/Attendance Record <mat-icon>receipt</mat-icon></button>
+            <button mat-menu-item routerLink="">Logout<mat-icon>exit_to_app</mat-icon></button>
+          </mat-menu>
+        </div>
       </div>
       <mat-divider> </mat-divider>
     </div>

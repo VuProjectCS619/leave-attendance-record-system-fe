@@ -1,0 +1,15 @@
+.drawer-container{
+  @apply
+  hidden
+  lg:block
+  xl:block
+}
+.show-icon{
+  @apply
+  mr-2
+  sm:block
+  md:block
+  lg:hidden
+  xl:hidden
+
+}

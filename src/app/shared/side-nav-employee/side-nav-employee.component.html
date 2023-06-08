@@ -1,45 +1,36 @@
 <mat-drawer-container class="w-screen h-screen" autosize>
   <!-- drawer options -->
-  <mat-drawer #drawer mode="side" opened class="w-72 ">
-    <div class="flex  justify-between p-4 ">
-      <p class="text-lg font-semibold ">Company ABC</p>
-
-    </div>
+  <mat-drawer  mode="side" opened class="w-72 drawer-container">
+    <p class="text-lg font-semibold p-4">Company ABC</p>
     <mat-list>
-      <div class="flex flex-col gap-12 p-4 w-full">
-        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
-          <a routerLink="/employee/attendance"><mat-icon>book</mat-icon></a>
-          <a routerLink="/employee/attendance">Attendance</a>
-        </div>
-        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
-          <a routerLink="/employee/apply-for-leave"><mat-icon>time_to_leave</mat-icon></a>
-          <a routerLink="/employee/apply-for-leave">Apply for Leave</a>
-        </div>
-        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
-          <a routerLink="/employee/record"><mat-icon>build</mat-icon></a>
-          <a routerLink="/employee/record">Leave/Attendance Record</a>
-        </div>
-        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
-          <a routerLink="/employee/account-setting"><mat-icon>settings</mat-icon></a>
-          <a routerLink="/employee/account-setting">Account Settings</a>
-        </div>
-        <div class="flex gap-2 hover:underline hover:text-fuchsia-800">
-          <a routerLink=""><mat-icon>exit_to_app</mat-icon></a>
-          <a routerLink="">Logout</a>
-        </div>
+      <div class="flex flex-col gap-6  w-full">
+        <button mat-menu-item routerLink="/employee/attendance">Attendance<mat-icon>book</mat-icon></button>
+        <button mat-menu-item routerLink="/employee/apply-for-leave">Apply for Leave<mat-icon>time_to_leave</mat-icon></button>
+        <button mat-menu-item routerLink="/employee/record">Leave/Attendance Record<mat-icon>build</mat-icon></button>
+        <button mat-menu-item routerLink="/employee/account-setting">Account Settings <mat-icon>settings</mat-icon></button>
+        <button mat-menu-item routerLink="">Logout<mat-icon>exit_to_app</mat-icon></button>
       </div>
     </mat-list>
   </mat-drawer>
   <!-- main content -->
   <mat-drawer-content>
-    <div class="sticky top-0 z-10 bg-white ">
-      <div class="flex gap-2 items-center  p-1">
-          <mat-icon class="cursor-pointer ml-2" (click)="drawer.toggle()">tune</mat-icon>
-          <p class="p-4 text-xl font-semibold">Welcome: {{greeting}}</p>
+    <div class="sticky top-0 z-10 bg-white">
+      <div class="flex gap-2 justify-between items-center p-1">
+        <p class="p-4 text-xl font-semibold">Welcome: {{greeting}}</p>
+        <!-- Show on small and medium screen -->
+        <div class="show-icon mr-2">
+          <button mat-button [matMenuTriggerFor]="menu"><mat-icon>tune</mat-icon></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/employee/attendance">Attendance<mat-icon>book</mat-icon></button>
+            <button mat-menu-item routerLink="/employee/apply-for-leave">Apply for Leave<mat-icon>time_to_leave</mat-icon></button>
+            <button mat-menu-item routerLink="/employee/record">Leave/Attendance Record<mat-icon>build</mat-icon></button>
+            <button mat-menu-item routerLink="/employee/account-setting">Account Settings <mat-icon>settings</mat-icon></button>
+            <button mat-menu-item routerLink="">Logout<mat-icon>exit_to_app</mat-icon></button>
+          </mat-menu>
+        </div>
       </div>
       <mat-divider> </mat-divider>
     </div>
     <div class="p-4"> <ng-content></ng-content> </div>
   </mat-drawer-content>
 </mat-drawer-container>
-
