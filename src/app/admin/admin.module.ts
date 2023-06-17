@@ -19,6 +19,7 @@ import { AddLeaveDialogComponent } from './add-leave-dialog/add-leave-dialog.com
 import { ViewRecordDialogComponent } from './view-record-dialog/view-record-dialog.component';
 import { UpdateEmployeeDialogComponent } from './update-employee-dialog/update-employee-dialog.component';
 import { DeleteEmployeeConfirmationDialogComponent } from './delete-employee-confirmation-dialog/delete-employee-confirmation-dialog.component';
+import { RestrictNegativeNumericValueDirective } from './restrict-negative-numeric-value.directive';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { DeleteEmployeeConfirmationDialogComponent } from './delete-employee-con
     ViewRecordDialogComponent,
     UpdateEmployeeDialogComponent,
     DeleteEmployeeConfirmationDialogComponent,
+    RestrictNegativeNumericValueDirective,
   ],
     imports: [
         CommonModule,
