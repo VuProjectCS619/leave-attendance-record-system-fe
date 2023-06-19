@@ -9,41 +9,41 @@
               <!--Name -->
               <mat-form-field class="w-full" appearance="fill">
                 <mat-label>Name</mat-label>
-                <input matInput placeholder="John Doe" >
+                <input [(ngModel)]="updateEmployeeForm.name" matInput placeholder="John Doe" >
               </mat-form-field>
               <!--Email -->
               <mat-form-field class="w-full" appearance="fill">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="johndoe@example.com" >
+                <input [(ngModel)]="updateEmployeeForm.email" matInput placeholder="johndoe@example.com" >
               </mat-form-field>
           </div>
           <div class="flex justify-around gap-2">
-            <!--Create Password-->
+            <!--Update Password-->
             <mat-form-field class="w-full" appearance="fill">
-              <mat-label>Create Password</mat-label>
-              <input matInput placeholder="Secret">
+              <mat-label>Password</mat-label>
+              <input [(ngModel)]="updateEmployeeForm.password" matInput placeholder="Secret">
             </mat-form-field>
             <!--Contact Number -->
             <mat-form-field class="w-full" appearance="fill">
               <mat-label>Contact Number</mat-label>
-              <input matInput placeholder="00123243831">
+              <input [(ngModel)]="updateEmployeeForm.contactNumber" matInput placeholder="00123243831">
             </mat-form-field>
           </div>
           <div class="flex justify-around gap-2">
             <!--Designation -->
             <mat-form-field class="w-full" appearance="fill">
               <mat-label>Designation</mat-label>
-              <input matInput placeholder="Junior Developer">
+              <input [(ngModel)]="updateEmployeeForm.designation" matInput placeholder="Junior Developer">
             </mat-form-field>
             <!--Salary -->
             <mat-form-field class="w-full" appearance="fill">
               <mat-label>Salary</mat-label>
-              <input type="number" matInput placeholder="10,00">
+              <input [(ngModel)]="updateEmployeeForm.salary" type="number" matInput placeholder="10,00">
             </mat-form-field>
           </div>
           <!--Button -->
           <div mat-dialog-actions>
-            <button mat-button mat-dialog-close color="primary">UPDATE</button>
+            <button (click)="updateEmployee()" mat-button mat-dialog-close color="primary">UPDATE</button>
           </div>
         </div>
   </div>

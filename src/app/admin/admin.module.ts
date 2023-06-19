@@ -20,6 +20,7 @@ import { ViewRecordDialogComponent } from './view-record-dialog/view-record-dial
 import { UpdateEmployeeDialogComponent } from './update-employee-dialog/update-employee-dialog.component';
 import { DeleteEmployeeConfirmationDialogComponent } from './delete-employee-confirmation-dialog/delete-employee-confirmation-dialog.component';
 import { RestrictNegativeNumericValueDirective } from './restrict-negative-numeric-value.directive';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { RestrictNegativeNumericValueDirective } from './restrict-negative-numer
         MatTabsModule,
         MatTableModule,
         MatExpansionModule,
-        MatDialogModule
+        MatDialogModule,
+        FormsModule
     ]
 })
 export class AdminModule { }
