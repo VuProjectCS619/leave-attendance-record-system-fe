@@ -6,8 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./attendance.component.css']
 })
 export class AttendanceComponent {
-  userName:string = "Muhamamd Osama Iftikhar"
+  userName:string = "Muhammad Osama Iftikhar"
   email:string = "osama@abc.com"
-  timeIn: string = "11:00 AM"
-  timeOut:string = "8:00 PM"
+  timeIn: any
+  timeOut:any
+
+  getTimeIn()
+  {
+    const currentDate = new Date();
+    this.timeIn = currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit',});
+  }
+  getTimeOut()
+  {
+    const currentDate = new Date();
+    this.timeOut = currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit',});
+  }
 }
