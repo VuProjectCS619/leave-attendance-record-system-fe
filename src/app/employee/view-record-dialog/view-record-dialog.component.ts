@@ -12,32 +12,32 @@ export class ViewRecordDialogComponent {
      date: "Jan, 05, 2023",
      day: "Monday",
      TimeLog:{
-       timeIn:"9:00 AM",
-       timeOut:"8:00 PM"
+       timeIn:"09:00 AM",
+       timeOut:"08:00 PM"
      }
    },
    {
      date: "Jan, 05, 2023",
      day: "Monday",
      TimeLog:{
-       timeIn:"9:00 AM",
-       timeOut:"8:00 PM"
+       timeIn:"09:00 AM",
+       timeOut:"08:00 PM"
      }
    },
    {
      date: "Jan, 05, 2023",
      day: "Monday",
      TimeLog:{
-       timeIn:"9:00 AM",
-       timeOut:"8:00 PM"
+       timeIn:"09:00 AM",
+       timeOut:"08:00 PM"
      }
    },
    {
      date: "Jan, 05, 2023",
      day: "Monday",
      TimeLog:{
-       timeIn:"9:00 AM",
-       timeOut:"8:00 PM"
+       timeIn:"09:00 AM",
+       timeOut:"08:00 PM"
      }
    },
 
