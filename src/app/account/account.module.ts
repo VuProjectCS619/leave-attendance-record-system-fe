@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import {RouterOutlet} from "@angular/router";
 import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
 import { LoginRoutingModule } from './login-routing.module';
 import {MatButtonModule} from "@angular/material/button";
@@ -27,7 +27,8 @@ import {MatButtonModule} from "@angular/material/button";
         ReactiveFormsModule,
         MatIconModule,
         LoginRoutingModule,
-        MatButtonModule
+        MatButtonModule,
+        FormsModule
     ]
 })
 export class AccountModule { }

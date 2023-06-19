@@ -16,21 +16,19 @@
             <!--ID -->
             <mat-form-field appearance="fill">
               <mat-label>Enter Your Email</mat-label>
-              <input matInput placeholder="johndoe@example.com" [formControl]="id" required>
-              <mat-error *ngIf="id.hasError('required')">You must enter your email</mat-error>
+              <input [(ngModel)]="loginForm.email" matInput placeholder="johndoe@example.com"  >
             </mat-form-field>
             <!-- Password-->
             <mat-form-field appearance="fill">
               <mat-label>Enter your password</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'"  [formControl]="password" required >
-              <mat-error *ngIf="password.hasError('required')">Password must not be empty</mat-error>
+              <input [(ngModel)]="loginForm.password" placeholder="*****" matInput [type]="hide ? 'password' : 'text'"  >
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
             </mat-form-field>
             <!--Button -->
             <div class="flex justify-end" >
-              <button  mat-raised-button color="primary" (click)="navigate()">Sign In</button>
+              <button mat-raised-button color="primary" (click)="navigate()">Sign In</button>
             </div>
           </div>
         </mat-card-actions>
