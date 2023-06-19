@@ -14,7 +14,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import { MatNativeDateModule } from '@angular/material/core';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatSelectModule} from "@angular/material/select";
 import { ViewRecordDialogComponent } from './view-record-dialog/view-record-dialog.component';
@@ -34,21 +34,22 @@ import {MatDialogModule} from "@angular/material/dialog";
     ViewRecordDialogComponent,
 
   ],
-  imports: [
-    CommonModule,
-    EmployeeRoutingModule,
-    SharedModule,
-    MatCardModule,
-    MatButtonModule,
-    MatTabsModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    ReactiveFormsModule,
-    MatExpansionModule,
-    MatSelectModule,
-    MatDialogModule,
+    imports: [
+        CommonModule,
+        EmployeeRoutingModule,
+        SharedModule,
+        MatCardModule,
+        MatButtonModule,
+        MatTabsModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        ReactiveFormsModule,
+        MatExpansionModule,
+        MatSelectModule,
+        MatDialogModule,
+        FormsModule,
 
-  ]
+    ]
 })
 export class EmployeeModule { }

@@ -52,14 +52,14 @@
             <!-- Date Picker-->
             <mat-form-field appearance="fill">
               <mat-label>To Date</mat-label>
-              <input matInput [matDatepicker]="toPicker">
+              <input [(ngModel)]="applyLeaveForm.toDate" matInput [matDatepicker]="toPicker">
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matIconSuffix [for]="toPicker"></mat-datepicker-toggle>
               <mat-datepicker #toPicker></mat-datepicker>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>From Date</mat-label>
-                <input matInput [matDatepicker]="fromPicker">
+                <input [(ngModel)]="applyLeaveForm.fromDate" matInput [matDatepicker]="fromPicker">
                 <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matIconSuffix [for]="fromPicker"></mat-datepicker-toggle>
               <mat-datepicker #fromPicker></mat-datepicker>
@@ -67,14 +67,14 @@
       <!--Dropdown -->
             <mat-form-field appearance="fill">
               <mat-label>Type of Leave</mat-label>
-              <mat-select>
+              <mat-select [(ngModel)]="applyLeaveForm.LeaveType">
                 <mat-option value="Full">Full</mat-option>
                 <mat-option value="Half">Half</mat-option>
               </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>Description of Leave</mat-label>
-              <mat-select>
+              <mat-select [(ngModel)]="applyLeaveForm.descriptionLeave">
                 <mat-option value="Casual">Casual</mat-option>
                 <mat-option value="Compensatory">Compensatory</mat-option>
                 <mat-option value="Earned">Earned</mat-option>
@@ -83,12 +83,12 @@
               <!--  Reason for Leave   -->
             <mat-form-field>
               <mat-label>Reason</mat-label>
-              <textarea  matInput placeholder="Description for Leave"></textarea>
+              <textarea [(ngModel)]="applyLeaveForm.reason"  matInput placeholder="Description for Leave"></textarea>
             </mat-form-field>
             <mat-card-actions>
               <!--Button -->
               <div class="flex w-full justify-end " >
-                <button  mat-raised-button  color="primary">APPLY</button>
+                <button (click)="applyLeave()" mat-raised-button  color="primary">APPLY</button>
               </div>
             </mat-card-actions>
           </div>

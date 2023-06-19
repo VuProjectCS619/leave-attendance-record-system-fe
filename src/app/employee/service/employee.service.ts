@@ -21,13 +21,13 @@ export class EmployeeService {
   {
     return this.http.get(`/, ${id}`);
   }
-  applyForLeave(form:any,id:any)
+  applyForLeave(form:any)
   {
-    return this.http.post(`/, ${id}`, form);
+    return this.http.post(`/`, form);
   }
-  updateProfileSetting(form:any,id:any)
+  updateProfileSetting(form:any)
   {
-    return this.http.put(`/, ${id}`, form);
+    return this.http.put(`/`, form);
   }
 
   /* TODO: Time In and Time Out Service */

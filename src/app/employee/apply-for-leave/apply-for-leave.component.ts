@@ -1,19 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataSource } from '@angular/cdk/table';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-];
+import {IApplyForLeave} from "../../interfaces/dtos";
+import {EmployeeService} from "../service/employee.service";
 
 
 @Component({
@@ -22,10 +11,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./apply-for-leave.component.css']
 })
 export class ApplyForLeaveComponent {
-
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-    dataSource = ELEMENT_DATA;
-
+constructor(private service:EmployeeService) {
+}
   // toDate = new FormControl(new Date());
   // fromDate = new FormControl(new Date());
   userName:string = "Muhamamd Osama Iftikhar"
@@ -35,6 +22,24 @@ export class ApplyForLeaveComponent {
   balance:number = 0
   appliedForLeave:string = "Jan, 05, 2023"
   status:string = "Pending"
+
+  applyLeaveForm:IApplyForLeave =
+  {
+    LeaveType: "",
+    descriptionLeave: "",
+    fromDate: "",
+    reason: "",
+    toDate: ""
+  }
+
+
+  applyLeave()
+  {
+    this.service.applyForLeave(this.applyLeaveForm).subscribe({
+      next:value => console.log(value),
+      error:err => console.log(err)
+    })
+  }
 
 
   leaveStatus = [

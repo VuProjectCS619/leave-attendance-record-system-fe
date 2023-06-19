@@ -14,12 +14,12 @@
         <div class="flex flex-col" >
         <mat-form-field appearance="fill">
           <mat-label>Update Name</mat-label>
-          <input matInput placeholder="John Doe" >
+          <input [(ngModel)]="this.updateProfileSettingForm.name" matInput placeholder="John Doe" >
         </mat-form-field>
         <mat-card-actions>
           <!--Button -->
           <div class="flex w-full justify-end">
-            <button  mat-raised-button  color="primary">UPDATE</button>
+            <button (click)="updateSetting()"  mat-raised-button  color="primary">UPDATE</button>
           </div>
         </mat-card-actions>
       </div>
@@ -27,12 +27,12 @@
         <div class="flex flex-col" >
         <mat-form-field appearance="fill">
           <mat-label>Update Password</mat-label>
-          <input matInput placeholder="Secret">
+          <input [(ngModel)]="this.updateProfileSettingForm.password" matInput placeholder="Secret">
         </mat-form-field>
         <mat-card-actions>
           <!--Button -->
           <div class="flex w-full justify-end">
-            <button  mat-raised-button  color="primary">UPDATE</button>
+            <button (click)="updateSetting()" mat-raised-button color="primary">UPDATE</button>
           </div>
         </mat-card-actions>
         </div>
