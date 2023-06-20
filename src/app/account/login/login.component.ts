@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router} from "@angular/router";
 import {ILogin} from "../../interfaces/dtos";
-import {AccountLoginService} from "../service/account.service";
+import {AccountLoginService} from "../../services/account.service";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

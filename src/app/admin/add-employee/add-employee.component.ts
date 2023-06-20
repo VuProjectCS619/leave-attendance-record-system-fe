@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AdminService} from "../service/admin.service";
+import {AdminService} from "../../services/admin.service";
 import {IAddEmployee} from "../../interfaces/dtos";
 @Component({
   selector: 'app-add-employee',

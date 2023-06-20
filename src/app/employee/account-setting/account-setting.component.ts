@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {EmployeeService} from "../service/employee.service";
+import {EmployeeService} from "../../services/employee.service";
 import {IUpdateProfileSetting} from "../../interfaces/dtos";
 
 @Component({

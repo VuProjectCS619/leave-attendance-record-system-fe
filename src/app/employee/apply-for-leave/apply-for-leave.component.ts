@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataSource } from '@angular/cdk/table';
 import {IApplyForLeave} from "../../interfaces/dtos";
-import {EmployeeService} from "../service/employee.service";
+import {EmployeeService} from "../../services/employee.service";
 
 
 @Component({
