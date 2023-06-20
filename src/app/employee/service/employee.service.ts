@@ -21,6 +21,10 @@ export class EmployeeService {
   {
     return this.http.get(`/, ${id}`);
   }
+  getAllowedLeave()
+  {
+    return this.http.get(`/`);
+  }
   applyForLeave(form:any)
   {
     return this.http.post(`/`, form);
