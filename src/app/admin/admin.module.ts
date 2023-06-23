@@ -24,18 +24,21 @@ import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
-  declarations: [
-    AdminComponent,
-    AddEmployeeComponent,
-    EmployeeManagementComponent,
-    LeaveManagementComponent,
-    RecordComponent,
-    AddLeaveDialogComponent,
-    ViewRecordDialogComponent,
-    UpdateEmployeeDialogComponent,
-    DeleteEmployeeConfirmationDialogComponent,
-    RestrictNegativeNumericValueDirective,
-  ],
+    declarations: [
+        AdminComponent,
+        AddEmployeeComponent,
+        EmployeeManagementComponent,
+        LeaveManagementComponent,
+        RecordComponent,
+        AddLeaveDialogComponent,
+        ViewRecordDialogComponent,
+        UpdateEmployeeDialogComponent,
+        DeleteEmployeeConfirmationDialogComponent,
+        RestrictNegativeNumericValueDirective,
+    ],
+    exports: [
+        RestrictNegativeNumericValueDirective
+    ],
     imports: [
         CommonModule,
         AdminRoutingModule,

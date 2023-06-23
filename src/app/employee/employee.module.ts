@@ -19,6 +19,9 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import {MatSelectModule} from "@angular/material/select";
 import { ViewRecordDialogComponent } from './view-record-dialog/view-record-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {AdminModule} from "../admin/admin.module";
+import { TwoDigitValDirective } from './two-digit-val.directive';
+
 
 
 
@@ -32,6 +35,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     RecordComponent,
     AccountSettingComponent,
     ViewRecordDialogComponent,
+    TwoDigitValDirective,
+
 
   ],
     imports: [
@@ -49,6 +54,7 @@ import {MatDialogModule} from "@angular/material/dialog";
         MatSelectModule,
         MatDialogModule,
         FormsModule,
+        AdminModule,
 
     ]
 })
