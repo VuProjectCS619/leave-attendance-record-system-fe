@@ -26,6 +26,8 @@ constructor(private service:EmployeeService) {
   applyLeaveForm:IApplyForLeave =
   {
     LeaveType: "",
+    hh: "",
+    mm:"",
     descriptionLeave: "",
     fromDate: "",
     reason: "",

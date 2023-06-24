@@ -26,18 +26,21 @@ import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
-  declarations: [
-    AdminComponent,
-    AddEmployeeComponent,
-    EmployeeManagementComponent,
-    LeaveManagementComponent,
-    RecordComponent,
-    AddLeaveDialogComponent,
-    ViewRecordDialogComponent,
-    UpdateEmployeeDialogComponent,
-    DeleteEmployeeConfirmationDialogComponent,
-    RestrictNegativeNumericValueDirective,
-  ],
+    declarations: [
+        AdminComponent,
+        AddEmployeeComponent,
+        EmployeeManagementComponent,
+        LeaveManagementComponent,
+        RecordComponent,
+        AddLeaveDialogComponent,
+        ViewRecordDialogComponent,
+        UpdateEmployeeDialogComponent,
+        DeleteEmployeeConfirmationDialogComponent,
+        RestrictNegativeNumericValueDirective,
+    ],
+    exports: [
+        RestrictNegativeNumericValueDirective
+    ],
     imports: [
         CommonModule,
         AdminRoutingModule,

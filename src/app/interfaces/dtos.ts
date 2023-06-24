@@ -34,6 +34,8 @@ export interface IApplyForLeave
   toDate:string,
   fromDate:string,
   LeaveType:string
+  hh?:string,
+  mm?:string,
   descriptionLeave:string,
   reason:string
 }

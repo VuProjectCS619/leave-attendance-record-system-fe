@@ -72,6 +72,19 @@
                 <mat-option value="Half">Half</mat-option>
               </mat-select>
             </mat-form-field>
+              <!--Hours/Minutes fields (if 'half' selected)-->
+            <ng-container *ngIf="applyLeaveForm.LeaveType === 'Half'" >
+                <div class="flex gap-2 items-center">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Hour/s</mat-label>
+                    <input [(ngModel)]="applyLeaveForm.hh" type="number" TwoDigitVal matInput placeholder="1">
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Minute/s</mat-label>
+                    <input [(ngModel)]="applyLeaveForm.mm" type="number" TwoDigitVal matInput placeholder="00">
+                  </mat-form-field>
+                </div>
+            </ng-container>
             <mat-form-field appearance="fill">
               <mat-label>Description of Leave</mat-label>
               <mat-select [(ngModel)]="applyLeaveForm.descriptionLeave">
