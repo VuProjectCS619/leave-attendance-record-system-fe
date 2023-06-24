@@ -21,6 +21,8 @@ import { UpdateEmployeeDialogComponent } from './update-employee-dialog/update-e
 import { DeleteEmployeeConfirmationDialogComponent } from './delete-employee-confirmation-dialog/delete-employee-confirmation-dialog.component';
 import { RestrictNegativeNumericValueDirective } from './restrict-negative-numeric-value.directive';
 import {FormsModule} from "@angular/forms";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import {FormsModule} from "@angular/forms";
         MatTableModule,
         MatExpansionModule,
         MatDialogModule,
-        FormsModule
+        FormsModule,
+        MatOptionModule,
+        MatSelectModule
     ]
 })
 export class AdminModule { }

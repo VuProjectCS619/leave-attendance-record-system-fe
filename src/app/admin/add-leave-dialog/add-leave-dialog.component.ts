@@ -13,6 +13,7 @@ export class AddLeaveDialogComponent {
 
   addLeaveForm:IAddEmployeeLeave =
     {
+      descriptionLeave: "",
       leave: 0
     }
 

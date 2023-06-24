@@ -25,6 +25,7 @@ export interface IUpdateEmployee
 }
 export interface IAddEmployeeLeave
 {
+  descriptionLeave:string
   leave:number
 }
 //Employee Interfaces
