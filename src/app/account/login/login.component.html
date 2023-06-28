@@ -19,7 +19,7 @@
               <input [(ngModel)]="loginForm.email" matInput placeholder="johndoe@example.com"  >
             </mat-form-field>
             <!-- Password-->
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" >
               <mat-label>Enter your password</mat-label>
               <input [(ngModel)]="loginForm.password" placeholder="*****" matInput [type]="hide ? 'password' : 'text'"  >
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
