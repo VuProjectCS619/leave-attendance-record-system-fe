@@ -20,15 +20,15 @@ export class LoginComponent {
 
   navigate() {
     // Check the user's role here
-    let userRole = "employee";
+    let isAdmin = true;
 
-    if (userRole === 'admin')
+    if (isAdmin)
     {
       this.route.navigate(['/admin/add-employee']).then(r => true );
     }
-    else if(userRole === 'employee')
+    else if(!isAdmin)
     {
-      this.route.navigate(['/employee/attendance']).then(r => true);
+      this.route.navigate(['/employee/attendance']).then(r => false);
     }
     else
     {
@@ -41,13 +41,13 @@ export class LoginComponent {
       next:value =>
       {
         console.log(value)
-        // if (value.userRole === 'admin')
+        // if (isAdmin)
         // {
         //   this.route.navigate(['/admin/add-employee']).then(r => true );
         // }
-        // else if(value.userRole === 'employee')
+        // else if(!isAdmin)
         // {
-        //   this.route.navigate(['/employee/attendance']).then(r => true);
+        //   this.route.navigate(['/employee/attendance']).then(r => false);
         // }
         // else
         // {
