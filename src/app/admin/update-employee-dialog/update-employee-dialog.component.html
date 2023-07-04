@@ -38,7 +38,7 @@
             <!--Salary -->
             <mat-form-field class="w-full" appearance="fill">
               <mat-label>Salary</mat-label>
-              <input [(ngModel)]="updateEmployeeForm.salary" type="number" matInput placeholder="10,00">
+              <input [(ngModel)]="updateEmployeeForm.salary" type="number" RestrictNegativeNumericValue matInput placeholder="10,00">
             </mat-form-field>
           </div>
           <!--Button -->
