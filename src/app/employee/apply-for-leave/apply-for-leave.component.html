@@ -112,14 +112,14 @@
     <mat-tab label="LEAVE STATUS">
       <!-- Card -->
       <div class="flex gap-4 flex-wrap p-10" >
-        <mat-card class="w-96 h-auto shadow-xl p-4 flex-col gap-4 " *ngFor="let employeeLeaveStatus of leaveStatus" >
+        <mat-card class="w-96 h-auto shadow-xl p-4 flex-col gap-4 " *ngFor="let leave of leaveStatus" >
           <div class="flex flex-col gap-2">
             <mat-card-title >Leave Status</mat-card-title>
             <mat-card-subtitle class="text-red-800">Note: In any case contact your admin for leave approval.</mat-card-subtitle>
           </div>
           <div class="flex flex-col gap-4">
-            <p class=" text-xs font-semibold">Applied for Leave:{{" "}}<span class="font-normal ">{{employeeLeaveStatus.appliedForLeave}}</span> </p>
-            <p class=" text-xs font-semibold">Status:{{" "}}<span class="font-normal ">{{employeeLeaveStatus.status}}</span> </p>
+            <p class=" text-xs font-semibold">Applied for Leave:{{" "}}<span class="font-normal ">{{leave.toDate|date:"mediumDate"}} - {{leave.toFrom|date:"mediumDate"}}</span> </p>
+            <p class=" text-xs font-semibold">Status:{{" "}}<span class="font-normal ">{{leave.status}}</span> </p>
           </div>
         </mat-card>
       </div>

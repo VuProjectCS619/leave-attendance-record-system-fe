@@ -7,15 +7,15 @@
           <mat-expansion-panel *ngFor="let employeeRecord of employeeAttendanceRecord"  >
             <mat-expansion-panel-header>
               <mat-panel-title>
-                {{employeeRecord.date}}
+                {{employeeRecord.date|date:"mediumDate"}}
               </mat-panel-title>
               <mat-panel-description class="text-fuchsia-800">
-                {{employeeRecord.day}}
+                {{employeeRecord.day|date:"EEEE"}}
               </mat-panel-description>
             </mat-expansion-panel-header >
             <div class="flex flex-col gap-4">
-              <p class="font-mono text-sm text-fuchsia-800">TIME IN:{{" "}}<span class="text-red-800">{{employeeRecord.TimeLog.timeIn}}</span> </p>
-              <p class="font-mono text-sm text-fuchsia-800">TIME OUT:{{" "}} <span class="text-red-800 ">{{employeeRecord.TimeLog.timeOut}}</span></p>
+              <p class="font-mono text-sm text-fuchsia-800">TIME IN:{{" "}}<span class="text-red-800">{{employeeRecord.TimeLog.timeIn|date:"shortTime"}}</span> </p>
+              <p class="font-mono text-sm text-fuchsia-800">TIME OUT:{{" "}} <span class="text-red-800 ">{{employeeRecord.TimeLog.timeOut|date:"shortTime"}}</span></p>
             </div>
           </mat-expansion-panel>
         </div>

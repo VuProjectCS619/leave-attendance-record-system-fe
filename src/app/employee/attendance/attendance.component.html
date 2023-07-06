@@ -11,14 +11,14 @@
           <mat-card-subtitle class="text-red-700 text-xs">Note: Attendance can be marked only once in a day.</mat-card-subtitle>
       </div>
       <div class="flex flex-col gap-4">
-        <p class=" text-xs font-semibold">Log Time In:{{" "}}<span class="font-mono text-fuchsia-800 text-[14px]">{{timeIn}}</span> </p>
-        <p class=" text-xs font-semibold">Log Time Out:{{" "}}<span class="font-mono text-fuchsia-800 text-[14px]">{{timeOut}}</span> </p>
+        <p class=" text-xs font-semibold">Log Time In:{{" "}}<span class="font-mono text-fuchsia-800 text-[14px]">{{timeIn|date:"shortTime"}}</span> </p>
+        <p class=" text-xs font-semibold">Log Time Out:{{" "}}<span class="font-mono text-fuchsia-800 text-[14px]">{{timeOut|date:"shortTime"}}</span> </p>
       </div>
       <mat-card-actions>
         <!--Button -->
         <div class="flex w-full justify-end gap-2" >
-          <button  mat-raised-button  color="primary" (click)="getTimeIn()">TIME IN</button>
-          <button  mat-raised-button  color="accent" (click)="getTimeOut()">TIME OUT</button>
+          <button  mat-raised-button  color="primary" (click)="logTimeIn()">TIME IN</button>
+          <button  mat-raised-button  color="accent" (click)="logTimeOut()">TIME OUT</button>
         </div>
       </mat-card-actions>
     </mat-card>

@@ -46,15 +46,18 @@ constructor(private service:EmployeeService) {
 
   leaveStatus = [
     {
-      appliedForLeave:"Jan, 05, 2023 - Jan, 07, 2023",
+      toDate:new Date(),
+      toFrom:new Date(),
       status:"Pending"
     },
     {
-      appliedForLeave:"Jan, 05, 2023 - Jan, 07, 2023",
+      toDate:new Date(),
+      toFrom:new Date(),
       status:"Pending"
     },
     {
-      appliedForLeave:"Jan, 05, 2023 - Jan, 07, 2023",
+      toDate:new Date(),
+      toFrom:new Date(),
       status:"Pending"
     }
   ]

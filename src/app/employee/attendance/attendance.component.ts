@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-attendance',
@@ -11,14 +11,12 @@ export class AttendanceComponent {
   timeIn: any
   timeOut:any
 
-  getTimeIn()
+  logTimeIn()
   {
-    const currentDate = new Date();
-    this.timeIn = currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit',});
+    this.timeIn = new Date()
   }
-  getTimeOut()
+  logTimeOut()
   {
-    const currentDate = new Date();
-    this.timeOut = currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit',});
+    this.timeOut = new Date()
   }
 }

@@ -9,35 +9,59 @@ export class ViewRecordDialogComponent {
   employeeName:string = "Muhammad Osama Iftikhar"
   employeeAttendanceRecord = [
     {
-      date: "Jan, 05, 2023",
-      day: "Monday",
+      date: new Date(),
+      day: new Date(),
       TimeLog:{
-        timeIn:"09:00 AM",
-        timeOut:"08:00 PM"
+        timeIn:new Date(),
+        timeOut:new Date()
       }
     },
     {
-      date: "Jan, 05, 2023",
-      day: "Monday",
+      date: new Date(),
+      day: new Date(),
       TimeLog:{
-        timeIn:"09:00 AM",
-        timeOut:"08:00 PM"
+        timeIn:new Date(),
+        timeOut:new Date()
       }
     },
     {
-      date: "Jan, 05, 2023",
-      day: "Monday",
+      date: new Date(),
+      day: new Date(),
       TimeLog:{
-        timeIn:"09:00 AM",
-        timeOut:"08:00 PM"
+        timeIn:new Date(),
+        timeOut:new Date()
       }
     },
     {
-      date: "Jan, 05, 2023",
-      day: "Monday",
+      date: new Date(),
+      day: new Date(),
       TimeLog:{
-        timeIn:"09:00 AM",
-        timeOut:"08:00 PM"
+        timeIn:new Date(),
+        timeOut:new Date()
+      }
+    },
+    {
+      date: new Date(),
+      day: new Date(),
+      TimeLog:{
+        timeIn:new Date(),
+        timeOut:new Date()
+      }
+    },
+    {
+      date: new Date(),
+      day: new Date(),
+      TimeLog:{
+        timeIn:new Date(),
+        timeOut:new Date()
+      }
+    },
+    {
+      date: new Date(),
+      day: new Date(),
+      TimeLog:{
+        timeIn:new Date(),
+        timeOut:new Date()
       }
     },
 
