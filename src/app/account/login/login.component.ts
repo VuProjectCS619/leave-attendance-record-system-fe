@@ -18,10 +18,12 @@ export class LoginComponent {
     password: ""
   }
 
+
   navigate() {
     // Check the user's role here
     let isAdmin = true;
 
+    // check if email == admin@xyz.com then hit admin route else employee route
     if (isAdmin)
     {
       this.route.navigate(['/admin/add-employee']).then(r => true );
@@ -29,6 +31,11 @@ export class LoginComponent {
     {
       this.route.navigate(['/employee/attendance']).then(r => false);
     }
+  }
+  gete(){
+    this.service.getThis().subscribe({
+      next:value => console.log(value)
+    })
   }
   login ()
   {

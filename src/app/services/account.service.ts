@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -10,6 +10,9 @@ export class AccountLoginService {
 
   getLogin(form:any)
   {
-    return this.http.post("", form);
+    return this.http.post("192.168.100.7:3000/user/signin", form);
+  }
+   getThis(){
+    return  this.http.get("192.168.100.7:3000");
   }
 }
