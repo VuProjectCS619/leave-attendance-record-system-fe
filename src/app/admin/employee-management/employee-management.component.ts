@@ -17,10 +17,14 @@ emp:any
   constructor(public dialog: MatDialog, private service:AdminService) {}
 
   openDialog() {
-    this.dialog.open(UpdateEmployeeDialogComponent);
+    this.dialog.open(UpdateEmployeeDialogComponent,{
+      data: this.emp
+    });
   }
   openDeleteDialog() {
-    this.dialog.open(DeleteEmployeeConfirmationDialogComponent);
+    this.dialog.open(DeleteEmployeeConfirmationDialogComponent,{
+      data:this.emp
+    });
   }
 
   ngOnInit(){

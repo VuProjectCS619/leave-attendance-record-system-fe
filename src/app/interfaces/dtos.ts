@@ -21,11 +21,13 @@ export interface IAddEmployee
 export interface IUpdateEmployee
 {
   name:string,
-  email:string,
   password:string,
   contactNumber:string,
   designation:string,
-  salary:number
+  salary:number,
+  allowedEarnedLeaves: number,
+  allowedCasualLeaves: number,
+  allowedCompensatoryLeaves: number
 }
 export interface IAddEmployeeLeave
 {

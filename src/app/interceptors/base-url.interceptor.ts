@@ -17,7 +17,7 @@ export class BaseUrlInterceptor implements HttpInterceptor {
     const cloned = request.clone({url:`${baseUrl}${request.url}`})
     cloned.headers.set(
       "Authorization",
-      'Bearer ' + localStorage.getItem('auth_token')
+      'Jwt ' + localStorage.getItem('auth_token')
     )
     return next.handle(cloned);
   }

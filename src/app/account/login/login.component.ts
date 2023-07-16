@@ -22,36 +22,31 @@ export class LoginComponent {
     email: "", password: ""
 
   }
-
+  email:string= "admin@xyz.com"
   // check if email == admin go to admin dashboard else employee
-  adminlogin(){
-    this.service.getLoginAdmin(this.loginForm).subscribe({
-      next:value => {
-      console.log(value)
+  loggedIn(){
+    if(this.loginForm.email === "admin@xyz.com" && this.loginForm.password === "password" && this.loginForm.isAdmin === true )
+    {
+      this.route.navigate(['/admin/add-employee'])
+    }else{
+      this.service.getEmployeeLogin(this.employeeLoginForm).subscribe({
+        next:value =>
+        {
+          console.log(value)
+          this.route.navigate(['/employee/attendance'])
+        },
+        error:err =>
+        {
+          console.log(err)
+        }
+      })
+    }
 
-               if (value.email === "admin@xyz.com"){
-                if (value.password ==="password" && value.isAdmin == true){
-                   this.route.navigate(['/admin/add-employee'])
-                }
-               }
-
-    } ,
-      error:err => console.log(err)
-    })
   }
+
   employeeLogin ()
   {
-    this.service.getEmployeeLogin(this.employeeLoginForm).subscribe({
-      next:value =>
-      {
-        console.log(value)
-        this.route.navigate(['/employee/attendance'])
-      },
-      error:err =>
-      {
-        console.log(err)
-      }
-    })
+
   }
 
 

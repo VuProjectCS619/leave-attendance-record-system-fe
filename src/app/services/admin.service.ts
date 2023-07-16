@@ -29,9 +29,10 @@ export class AdminService {
   {
     return this.http.put(`/, ${id}`, form);
   }
-  updateEmployee(form:any, id:any)
+  updateEmployee(form:any, id:any):Observable<any>
   {
-    return this.http.put(`/, ${id}`, form);
+
+    return this.http.patch(`employee, ${id}`, form);
   }
   deleteEmployee(form:any, id:any)
   {
