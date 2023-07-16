@@ -51,15 +51,15 @@
           <div class="flex justify-around gap-2">
             <mat-form-field class="w-full"  appearance="fill">
               <mat-label>Casual Leaves</mat-label>
-              <input type="number" RestrictNegativeNumericValue matInput placeholder="1">
+              <input type="number" [(ngModel)]="addEmployeeForm.allowedCasualLeaves" RestrictNegativeNumericValue matInput placeholder="1">
             </mat-form-field>
             <mat-form-field class="w-full"  appearance="fill">
               <mat-label>Compensatory Leaves</mat-label>
-              <input type="number" RestrictNegativeNumericValue matInput placeholder="1">
+              <input type="number" [(ngModel)]="addEmployeeForm.allowedCompensatoryLeaves" RestrictNegativeNumericValue matInput placeholder="1">
             </mat-form-field>
             <mat-form-field class="w-full"  appearance="fill">
               <mat-label>Earned Leaves</mat-label>
-              <input type="number" RestrictNegativeNumericValue matInput placeholder="1">
+              <input type="number" [(ngModel)]="addEmployeeForm.allowedEarnedLeaves" RestrictNegativeNumericValue matInput placeholder="1">
             </mat-form-field>
           </div>
             <!--Button -->

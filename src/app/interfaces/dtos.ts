@@ -3,6 +3,7 @@ export interface ILogin
 {
   email:string,
   password:string
+  isAdmin?:boolean
 }
 //Admin Interfaces
 export interface IAddEmployee
@@ -13,6 +14,9 @@ export interface IAddEmployee
   contactNumber:string,
   designation:string,
   salary:number
+  allowedEarnedLeaves: number,
+  allowedCasualLeaves: number,
+  allowedCompensatoryLeaves: number
 }
 export interface IUpdateEmployee
 {

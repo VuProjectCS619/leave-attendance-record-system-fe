@@ -13,7 +13,7 @@ export class BaseUrlInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const baseUrl = "http://localhost:3000/api/"
+    const baseUrl = "http://localhost:3000/"
     const cloned = request.clone({url:`${baseUrl}${request.url}`})
     cloned.headers.set(
       "Authorization",

@@ -16,14 +16,23 @@ export class AddEmployeeComponent {
       email: "",
       name: "",
       password: "",
-      salary: 0
+      salary: 0,
+      allowedCasualLeaves: 0,
+      allowedCompensatoryLeaves: 0,
+      allowedEarnedLeaves: 0,
     }
 
     addEmployee()
     {
-      this.service.addEmployee(this.addEmployeeForm).subscribe({
-        next:value => console.log(value),
-        error:err => console.log(err)
-      })
+     this.service.addEmployee(this.addEmployeeForm).subscribe({
+       next:value => {
+         console.log(value)
+       },
+       error:err => {
+         console.log(err)
+       }
+     })
     }
+
+
 }

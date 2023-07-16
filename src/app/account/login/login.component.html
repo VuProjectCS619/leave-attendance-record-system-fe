@@ -25,12 +25,10 @@
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
-              <p>{{loginForm.password}}</p>
             </mat-form-field>
-
             <!--Button -->
             <div class="flex justify-end" >
-              <button mat-raised-button color="primary" type="button" (click)="gete()">Sign In</button>
+              <button mat-raised-button color="primary" type="button" (click)="adminlogin()">Sign In</button>
             </div>
           </div>
         </mat-card-actions>

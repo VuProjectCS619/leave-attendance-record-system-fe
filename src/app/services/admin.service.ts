@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +9,9 @@ export class AdminService {
 
   constructor(private http:HttpClient) { }
 
-  getEmployee()
+  getEmployee():Observable<any>
   {
-    return this.http.get("");
+    return this.http.get("employee");
   }
   getEmployeeAttendanceRecord()
   {
@@ -20,9 +21,9 @@ export class AdminService {
   {
     return this.http.get("");
   }
-  addEmployee(form:any)
+  addEmployee(form:any) :Observable<any>
   {
-    return this.http.post("", form);
+    return this.http.post("employee", form);
   }
   addEmployeeLeave(form:any, id:any)
   {

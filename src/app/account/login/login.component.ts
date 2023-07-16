@@ -15,41 +15,37 @@ export class LoginComponent {
   loginForm:ILogin =
   {
     email: "",
-    password: ""
+    password: "",
+    isAdmin:true
+  }
+  employeeLoginForm:ILogin= {
+    email: "", password: ""
+
   }
 
+  // check if email == admin go to admin dashboard else employee
+  adminlogin(){
+    this.service.getLoginAdmin(this.loginForm).subscribe({
+      next:value => {
+      console.log(value)
 
-  navigate() {
-    // Check the user's role here
-    let isAdmin = true;
+               if (value.email === "admin@xyz.com"){
+                if (value.password ==="password" && value.isAdmin == true){
+                   this.route.navigate(['/admin/add-employee'])
+                }
+               }
 
-    // check if email == admin@xyz.com then hit admin route else employee route
-    if (isAdmin)
-    {
-      this.route.navigate(['/admin/add-employee']).then(r => true );
-    } else if (!isAdmin)
-    {
-      this.route.navigate(['/employee/attendance']).then(r => false);
-    }
-  }
-  gete(){
-    this.service.getThis().subscribe({
-      next:value => console.log(value)
+    } ,
+      error:err => console.log(err)
     })
   }
-  login ()
+  employeeLogin ()
   {
-    this.service.getLogin(this.loginForm).subscribe({
+    this.service.getEmployeeLogin(this.employeeLoginForm).subscribe({
       next:value =>
       {
         console.log(value)
-        // if (isAdmin)
-        // {
-        //   this.route.navigate(['/admin/add-employee']).then(r => true );
-        // } else if (!isAdmin)
-        // {
-        //   this.route.navigate(['/employee/attendance']).then(r => false);
-        // }
+        this.route.navigate(['/employee/attendance'])
       },
       error:err =>
       {
@@ -57,5 +53,6 @@ export class LoginComponent {
       }
     })
   }
+
 
 }
