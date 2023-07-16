@@ -10,6 +10,7 @@ import {EmployeeModule} from "./employee/employee.module";
 import {AdminModule} from "./admin/admin.module";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {BaseUrlInterceptor} from "./interceptors/base-url.interceptor";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {BaseUrlInterceptor} from "./interceptors/base-url.interceptor";
     SharedModule,
     EmployeeModule,
     AdminModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     {

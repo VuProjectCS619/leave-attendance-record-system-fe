@@ -3,7 +3,7 @@
 <!--  card  -->
       <div>
         <div class="mb-2">
-        <p class="font-semibold text-xl" > Welcome</p>
+          <p class="font-semibold text-xl" > Welcome</p>
         </div>
       <mat-card class="w-96 h-auto shadow-xl ">
         <mat-card-header>
@@ -19,16 +19,18 @@
               <input [(ngModel)]="loginForm.email" matInput placeholder="johndoe@example.com"  >
             </mat-form-field>
             <!-- Password-->
-            <mat-form-field appearance="fill" >
+            <mat-form-field  appearance="fill" >
               <mat-label>Enter your password</mat-label>
               <input [(ngModel)]="loginForm.password" placeholder="*****" matInput [type]="hide ? 'password' : 'text'"  >
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
+              <p>{{loginForm.password}}</p>
             </mat-form-field>
+
             <!--Button -->
             <div class="flex justify-end" >
-              <button mat-raised-button color="primary" (click)="navigate()">Sign In</button>
+              <button mat-raised-button color="primary" type="button" (click)="gete()">Sign In</button>
             </div>
           </div>
         </mat-card-actions>

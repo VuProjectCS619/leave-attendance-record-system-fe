@@ -48,6 +48,20 @@
               <input [(ngModel)]="addEmployeeForm.salary" type="number" RestrictNegativeNumericValue matInput placeholder="10,00">
             </mat-form-field>
           </div>
+          <div class="flex justify-around gap-2">
+            <mat-form-field class="w-full"  appearance="fill">
+              <mat-label>Casual Leaves</mat-label>
+              <input type="number" RestrictNegativeNumericValue matInput placeholder="1">
+            </mat-form-field>
+            <mat-form-field class="w-full"  appearance="fill">
+              <mat-label>Compensatory Leaves</mat-label>
+              <input type="number" RestrictNegativeNumericValue matInput placeholder="1">
+            </mat-form-field>
+            <mat-form-field class="w-full"  appearance="fill">
+              <mat-label>Earned Leaves</mat-label>
+              <input type="number" RestrictNegativeNumericValue matInput placeholder="1">
+            </mat-form-field>
+          </div>
             <!--Button -->
             <div class="flex justify-end" >
               <button class="w-1/4" mat-raised-button color="primary" (click)="addEmployee()" >ADD</button>
