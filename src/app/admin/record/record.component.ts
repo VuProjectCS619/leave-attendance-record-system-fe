@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
-import {AddLeaveDialogComponent} from "../add-leave-dialog/add-leave-dialog.component";
 import {ViewRecordDialogComponent} from "../view-record-dialog/view-record-dialog.component";
 
 @Component({

@@ -32,11 +32,11 @@ export class AdminService {
   updateEmployee(form:any, id:any):Observable<any>
   {
 
-    return this.http.patch(`employee, ${id}`, form);
+    return this.http.patch(`employee/${id}`, form);
   }
-  deleteEmployee(form:any, id:any)
+  deleteEmployee( id:any)
   {
-    return this.http.put(`/, ${id}`, form);
+    return this.http.delete(`employee/${id}`);
   }
 
   /* TODO: Accept and Reject Leave Service */

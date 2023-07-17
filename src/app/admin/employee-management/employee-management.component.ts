@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
-import {AddLeaveDialogComponent} from "../add-leave-dialog/add-leave-dialog.component";
+
 import {UpdateEmployeeDialogComponent} from "../update-employee-dialog/update-employee-dialog.component";
 import {
   DeleteEmployeeConfirmationDialogComponent
@@ -13,30 +13,57 @@ import {AdminService} from "../../services/admin.service";
   styleUrls: ['./employee-management.component.css']
 })
 export class EmployeeManagementComponent implements OnInit {
-emp:any
-  constructor(public dialog: MatDialog, private service:AdminService) {}
+  empData:any // getting values here from api
+  constructor(public dialog: MatDialog, public service:AdminService) {}
 
-  openDialog() {
-    this.dialog.open(UpdateEmployeeDialogComponent,{
-      data: this.emp
+  updateEmpDialog(data:any) {
+     this.dialog.open(UpdateEmployeeDialogComponent,{
+      data,
     });
-  }
-  openDeleteDialog() {
-    this.dialog.open(DeleteEmployeeConfirmationDialogComponent,{
-      data:this.emp
-    });
-  }
 
-  ngOnInit(){
+
+  }
+  // openDeleteDialog(id:any) {
+  //   this.dialog.open(DeleteEmployeeConfirmationDialogComponent,{
+  //      data: this.emp
+  //   });
+  // }
+
+  deleteEmp(id:any)
+  {
+    this.service.deleteEmployee(id).subscribe({
+      next:value => {
+
+        console.log(value)
+        this.getEmployeeList()
+      },
+      error:err => console.log(err)
+    })
+  }
+  getEmployeeList(){
     this.service.getEmployee().subscribe({
       next:value =>
       {
         console.log(value)
-        this.emp = value
+        this.empData = value
       },
       error:err => console.log(err),
 
     })
   }
+
+  ngOnInit()
+  {
+      this.service.getEmployee().subscribe({
+        next:value =>
+        {
+          console.log(value)
+          this.empData = value
+        },
+        error:err => console.log(err),
+
+      })
+  }
+
 
 }
