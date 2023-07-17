@@ -49,13 +49,10 @@
               <mat-label>Earned Leaves</mat-label>
               <input type="number" [(ngModel)]="updateEmployeeForm.allowedEarnedLeaves" RestrictNegativeNumericValue matInput placeholder="1">
             </mat-form-field>
-            <div *ngFor="let emp of empData">
-              {{emp.name}}
-            </div>
           </div>
           <!--Button -->
           <div mat-dialog-actions  >
-            <button  mat-button mat-dialog-close color="primary">UPDATE</button>
+            <button (click)="updateEmployee()"  mat-button mat-dialog-close color="primary">UPDATE</button>
           </div>
         </div>
   </div>

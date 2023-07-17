@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class SideNavEmployeeComponent {
   greeting:string = "Employee"
+
+  logOut(){
+    localStorage.clear()
+  }
 }

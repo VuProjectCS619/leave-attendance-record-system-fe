@@ -10,7 +10,7 @@ import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 })
 export class UpdateEmployeeDialogComponent {
 
-  constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public empData: any) { }
+  constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public empData: string) { }
 
   updateEmployeeForm:IUpdateEmployee =
     {
@@ -24,10 +24,10 @@ export class UpdateEmployeeDialogComponent {
       allowedEarnedLeaves: 0,
     }
 
-  updateEmployee(id:any)
+  updateEmployee()
 
   {
-    this.service.updateEmployee(this.updateEmployeeForm, id).subscribe({
+    this.service.updateEmployee(this.updateEmployeeForm, this.empData).subscribe({
       next:value =>{
         console.log(value)
         alert("Updated")

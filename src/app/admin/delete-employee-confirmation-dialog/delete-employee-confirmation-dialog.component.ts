@@ -10,11 +10,11 @@ import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 export class DeleteEmployeeConfirmationDialogComponent {
   empName:string = "Muhammad Osama Iftikhar"
 
-  constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public emp:any) {}
+  constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public empData:any) {}
 
-  deleteEmp(id:any)
+  deleteEmp()
   {
-    this.service.deleteEmployee(id).subscribe({
+    this.service.deleteEmployee(this.empData).subscribe({
       next:value => console.log(value),
       error:err => console.log(err)
     })

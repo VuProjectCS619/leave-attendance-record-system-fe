@@ -16,18 +16,18 @@ export class EmployeeManagementComponent implements OnInit {
   empData:any // getting values here from api
   constructor(public dialog: MatDialog, public service:AdminService) {}
 
-  updateEmpDialog(data:any) {
+  updateEmpDialog(data:string) {
      this.dialog.open(UpdateEmployeeDialogComponent,{
       data,
     });
 
 
   }
-  // openDeleteDialog(id:any) {
-  //   this.dialog.open(DeleteEmployeeConfirmationDialogComponent,{
-  //      data: this.emp
-  //   });
-  // }
+  openDeleteDialog(data:string) {
+    this.dialog.open(DeleteEmployeeConfirmationDialogComponent,{
+       data,
+    });
+  }
 
   deleteEmp(id:any)
   {

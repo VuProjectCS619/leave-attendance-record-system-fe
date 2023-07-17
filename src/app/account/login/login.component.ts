@@ -16,7 +16,6 @@ export class LoginComponent {
   {
     email: "",
     password: "",
-    isAdmin:true
   }
   employeeLoginForm:ILogin= {
     email: "", password: ""
@@ -25,14 +24,15 @@ export class LoginComponent {
   email:string= "admin@xyz.com"
   // check if email == admin go to admin dashboard else employee
   loggedIn(){
-    if(this.loginForm.email === "admin@xyz.com" && this.loginForm.password === "password" && this.loginForm.isAdmin === true )
+
+    if(this.loginForm.email === "admin@xyz.com" )
     {
       this.route.navigate(['/admin/add-employee'])
     }else{
-      this.service.getEmployeeLogin(this.employeeLoginForm).subscribe({
+      this.service.getEmployeeLogin(this.loginForm).subscribe({
         next:value =>
         {
-          console.log(value)
+          localStorage.setItem('auth_token' , value.jwt)
           this.route.navigate(['/employee/attendance'])
         },
         error:err =>
