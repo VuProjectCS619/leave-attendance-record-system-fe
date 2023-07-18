@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { DataSource } from '@angular/cdk/table';
 import {IApplyForLeave} from "../../interfaces/dtos";
 import {EmployeeService} from "../../services/employee.service";
 
@@ -11,10 +9,8 @@ import {EmployeeService} from "../../services/employee.service";
   styleUrls: ['./apply-for-leave.component.css']
 })
 export class ApplyForLeaveComponent {
-constructor(private service:EmployeeService) {
-}
-  // toDate = new FormControl(new Date());
-  // fromDate = new FormControl(new Date());
+constructor(private service:EmployeeService) {}
+
   userName:string = "Muhamamd Osama Iftikhar"
   email:string = "osama@abc.com"
   allowedLeaves: number = 5
@@ -38,6 +34,7 @@ constructor(private service:EmployeeService) {
   applyLeave()
   {
     this.service.applyForLeave(this.applyLeaveForm).subscribe({
+
       next:value => console.log(value),
       error:err => console.log(err)
     })
@@ -61,6 +58,5 @@ constructor(private service:EmployeeService) {
       status:"Pending"
     }
   ]
-
 
 }

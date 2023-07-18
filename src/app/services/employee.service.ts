@@ -32,15 +32,15 @@ export class EmployeeService {
   }
   applyForLeave(form:any):Observable<any>
   {
-    return this.http.post(`leave/application`, form);
+    return this.http.post(`leave/application `, form);
   }
-  updateProfileSetting(form:any)
+  updateProfileSetting(form:any, id:string)
   {
-    return this.http.patch(``, form);
+    return this.http.patch(`user/profile/${id}`, form);
   }
   logTimeIn(data:any, token:any):Observable<any>
   {
-    return this.http.post(`attendance/logintime/${token}`,data)
+    return this.http.post(`attendance/logintime`,data)
   }
   logTimeOut(data:any, token:any):Observable<any>
   {

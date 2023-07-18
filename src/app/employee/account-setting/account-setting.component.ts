@@ -23,10 +23,10 @@ myName:string="Muhammad Osama Iftikhar"
     }
   updateSetting()
   {
-    this.service.updateProfileSetting(this.updateProfileSettingForm).subscribe({
-      next:value => console.log(value),
-      error:err => console.log(err)
-    })
+    // this.service.updateProfileSetting(this.updateProfileSettingForm).subscribe({
+    //   next:value => console.log(value),
+    //   error:err => console.log(err)
+    // })
   }
 
 }
