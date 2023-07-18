@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -25,14 +26,25 @@ export class EmployeeService {
   {
     return this.http.get(`/`);
   }
-  applyForLeave(form:any)
+  getEmployee(id:string)
   {
-    return this.http.post(`/`, form);
+    return this.http.get(`employee${id}`)
+  }
+  applyForLeave(form:any):Observable<any>
+  {
+    return this.http.post(`leave/application`, form);
   }
   updateProfileSetting(form:any)
   {
-    return this.http.put(`/`, form);
+    return this.http.patch(``, form);
+  }
+  logTimeIn(data:any, token:any):Observable<any>
+  {
+    return this.http.post(`attendance/logintime/${token}`,data)
+  }
+  logTimeOut(data:any, token:any):Observable<any>
+  {
+    return this.http.post(`attendance/logouttime/${token}`, data)
   }
 
-  /* TODO: Time In and Time Out Service */
 }

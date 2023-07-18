@@ -32,8 +32,10 @@ export class LoginComponent {
       this.service.getEmployeeLogin(this.loginForm).subscribe({
         next:value =>
         {
-          localStorage.setItem('auth_token' , value.jwt)
+          localStorage.setItem('auth_token' , value.jwt,)
+          localStorage.setItem("user", value)
           this.route.navigate(['/employee/attendance'])
+          console.log(value)
         },
         error:err =>
         {
@@ -43,11 +45,5 @@ export class LoginComponent {
     }
 
   }
-
-  employeeLogin ()
-  {
-
-  }
-
 
 }
