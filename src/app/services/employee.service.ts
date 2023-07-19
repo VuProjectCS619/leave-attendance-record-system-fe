@@ -38,13 +38,17 @@ export class EmployeeService {
   {
     return this.http.patch(`user/profile/${id}`, form);
   }
-  logTimeIn(data:any, token:any):Observable<any>
+  logTimeIn():Observable<any>
   {
-    return this.http.post(`attendance/logintime`,data)
+    return this.http.post(`attendance/logintime`, "")
   }
-  logTimeOut(data:any, token:any):Observable<any>
+  logTimeOut():Observable<any>
   {
-    return this.http.post(`attendance/logouttime/${token}`, data)
+    return this.http.post("attendance/logouttime", "")
+  }
+
+  getLeaveRecords(){
+    return this.http.get("user/leave-records")
   }
 
 }
