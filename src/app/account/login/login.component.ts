@@ -33,6 +33,8 @@ export class LoginComponent {
         next:value =>
         {
           localStorage.setItem('auth_token' , value.jwt,)
+          localStorage.setItem('user' , JSON.stringify(value))
+          console.log(value)
 
           this.route.navigate(['/employee/attendance'])
         },

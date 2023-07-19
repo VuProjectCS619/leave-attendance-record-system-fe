@@ -14,14 +14,6 @@ export class BaseUrlInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const baseUrl = "http://localhost:3000/"
-    // const cloned = request.clone({url:`${baseUrl}${request.url}`})
-    // cloned.headers.set(
-    //   "Authorization",
-    //   'Jwt ' + localStorage.getItem('auth_token')
-    // )
-    // return next.handle(cloned);
-// Get the auth token from the service.
-    const authToken = localStorage.getItem('auth_token')
 
     // Clone the request and replace the original headers with
     // cloned headers, updated with the authorization.// Clone the request and set the new header in one step.
