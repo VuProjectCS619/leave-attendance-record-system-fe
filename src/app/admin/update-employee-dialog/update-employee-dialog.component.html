@@ -11,36 +11,36 @@
                 <mat-label>Name</mat-label>
                 <input [(ngModel)]="updateEmployeeForm.name" matInput placeholder="John Doe" >
               </mat-form-field>
+              <!--Update Password-->
+              <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input [(ngModel)]="updateEmployeeForm.password" matInput placeholder="Secret">
+              </mat-form-field>
           </div>
           <div class="flex justify-around gap-2">
-            <!--Update Password-->
-            <mat-form-field class="w-full" appearance="fill">
-              <mat-label>Password</mat-label>
-              <input [(ngModel)]="updateEmployeeForm.password" matInput placeholder="Secret">
-            </mat-form-field>
             <!--Contact Number -->
             <mat-form-field class="w-full" appearance="fill">
               <mat-label>Contact Number</mat-label>
               <input [(ngModel)]="updateEmployeeForm.contactNumber" matInput placeholder="00123243831">
             </mat-form-field>
-          </div>
-          <div class="flex justify-around gap-2">
             <!--Designation -->
             <mat-form-field class="w-full" appearance="fill">
               <mat-label>Designation</mat-label>
               <input [(ngModel)]="updateEmployeeForm.designation" matInput placeholder="Junior Developer">
             </mat-form-field>
+          </div>
+          <div class="flex justify-around gap-2">
             <!--Salary -->
             <mat-form-field class="w-full" appearance="fill">
               <mat-label>Salary</mat-label>
               <input [(ngModel)]="updateEmployeeForm.salary" type="number" RestrictNegativeNumericValue matInput placeholder="10,00">
             </mat-form-field>
-          </div>
-          <div class="flex justify-around gap-2">
             <mat-form-field class="w-full"  appearance="fill">
               <mat-label>Casual Leaves</mat-label>
               <input type="number" [(ngModel)]="updateEmployeeForm.allowedCasualLeaves" RestrictNegativeNumericValue matInput placeholder="1">
             </mat-form-field>
+          </div>
+          <div class="flex justify-around gap-2">
             <mat-form-field class="w-full"  appearance="fill">
               <mat-label>Compensatory Leaves</mat-label>
               <input type="number" [(ngModel)]="updateEmployeeForm.allowedCompensatoryLeaves" RestrictNegativeNumericValue matInput placeholder="1">
