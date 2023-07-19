@@ -3,7 +3,7 @@
   <mat-drawer  mode="side" opened class="w-72 drawer-container">
     <p class="text-lg font-semibold p-4">Company ABC</p>
     <mat-list>
-      <div class="flex flex-col mt-2 mb-10  w-full"
+      <div class="flex flex-col p-2 mt-2 mb-8  w-full"
            *ngFor="let option of options"
            (click)="setSelectedOption(option)"
            [ngClass]="{ 'active-option': option.active }"
@@ -23,11 +23,15 @@
         <div class="show-icon mr-2">
           <button mat-button [matMenuTriggerFor]="menu"><mat-icon>tune</mat-icon></button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="/admin/add-employee">Add An Employee<mat-icon>note_add</mat-icon></button>
-            <button mat-menu-item routerLink="/admin/employee-management">Employee Management <mat-icon>supervised_user_circle</mat-icon></button>
-            <button mat-menu-item routerLink="/admin/leave-management">Leave Management <mat-icon>build</mat-icon></button>
-            <button mat-menu-item routerLink="/admin/record">Leave/Attendance Record <mat-icon>receipt</mat-icon></button>
-            <button mat-menu-item routerLink="">Logout<mat-icon>exit_to_app</mat-icon></button>
+            <div class="flex flex-col mt-2 mb-2 p-2 w-full"
+                 *ngFor="let option of options"
+                 (click)="setSelectedOption(option)"
+                 [ngClass]="{ 'active-option': option.active }"
+                 [routerLink]="option.path" >
+              <div class="flex gap-4 cursor-pointer px-4">
+                <mat-icon>{{option.icon}}</mat-icon> {{ option.name }}
+              </div>
+            </div>
           </mat-menu>
         </div>
       </div>
