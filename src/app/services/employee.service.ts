@@ -32,7 +32,7 @@ export class EmployeeService {
   }
   applyForLeave(form:any):Observable<any>
   {
-    return this.http.post(`leave/application `, form);
+    return this.http.post("leave/application", form);
   }
   updateProfileSetting(form:any, id:string)
   {

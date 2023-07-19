@@ -13,3 +13,10 @@
   xl:hidden
 
 }
+
+.active-option {
+  @apply
+  bg-fuchsia-800
+  text-white
+  px-2 py-4
+}

@@ -20,17 +20,13 @@ export class AttendanceComponent {
 
   logTimeIn()
   {
-    this.service.getLeaveRecords().subscribe({
-      next: value => console.log(value),
-      error: err => console.log(err)
+    this.service.logTimeIn().subscribe({
+      next:value => {
+        console.log(value)
+
+      },
+      error:err => console.log(err)
     })
-    // this.service.logTimeIn().subscribe({
-    //   next:value => {
-    //     console.log(value)
-    //
-    //   },
-    //   error:err => console.log(err)
-    // })
   }
   logTimeOut()
   {

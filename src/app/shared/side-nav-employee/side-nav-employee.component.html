@@ -3,12 +3,14 @@
   <mat-drawer  mode="side" opened class="w-72 drawer-container">
     <p class="text-lg font-semibold p-4">Company ABC</p>
     <mat-list>
-      <div class="flex flex-col gap-6  w-full">
-        <button mat-menu-item routerLink="/employee/attendance">Attendance<mat-icon>book</mat-icon></button>
-        <button mat-menu-item routerLink="/employee/apply-for-leave">Apply for Leave<mat-icon>time_to_leave</mat-icon></button>
-        <button mat-menu-item routerLink="/employee/record">Leave/Attendance Record<mat-icon>build</mat-icon></button>
-        <button mat-menu-item routerLink="/employee/account-setting">Account Settings <mat-icon>settings</mat-icon></button>
-        <button mat-menu-item routerLink="">Logout<mat-icon>exit_to_app</mat-icon></button>
+      <div class="flex flex-col mt-2 mb-10  w-full"
+           *ngFor="let option of options"
+           (click)="setSelectedOption(option)"
+           [ngClass]="{ 'active-option': option.active }"
+           [routerLink]="option.path" >
+        <div class="flex gap-4 cursor-pointer px-4">
+          <mat-icon>{{option.icon}}</mat-icon> {{ option.name }}
+        </div>
       </div>
     </mat-list>
   </mat-drawer>
