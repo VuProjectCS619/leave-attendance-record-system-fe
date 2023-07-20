@@ -30,11 +30,9 @@ export class UpdateEmployeeDialogComponent {
         console.log(value)
       },
       error:err => console.log(err),
-
     })
   }
   updateEmployee()
-
   {
     this.service.updateEmployee(this.updateEmployeeForm, this.empData).subscribe({
       next:value =>{
@@ -45,6 +43,4 @@ export class UpdateEmployeeDialogComponent {
       error:err => console.log(err)
     })
   }
-
-
 }

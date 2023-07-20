@@ -64,6 +64,5 @@ export class ViewRecordDialogComponent {
         timeOut:new Date()
       }
     },
-
   ]
 }

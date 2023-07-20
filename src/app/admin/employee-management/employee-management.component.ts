@@ -20,15 +20,12 @@ export class EmployeeManagementComponent implements OnInit {
      this.dialog.open(UpdateEmployeeDialogComponent,{
       data,
     });
-
-
   }
   openDeleteDialog(data:string) {
     this.dialog.open(DeleteEmployeeConfirmationDialogComponent,{
        data,
     });
   }
-
 
   ngOnInit()
   {
@@ -42,6 +39,5 @@ export class EmployeeManagementComponent implements OnInit {
 
       })
   }
-
 
 }

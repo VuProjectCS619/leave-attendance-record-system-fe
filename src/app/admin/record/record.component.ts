@@ -10,7 +10,8 @@ import {AdminService} from "../../services/admin.service";
 })
 export class RecordComponent implements  OnInit{
   employeeLeaveRecord:any
-  constructor(public dialog: MatDialog, private service:AdminService) {}
+  userId:any
+  constructor(private service:AdminService) {}
   ngOnInit()
   {
       this.service.getEmployeeLeaveRecord().subscribe({
@@ -22,139 +23,26 @@ export class RecordComponent implements  OnInit{
           console.log(err)
         }
       })
+
+    this.service.getEmployee().subscribe({
+      next:value => {
+        this.userId = value.id
+      },
+      error:err => {
+        console.log(err)
+      }
+    })
+  }
+  getAttendance(id:any)
+  {
+    this.service.getEmployeeAttendanceRecord(id).subscribe({
+      next:value => {
+        console.log(value)
+      },
+      error:err => {
+        console.log(err)
+      }
+    })
   }
 
-  openDialog() {
-    this.dialog.open(ViewRecordDialogComponent);
-  }
-
-  employeeRecord =[
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-  ]
-  leaveRecord = [
-    {
-      monthYear:"Jan, 2023",
-      name: "Muhammad Osama Iftikhar",
-      workingHours: 115,
-      leaves: 3
-    },
-    { monthYear:"Feb, 2023",
-      name: "Muhammad Osama Iftikhar",
-      workingHours: 115,
-      leaves: 3
-    },
-    {
-      monthYear:"Mar, 2023",
-      name: "Muhammad Osama Iftikhar",
-      workingHours: 115,
-      leaves: 3
-    },
-    {
-      monthYear:"Apr, 2023",
-      name: "Muhammad Osama Iftikhar",
-      workingHours: 115,
-      leaves: 3
-    },
-    {
-      monthYear:"May, 2023",
-      name: "Muhammad Osama Iftikhar",
-      workingHours: 115,
-      leaves: 3
-    },
-    {
-      monthYear:"Jun, 2023",
-      name: "Muhammad Osama Iftikhar",
-      eworkingHours: 115,
-      leaves: 3
-    },
-    {
-      monthYear:"Jul, 2023",
-      name: "Muhammad Osama Iftikhar",
-      workingHours: 115,
-      leaves: 3
-    },
-    {
-      monthYear:"Aug, 2023",
-      name: "Muhammad Osama Iftikhar",
-      workingHours: 115,
-      leaves: 3
-    },
-    {
-      monthYear:"Sep, 2023",
-      name: "Muhammad Osama Iftikhar",
-      workingHours: 115,
-      leaves: 3
-    },
-    {
-      monthYear:"Oct, 2023",
-      name: "Muhammad Osama Iftikhar",
-      workingHours: 115,
-      leaves: 3
-    },
-    {
-      monthYear:"Nov, 2023",
-      name: "Muhammad Osama Iftikhar",
-      workingHours: 115,
-      leaves: 3
-    },
-    {
-      monthYear:"Dec, 2023",
-      name: "Muhammad Osama Iftikhar",
-      workingHours: 115,
-      leaves: 3
-    },
-  ]
-  attendanceRecord = [
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com"
-    },
-  ]
 }

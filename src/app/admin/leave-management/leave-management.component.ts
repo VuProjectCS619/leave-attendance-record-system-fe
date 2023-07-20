@@ -41,7 +41,6 @@ ngOnInit()
     }
   })
 }
-
  acceptLeave( applicationId:string)
  {
    this.acceptedData.applicationId = applicationId
@@ -58,5 +57,4 @@ ngOnInit()
      error: err => {console.log(err)}
    })
  }
-
 }
