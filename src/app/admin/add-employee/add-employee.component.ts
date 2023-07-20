@@ -11,7 +11,7 @@ export class AddEmployeeComponent {
 
   addEmployeeForm:IAddEmployee =
     {
-      contactNumber: "",
+      contact: "",
       designation: "",
       email: "",
       name: "",

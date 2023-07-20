@@ -14,14 +14,14 @@ export class UpdateEmployeeDialogComponent {
 
   updateEmployeeForm:IUpdateEmployee =
     {
-      contactNumber: "",
+      salary: 0,
+      contact: "",
       designation: "",
       name: "",
       password: "",
-      salary: 0,
       allowedCasualLeaves: 0,
       allowedCompensatoryLeaves: 0,
-      allowedEarnedLeaves: 0,
+      allowedEarnedLeaves: 0
     }
   getEmployeeList(){
     this.service.getEmployee().subscribe({
