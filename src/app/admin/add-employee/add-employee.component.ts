@@ -20,6 +20,9 @@ export class AddEmployeeComponent {
       allowedCasualLeaves: 0,
       allowedCompensatoryLeaves: 0,
       allowedEarnedLeaves: 0,
+      consumedCasualLeaves: 0,
+      consumedCompensatoryLeaves: 0,
+      consumedEarnedLeaves: 0,
     }
 
     addEmployee()

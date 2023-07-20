@@ -29,28 +29,6 @@ export class EmployeeManagementComponent implements OnInit {
     });
   }
 
-  deleteEmp(id:any)
-  {
-    this.service.deleteEmployee(id).subscribe({
-      next:value => {
-
-        console.log(value)
-        this.getEmployeeList()
-      },
-      error:err => console.log(err)
-    })
-  }
-  getEmployeeList(){
-    this.service.getEmployee().subscribe({
-      next:value =>
-      {
-        console.log(value)
-        this.empData = value
-      },
-      error:err => console.log(err),
-
-    })
-  }
 
   ngOnInit()
   {

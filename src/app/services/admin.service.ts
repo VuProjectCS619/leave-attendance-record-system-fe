@@ -25,9 +25,9 @@ export class AdminService {
   {
     return this.http.post("employee", form);
   }
-  addEmployeeLeave(form:any, id:any)
+  getEmployeeLeaves()
   {
-    return this.http.put(`/, ${id}`, form);
+    return this.http.get("admin/leave-applications")
   }
   updateEmployee(form:any, id:any):Observable<any>
   {

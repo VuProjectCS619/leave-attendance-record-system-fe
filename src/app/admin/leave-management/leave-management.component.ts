@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
+import {AdminService} from "../../services/admin.service";
 
 
 
@@ -16,11 +17,22 @@ export interface leave {
   templateUrl: './leave-management.component.html',
   styleUrls: ['./leave-management.component.css']
 })
-export class LeaveManagementComponent {
+export class LeaveManagementComponent implements OnInit  {
+leaves:any
+  constructor(public dialog: MatDialog, private service:AdminService) {}
 
-  constructor(public dialog: MatDialog) {}
-
-
+ngOnInit()
+{
+  this.service.getEmployeeLeaves().subscribe({
+    next:value => {
+      console.log(value)
+      this.leaves =value
+    },
+    error:err => {
+      console.log(err)
+    }
+  })
+}
 
   leaveRequests = [
     {

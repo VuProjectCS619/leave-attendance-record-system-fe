@@ -16,13 +16,13 @@
           <mat-label>Update Name</mat-label>
           <input [(ngModel)]="this.updateProfileSettingForm.name" matInput placeholder="John Doe" >
         </mat-form-field>
-        <mat-card-actions>
-          <!--Button -->
-          <div class="flex w-full justify-end">
-            <button (click)="updateSetting()"  mat-raised-button  color="primary">UPDATE</button>
-          </div>
-        </mat-card-actions>
       </div>
+        <div class="flex flex-col" >
+          <mat-form-field appearance="fill">
+            <mat-label>Update Contact</mat-label>
+            <input [(ngModel)]="this.updateProfileSettingForm.contact" matInput placeholder="012345678910" >
+          </mat-form-field>
+        </div>
         <!--Update Password-->
         <div class="flex flex-col" >
         <mat-form-field appearance="fill">

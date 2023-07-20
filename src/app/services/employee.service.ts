@@ -34,13 +34,13 @@ export class EmployeeService {
   {
     return this.http.post("leave/application", form);
   }
-  updateProfileSetting(form:any, id:string)
+  updateProfileSetting(form:any)
   {
-    return this.http.patch(`user/profile/${id}`, form);
+    return this.http.patch("user/profile/", form);
   }
   logTimeIn():Observable<any>
   {
-    return this.http.post(`attendance/logintime`, "")
+    return this.http.post("attendance/logintime", "")
   }
   logTimeOut():Observable<any>
   {

@@ -17,6 +17,9 @@ export interface IAddEmployee
   allowedEarnedLeaves: number,
   allowedCasualLeaves: number,
   allowedCompensatoryLeaves: number
+  consumedCasualLeaves: number;
+  consumedCompensatoryLeaves: number;
+  consumedEarnedLeaves: number;
 }
 export interface IUpdateEmployee
 {
@@ -39,7 +42,7 @@ export interface IApplyForLeave
 {
   toDate:string,
   fromDate:string,
-  LeaveType:string
+  leaveType:string
   hh?:string,
   mm?:string,
   descriptionLeave:string,
@@ -50,4 +53,5 @@ export interface IUpdateProfileSetting
 {
   name:string,
   password:string
+  contact:string
 }

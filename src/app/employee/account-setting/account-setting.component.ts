@@ -19,14 +19,15 @@ myName:string="Muhammad Osama Iftikhar"
   updateProfileSettingForm:IUpdateProfileSetting =
     {
       name: "",
-      password: ""
+      password: "",
+      contact:""
     }
   updateSetting()
   {
-    // this.service.updateProfileSetting(this.updateProfileSettingForm).subscribe({
-    //   next:value => console.log(value),
-    //   error:err => console.log(err)
-    // })
+    this.service.updateProfileSetting(this.updateProfileSettingForm).subscribe({
+      next:value => console.log(value),
+      error:err => console.log(err)
+    })
   }
 
 }

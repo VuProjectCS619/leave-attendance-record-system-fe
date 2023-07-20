@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IApplyForLeave} from "../../interfaces/dtos";
+import {IAddEmployee, IApplyForLeave} from "../../interfaces/dtos";
 import {EmployeeService} from "../../services/employee.service";
 
 
@@ -15,13 +15,13 @@ constructor(private service:EmployeeService) {}
   email:string = "osama@abc.com"
   allowedLeaves: number = 5
   consumedLeaves:number = 5
-  balance:number = 0
+  // balance:number = 0
   appliedForLeave:string = "Jan, 05, 2023"
   status:string = "Pending"
 
   applyLeaveForm:IApplyForLeave =
   {
-    LeaveType: "",
+    leaveType: "",
     hh: "",
     mm:"",
     descriptionLeave: "",
@@ -30,7 +30,16 @@ constructor(private service:EmployeeService) {}
     toDate: ""
   }
 
-
+  user: IAddEmployee = JSON.parse(localStorage.getItem("user") || "")
+  allowedCasualLeaves:number  = this.user ? this.user.allowedCasualLeaves : 0
+  allowedCompensatoryLeaves:number  = this.user ? this.user.allowedCompensatoryLeaves : 0
+  allowedEarnedLeaves:number  = this.user ? this.user.allowedEarnedLeaves : 0
+  consumedCasualLeaves:number  = this.user ? this.user.consumedCasualLeaves : 0
+  consumedCompensatoryLeaves:number  = this.user ? this.user.consumedCompensatoryLeaves : 0
+  consumedEarnedLeaves:number  = this.user ? this.user.consumedEarnedLeaves : 0
+  balanceCasualLeaves:number = this.user.allowedCasualLeaves - this.user.consumedCasualLeaves
+  balanceCompensatoryLeaves:number = this.user.allowedCompensatoryLeaves - this.user.consumedCompensatoryLeaves
+  balanceEarnedLeaves:number = this.user.allowedEarnedLeaves - this.user.consumedEarnedLeaves
   applyLeave()
   {
     this.service.applyForLeave(this.applyLeaveForm).subscribe({

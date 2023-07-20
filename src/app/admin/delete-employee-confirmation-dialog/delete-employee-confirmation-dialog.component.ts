@@ -12,10 +12,23 @@ export class DeleteEmployeeConfirmationDialogComponent {
 
   constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public empData:any) {}
 
+  getEmployeeList(){
+    this.service.getEmployee().subscribe({
+      next:value =>
+      {
+        console.log(value)
+      },
+      error:err => console.log(err),
+
+    })
+  }
   deleteEmp()
   {
     this.service.deleteEmployee(this.empData).subscribe({
-      next:value => console.log(value),
+      next:value => {
+        console.log(value)
+        this.getEmployeeList()
+      },
       error:err => console.log(err)
     })
   }

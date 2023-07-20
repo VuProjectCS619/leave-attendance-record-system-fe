@@ -23,6 +23,7 @@ export class AttendanceComponent {
     this.service.logTimeIn().subscribe({
       next:value => {
         console.log(value)
+         localStorage.setItem("timeIn",value.loginTime )
 
       },
       error:err => console.log(err)
@@ -33,6 +34,7 @@ export class AttendanceComponent {
     this.service.logTimeOut().subscribe({
       next:value => {
         console.log(value)
+        localStorage.setItem("timeIn",value.loginOut )
       },
       error:err => console.log(err)
     })
