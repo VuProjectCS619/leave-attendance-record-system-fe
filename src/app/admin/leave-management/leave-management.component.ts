@@ -20,7 +20,17 @@ export interface leave {
 export class LeaveManagementComponent implements OnInit  {
 leaves:any
   constructor(public dialog: MatDialog, private service:AdminService) {}
+acceptedData = {
+  applicationId: "",
+  status: "Accepted"
+}
 
+  rejectedData = {
+    applicationId: "",
+    status: "Rejected"
+  }
+
+  leaveStatus = ""
 ngOnInit()
 {
   this.service.getEmployeeLeaves().subscribe({
@@ -36,7 +46,16 @@ ngOnInit()
 
  acceptLeave( applicationId:string)
  {
-   this.service.acceptLeave(applicationId).subscribe({
+   this.acceptedData.applicationId = applicationId
+   this.service.approveLeave(this.acceptedData).subscribe({
+     next: value => {console.log(value)},
+     error: err => {console.log(err)}
+   })
+ }
+ rejectedLeave( applicationId:string)
+ {
+   this.rejectedData.applicationId = applicationId
+   this.service.approveLeave(this.rejectedData).subscribe({
      next: value => {console.log(value)},
      error: err => {console.log(err)}
    })

@@ -38,7 +38,7 @@ export class AdminService {
   {
     return this.http.get("admin/leave-applications")
   }
-  acceptLeave(data:any)
+  approveLeave(data:any)
   {
 
     return this.http.patch("admin/leave-applications",data)

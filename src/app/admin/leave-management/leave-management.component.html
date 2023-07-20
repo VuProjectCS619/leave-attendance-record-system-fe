@@ -24,10 +24,12 @@
           </div>
           <mat-card-actions>
             <!--Button -->
+
             <div class="flex w-full justify-end gap-2">
               <button mat-raised-button color="primary" (click)="acceptLeave(employeeLeaveReq.id)">ACCEPT</button>
-              <button mat-raised-button color="warn">REJECT</button>
+              <button mat-raised-button color="warn" (click)="rejectedLeave(employeeLeaveReq.id)">REJECT</button>
             </div>
+
           </mat-card-actions>
         </mat-card>
       </div>
