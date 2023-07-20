@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IAddEmployee, IApplyForLeave} from "../../interfaces/dtos";
 import {EmployeeService} from "../../services/employee.service";
 
@@ -8,22 +8,16 @@ import {EmployeeService} from "../../services/employee.service";
   templateUrl: './apply-for-leave.component.html',
   styleUrls: ['./apply-for-leave.component.css']
 })
-export class ApplyForLeaveComponent {
+export class ApplyForLeaveComponent  implements OnInit{
 constructor(private service:EmployeeService) {}
 
-  userName:string = "Muhamamd Osama Iftikhar"
-  email:string = "osama@abc.com"
-  allowedLeaves: number = 5
-  consumedLeaves:number = 5
-  // balance:number = 0
-  appliedForLeave:string = "Jan, 05, 2023"
-  status:string = "Pending"
+  leaveStats:any
 
   applyLeaveForm:IApplyForLeave =
   {
     leaveType: "",
-    hh: "",
-    mm:"",
+    // hh: "",
+    // mm:"",
     descriptionLeave: "",
     fromDate: "",
     reason: "",
@@ -49,6 +43,17 @@ constructor(private service:EmployeeService) {}
     })
   }
 
+  ngOnInit() {
+  this.service.getEmployeeLeaveStatus().subscribe({
+    next:value => {
+      console.log(value)
+      this.leaveStats = value
+    },
+    error:err => {
+      console.log(err)
+    }
+  })
+  }
 
   leaveStatus = [
     {

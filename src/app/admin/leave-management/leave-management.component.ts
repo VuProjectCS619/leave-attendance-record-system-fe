@@ -34,58 +34,12 @@ ngOnInit()
   })
 }
 
-  leaveRequests = [
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com",
-      reason: "I have an emergency."
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com",
-      reason: "I have an emergency."
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com",
-      reason: "I have an emergency."
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com",
-      reason: "I have an emergency."
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com",
-      reason: "I have an emergency."
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com",
-      reason: "I have an emergency."
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com",
-      reason: "I have an emergency."
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com",
-      reason: "I have an emergency."
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com",
-      reason: "I have an emergency."
-    },
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com",
-      reason: "I have an emergency."
-    },
-
-  ]
+ acceptLeave( applicationId:string)
+ {
+   this.service.acceptLeave(applicationId).subscribe({
+     next: value => {console.log(value)},
+     error: err => {console.log(err)}
+   })
+ }
 
 }

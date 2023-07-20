@@ -26,10 +26,6 @@ export class EmployeeService {
   {
     return this.http.get(`/`);
   }
-  getEmployee(id:string)
-  {
-    return this.http.get(`employee${id}`)
-  }
   applyForLeave(form:any):Observable<any>
   {
     return this.http.post("leave/application", form);
@@ -50,5 +46,12 @@ export class EmployeeService {
   getLeaveRecords(){
     return this.http.get("user/leave-records")
   }
-
+  getEmployeeLeaveStatus()
+  {
+    return this.http.get("user/leave-applications")
+  }
+  getAttendance()
+  {
+    return this.http.get("attendance")
+  }
 }

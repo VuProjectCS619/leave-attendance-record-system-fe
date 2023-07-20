@@ -1,23 +1,36 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ViewRecordDialogComponent} from "../view-record-dialog/view-record-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
+import {EmployeeService} from "../../services/employee.service";
 
 @Component({
   selector: 'app-record',
   templateUrl: './record.component.html',
   styleUrls: ['./record.component.css']
 })
-export class RecordComponent {
-  name:string = "Muhammad Osama Iftikhar"
-  email:string="osama@abc.com"
+export class RecordComponent implements OnInit{
 
-  constructor(public dialog: MatDialog) {}
+  record:any
+  constructor(public dialog: MatDialog, private service: EmployeeService) {}
 
-  openDialog() {
-    this.dialog.open(ViewRecordDialogComponent);
+  openRecord() {
+    this.dialog.open(ViewRecordDialogComponent,{
+   data:this.record
+    });
   }
 
-
+ngOnInit()
+{
+  this.service.getAttendance().subscribe({
+    next:value => {
+      console.log(value)
+      this.record = value
+    },
+    error:err => {
+      console.log(err)
+    }
+  })
+}
   leaveEmployeeRecord= [
     {
       monthYear:"Jan, 2023",
@@ -79,10 +92,5 @@ export class RecordComponent {
       leaves: 3
     },
   ]
-  attendanceRecord = [
-    {
-      name: "Muhammad Osama Iftikhar",
-      employeeEmail: "osama@abc.com",
-    },
-  ]
+
 }

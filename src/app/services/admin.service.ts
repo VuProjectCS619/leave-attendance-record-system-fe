@@ -25,10 +25,6 @@ export class AdminService {
   {
     return this.http.post("employee", form);
   }
-  getEmployeeLeaves()
-  {
-    return this.http.get("admin/leave-applications")
-  }
   updateEmployee(form:any, id:any):Observable<any>
   {
 
@@ -38,6 +34,17 @@ export class AdminService {
   {
     return this.http.delete(`employee/${id}`);
   }
-
+  getEmployeeLeaves()
+  {
+    return this.http.get("admin/leave-applications")
+  }
+  acceptLeave(dataa:any)
+  {
+    const data ={
+      applicationId: "",
+      status: "Accepted"
+    }
+    return this.http.patch("admin/leave-applications",dataa)
+  }
   /* TODO: Accept and Reject Leave Service */
 }

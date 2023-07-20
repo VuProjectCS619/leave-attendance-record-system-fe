@@ -68,23 +68,26 @@
             <mat-form-field appearance="fill">
               <mat-label>Type of Leave</mat-label>
               <mat-select [(ngModel)]="applyLeaveForm.leaveType">
-                <mat-option value="Full">Full</mat-option>
-                <mat-option value="Half">Half</mat-option>
+<!--                <mat-option value="Full">Full</mat-option>-->
+<!--                <mat-option value="Half">Half</mat-option>-->
+                <mat-option value="casualLeaves">Casual</mat-option>
+                <mat-option value="compensatoryLeaves">Compensatory</mat-option>
+                <mat-option value="earnedLeaves">Earned</mat-option>
               </mat-select>
             </mat-form-field>
               <!--Hours/Minutes fields (if 'half' selected)-->
-            <ng-container *ngIf="applyLeaveForm.leaveType === 'Half'" >
-                <div class="flex gap-2 items-center">
-                  <mat-form-field appearance="fill">
-                    <mat-label>Hour/s</mat-label>
-                    <input [(ngModel)]="applyLeaveForm.hh" type="number" TwoDigitVal matInput placeholder="1">
-                  </mat-form-field>
-                  <mat-form-field appearance="fill">
-                    <mat-label>Minute/s</mat-label>
-                    <input [(ngModel)]="applyLeaveForm.mm" type="number" TwoDigitVal matInput placeholder="00">
-                  </mat-form-field>
-                </div>
-            </ng-container>
+<!--            <ng-container *ngIf="applyLeaveForm.leaveType === 'Half'" >-->
+<!--                <div class="flex gap-2 items-center">-->
+<!--                  <mat-form-field appearance="fill">-->
+<!--                    <mat-label>Hour/s</mat-label>-->
+<!--                    <input [(ngModel)]="applyLeaveForm.hh" type="number" TwoDigitVal matInput placeholder="1">-->
+<!--                  </mat-form-field>-->
+<!--                  <mat-form-field appearance="fill">-->
+<!--                    <mat-label>Minute/s</mat-label>-->
+<!--                    <input [(ngModel)]="applyLeaveForm.mm" type="number" TwoDigitVal matInput placeholder="00">-->
+<!--                  </mat-form-field>-->
+<!--                </div>-->
+<!--            </ng-container>-->
             <mat-form-field appearance="fill">
               <mat-label>Description of Leave</mat-label>
               <mat-select [(ngModel)]="applyLeaveForm.descriptionLeave">
@@ -92,6 +95,7 @@
                 <mat-option value="Compensatory">Compensatory</mat-option>
                 <mat-option value="Earned">Earned</mat-option>
               </mat-select>
+              <p> {{applyLeaveForm.descriptionLeave}}</p>
             </mat-form-field>
               <!--  Reason for Leave   -->
             <mat-form-field>
@@ -112,14 +116,15 @@
     <mat-tab label="LEAVE STATUS">
       <!-- Card -->
       <div class="flex gap-4 flex-wrap p-10" >
-        <mat-card class="w-96 h-auto shadow-xl p-4 flex-col gap-4 " *ngFor="let leave of leaveStatus" >
+        <mat-card class="w-96 h-auto shadow-xl p-4 flex-col gap-4 " *ngFor="let leave of leaveStats" >
           <div class="flex flex-col gap-2">
             <mat-card-title >Leave Status</mat-card-title>
             <mat-card-subtitle class="text-red-800">Note: In any case contact your admin for leave approval.</mat-card-subtitle>
           </div>
           <div class="flex flex-col gap-4">
-            <p class=" text-xs font-semibold">Applied for Leave:{{" "}}<span class="font-normal ">{{leave.toDate|date:"mediumDate"}} - {{leave.toFrom|date:"mediumDate"}}</span> </p>
+            <p class=" text-xs font-semibold">Applied for Leave:{{" "}}<span class="font-normal ">{{leave["toDate"]|date:"dd, MMMM, yyyy"}} - {{leave["fromDate"]|date:"dd, MMMM, yyyy"}}</span> </p>
             <p class=" text-xs font-semibold">Status:{{" "}}<span class="font-normal ">{{leave.status}}</span> </p>
+            <p class=" text-xs font-semibold">Reason:{{" "}}<span class="font-normal ">{{leave.reason}}</span> </p>
           </div>
         </mat-card>
       </div>
