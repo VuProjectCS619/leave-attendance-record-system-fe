@@ -10,12 +10,21 @@ import {EmployeeService} from "../../services/employee.service";
 })
 export class RecordComponent implements OnInit{
 
-  record:any
+  recordAttendance:any
+
+  recordLeaves ={
+    allowedCasualLeaves:0,
+    allowedCompensatoryLeaves: 0,
+    allowedEarnedLeaves:0,
+    consumedCasualLeaves:0,
+    consumedCompensatoryLeaves:0,
+    consumedEarnedLeaves:0
+  }
   constructor(public dialog: MatDialog, private service: EmployeeService) {}
 
   openRecord() {
     this.dialog.open(ViewRecordDialogComponent,{
-   data:this.record
+   data:this.recordAttendance
     });
   }
 
@@ -24,12 +33,29 @@ ngOnInit()
   this.service.getAttendance().subscribe({
     next:value => {
       console.log(value)
-      this.record = value
+      this.recordAttendance = value
     },
     error:err => {
       console.log(err)
     }
   })
+
+  this.service.getLeaveRecord().subscribe({
+    next:value => {
+      console.log(value)
+      // this.recordLeaves = value.allowedCasualLeaves
+      this.recordLeaves.allowedCasualLeaves = value.allowedCasualLeaves
+      this.recordLeaves.allowedCompensatoryLeaves = value.allowedCompensatoryLeaves
+      this.recordLeaves.allowedEarnedLeaves = value.allowedEarnedLeaves
+      this.recordLeaves.consumedCasualLeaves = value.consumedCasualLeaves
+      this.recordLeaves.consumedCompensatoryLeaves = value.consumedCompensatoryLeaves
+      this.recordLeaves.consumedEarnedLeaves = value.consumedEarnedLeaves
+    },
+    error:err => {
+      console.log(err)
+    }
+  })
+
 }
   leaveEmployeeRecord= [
     {

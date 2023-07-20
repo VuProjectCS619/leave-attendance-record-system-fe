@@ -10,22 +10,23 @@ export class EmployeeService {
 
   constructor(private http:HttpClient) { }
 
-  getLeaveStatus(id:any)
+  getEmployeeLeaveStatus():Observable<any>
   {
-    return this.http.get(`/, ${id}`);
+    return this.http.get("user/leave-applications")
+  }
+  getAttendance():Observable<any>
+  {
+    return this.http.get("attendance")
   }
   getAttendanceRecord(id:any)
   {
     return this.http.get(`/, ${id}`);
   }
-  getLeaveRecord(id:any)
+  getLeaveRecord():Observable<any>
   {
-    return this.http.get(`/, ${id}`);
+    return this.http.get("user/leave-records");
   }
-  getAllowedLeave()
-  {
-    return this.http.get(`/`);
-  }
+
   applyForLeave(form:any):Observable<any>
   {
     return this.http.post("leave/application", form);
@@ -43,15 +44,4 @@ export class EmployeeService {
     return this.http.post("attendance/logouttime", "")
   }
 
-  getLeaveRecords(){
-    return this.http.get("user/leave-records")
-  }
-  getEmployeeLeaveStatus()
-  {
-    return this.http.get("user/leave-applications")
-  }
-  getAttendance()
-  {
-    return this.http.get("attendance")
-  }
 }

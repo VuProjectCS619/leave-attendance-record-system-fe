@@ -21,6 +21,7 @@ import { ViewRecordDialogComponent } from './view-record-dialog/view-record-dial
 import {MatDialogModule} from "@angular/material/dialog";
 import {AdminModule} from "../admin/admin.module";
 import { TwoDigitValDirective } from './two-digit-val.directive';
+import {MatListModule} from "@angular/material/list";
 
 
 
@@ -55,6 +56,7 @@ import { TwoDigitValDirective } from './two-digit-val.directive';
         MatDialogModule,
         FormsModule,
         AdminModule,
+        MatListModule,
 
     ]
 })
