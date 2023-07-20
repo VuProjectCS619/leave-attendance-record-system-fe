@@ -29,8 +29,6 @@ acceptedData = {
     applicationId: "",
     status: "Rejected"
   }
-
-  leaveStatus = ""
 ngOnInit()
 {
   this.service.getEmployeeLeaves().subscribe({

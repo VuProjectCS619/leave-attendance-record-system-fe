@@ -1,15 +1,28 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {ViewRecordDialogComponent} from "../view-record-dialog/view-record-dialog.component";
+import {AdminService} from "../../services/admin.service";
 
 @Component({
   selector: 'app-record',
   templateUrl: './record.component.html',
   styleUrls: ['./record.component.css']
 })
-export class RecordComponent {
-
-  constructor(public dialog: MatDialog) {}
+export class RecordComponent implements  OnInit{
+  employeeLeaveRecord:any
+  constructor(public dialog: MatDialog, private service:AdminService) {}
+  ngOnInit()
+  {
+      this.service.getEmployeeLeaveRecord().subscribe({
+        next:value => {
+          console.log(value)
+          this.employeeLeaveRecord = value
+        },
+        error: err => {
+          console.log(err)
+        }
+      })
+  }
 
   openDialog() {
     this.dialog.open(ViewRecordDialogComponent);

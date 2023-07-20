@@ -13,13 +13,13 @@ export class AdminService {
   {
     return this.http.get("employee");
   }
-  getEmployeeAttendanceRecord()
+  getEmployeeAttendanceRecord(id:string):Observable<any>
   {
-    return this.http.get("");
+    return this.http.get(`admin/${id}/attendance`);
   }
-  getEmployeeLeaveRecord()
+  getEmployeeLeaveRecord():Observable<any>
   {
-    return this.http.get("");
+    return this.http.get("admin/leave-records");
   }
   addEmployee(form:any) :Observable<any>
   {
@@ -30,18 +30,16 @@ export class AdminService {
 
     return this.http.patch(`employee/${id}`, form);
   }
-  deleteEmployee( id:any)
+  deleteEmployee( id:any):Observable<any>
   {
     return this.http.delete(`employee/${id}`);
   }
-  getEmployeeLeaves()
+  getEmployeeLeaves():Observable<any>
   {
     return this.http.get("admin/leave-applications")
   }
-  approveLeave(data:any)
+  approveLeave(data:any):Observable<any>
   {
-
     return this.http.patch("admin/leave-applications",data)
   }
-  /* TODO: Accept and Reject Leave Service */
 }

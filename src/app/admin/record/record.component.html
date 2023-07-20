@@ -9,21 +9,29 @@
     <!--   Table    -->
       <div class="flex flex-col gap-2 flex-wrap p-10 " >
         <mat-accordion>
-          <mat-expansion-panel *ngFor="let employee of employeeRecord" >
+          <mat-expansion-panel *ngFor="let employee of employeeLeaveRecord" >
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Name/Email
+                Name/Contact Number
               </mat-panel-title>
               <mat-panel-description class="text-fuchsia-800">
-                {{employee.name}}, {{employee.employeeEmail}}
+                {{employee["EmployeeName"]}}, {{employee["EmployeeContact"]}}
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <div class="flex gap-4 flex-wrap p-10" >
-              <mat-card class="w-96 h-auto shadow-xl p-4" *ngFor="let record of leaveRecord">
+            <div class="flex gap-4 justify-center  p-10" >
+              <mat-card class="w-full h-auto shadow-xl p-4" >
                 <div class="flex flex-col gap-4">
-                  <mat-card-title>{{record.monthYear}}</mat-card-title>
-                  <p class=" text-xs font-semibold">Leaves:{{" "}}<span class="font-normal ">{{record.leaves}}</span> </p>
-                  <p class=" text-xs font-semibold">Working Hours:{{" "}}<span class="font-normal ">{{record.workingHours}}</span> </p>
+                  <mat-card-title>Leave Record</mat-card-title>
+                  <mat-divider></mat-divider>
+                  <mat-card-subtitle>Allowed Leaves</mat-card-subtitle>
+                  <p class=" text-xs font-semibold">Casual Leaves:{{" "}}<span class="font-normal ">{{employee.allowedCasualLeaves}}</span> </p>
+                  <p class=" text-xs font-semibold">Compensatory Leaves:{{" "}}<span class="font-normal ">{{employee.allowedCompensatoryLeaves}}</span> </p>
+                  <p class=" text-xs font-semibold">Earned Leaves:{{" "}}<span class="font-normal ">{{employee.allowedEarnedLeaves}}</span> </p>
+                  <mat-divider></mat-divider>
+                  <mat-card-subtitle>Consumed Leaves</mat-card-subtitle>
+                  <p class=" text-xs font-semibold">Casual Leaves:{{" "}}<span class="font-normal ">{{employee.consumedCasualLeaves}}</span> </p>
+                  <p class=" text-xs font-semibold">Compensatory Leaves:{{" "}}<span class="font-normal ">{{employee.consumedCompensatoryLeaves}}</span> </p>
+                  <p class=" text-xs font-semibold">Earned Leaves:{{" "}}<span class="font-normal ">{{employee.consumedEarnedLeaves}}</span> </p>
                 </div>
               </mat-card>
             </div>

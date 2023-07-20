@@ -1,6 +1,6 @@
 <div class=" flex flex-col gap-4">
   <div>
-    <p class=" text-lg font-bold text-fuchsia-800">Leave Management </p>
+    <p class=" text-lg font-bold text-fuchsia-800">Leave Request Management </p>
   </div>
   <!--Tabs-->
   <mat-tab-group dynamicHeight>
@@ -24,12 +24,16 @@
           </div>
           <mat-card-actions>
             <!--Button -->
-
             <div class="flex w-full justify-end gap-2">
-              <button mat-raised-button color="primary" (click)="acceptLeave(employeeLeaveReq.id)">ACCEPT</button>
-              <button mat-raised-button color="warn" (click)="rejectedLeave(employeeLeaveReq.id)">REJECT</button>
+              <button mat-raised-button color="primary"
+                      [disabled]="employeeLeaveReq.status === 'Accepted' || employeeLeaveReq.status === 'Accepted'"
+                      (click)="acceptLeave(employeeLeaveReq.id)">ACCEPT
+              </button>
+              <button mat-raised-button color="warn"
+                      [disabled]="employeeLeaveReq.status === 'Rejected' || employeeLeaveReq.status === 'Accepted'"
+                      (click)="rejectedLeave(employeeLeaveReq.id)">REJECT
+              </button>
             </div>
-
           </mat-card-actions>
         </mat-card>
       </div>

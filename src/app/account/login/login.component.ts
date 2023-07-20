@@ -17,15 +17,11 @@ export class LoginComponent {
     email: "",
     password: "",
   }
-  employeeLoginForm:ILogin= {
-    email: "", password: ""
 
-  }
-  email:string= "admin@xyz.com"
   // check if email == admin go to admin dashboard else employee
   loggedIn(){
 
-    if(this.loginForm.email === "admin@xyz.com" )
+    if(this.loginForm.email === "admin@xyz.com" && this.loginForm.password === "password" )
     {
       this.route.navigate(['/admin/add-employee'])
     }else{
