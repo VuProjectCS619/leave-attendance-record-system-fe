@@ -38,13 +38,10 @@ export class AdminService {
   {
     return this.http.get("admin/leave-applications")
   }
-  acceptLeave(dataa:any)
+  acceptLeave(data:any)
   {
-    const data ={
-      applicationId: "",
-      status: "Accepted"
-    }
-    return this.http.patch("admin/leave-applications",dataa)
+
+    return this.http.patch("admin/leave-applications",data)
   }
   /* TODO: Accept and Reject Leave Service */
 }
