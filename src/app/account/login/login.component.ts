@@ -2,13 +2,19 @@ import { Component } from '@angular/core';
 import { Router} from "@angular/router";
 import {ILogin} from "../../interfaces/dtos";
 import {AccountLoginService} from "../../services/account.service";
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private service:AccountLoginService  , private route : Router) {}
+  //snackbar variables
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  durationInSeconds = 2;
+  leaves:any
+  constructor(private service:AccountLoginService  , private route : Router, private snackbar:MatSnackBar) {}
   empty = true
   hide= true
 
@@ -23,6 +29,11 @@ export class LoginComponent {
 
     if(this.loginForm.email === "admin@xyz.com" && this.loginForm.password === "password" )
     {
+      this.snackbar.open("Logged In", 'Close', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        duration: this.durationInSeconds * 1000,
+      })
       this.route.navigate(['/admin/add-employee'])
     }else{
       this.service.getEmployeeLogin(this.loginForm).subscribe({
@@ -30,13 +41,20 @@ export class LoginComponent {
         {
           localStorage.setItem('auth_token' , value.jwt,)
           localStorage.setItem('user' , JSON.stringify(value))
-          console.log(value)
-
+          this.snackbar.open("Logged In", 'Close', {
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,
+            duration: this.durationInSeconds * 1000,
+          })
           this.route.navigate(['/employee/attendance'])
         },
         error:err =>
         {
-          console.log(err)
+          this.snackbar.open("Unauthorized", 'Close', {
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,
+            duration: this.durationInSeconds * 1000,
+          })
         }
       })
     }
