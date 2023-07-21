@@ -22,6 +22,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {AdminModule} from "../admin/admin.module";
 import { TwoDigitValDirective } from './two-digit-val.directive';
 import {MatListModule} from "@angular/material/list";
+import { MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 
@@ -57,6 +58,7 @@ import {MatListModule} from "@angular/material/list";
         FormsModule,
         AdminModule,
         MatListModule,
+      MatSnackBarModule
 
     ]
 })

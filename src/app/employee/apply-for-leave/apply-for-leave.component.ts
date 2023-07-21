@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IAddEmployee, IApplyForLeave} from "../../interfaces/dtos";
 import {EmployeeService} from "../../services/employee.service";
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
 
 
 @Component({
@@ -9,8 +10,11 @@ import {EmployeeService} from "../../services/employee.service";
   styleUrls: ['./apply-for-leave.component.css']
 })
 export class ApplyForLeaveComponent  implements OnInit{
-constructor(private service:EmployeeService) {}
-
+constructor(private service:EmployeeService, private snackbar:MatSnackBar) {}
+//snackbar variables
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  durationInSeconds = 2;
   leaveStats:any
 
   applyLeaveForm:IApplyForLeave =
@@ -38,8 +42,16 @@ constructor(private service:EmployeeService) {}
   {
     this.service.applyForLeave(this.applyLeaveForm).subscribe({
 
-      next:value => console.log(value),
-      error:err => console.log(err)
+      next:value => this.snackbar.open("Successfully Applied", 'Close', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        duration: this.durationInSeconds * 1000,
+      }),
+      error:err => this.snackbar.open("Please Fill the form", 'Close', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        duration: this.durationInSeconds * 1000,
+      })
     })
   }
 
@@ -55,22 +67,5 @@ constructor(private service:EmployeeService) {}
   })
   }
 
-  leaveStatus = [
-    {
-      toDate:new Date(),
-      toFrom:new Date(),
-      status:"Pending"
-    },
-    {
-      toDate:new Date(),
-      toFrom:new Date(),
-      status:"Pending"
-    },
-    {
-      toDate:new Date(),
-      toFrom:new Date(),
-      status:"Pending"
-    }
-  ]
 
 }

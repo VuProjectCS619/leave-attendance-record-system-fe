@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {EmployeeService} from "../../services/employee.service";
 import {IUpdateProfileSetting} from "../../interfaces/dtos";
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
+
 
 @Component({
   selector: 'app-account-setting',
@@ -8,7 +10,11 @@ import {IUpdateProfileSetting} from "../../interfaces/dtos";
   styleUrls: ['./account-setting.component.css']
 })
 export class AccountSettingComponent {
-  constructor(private service:EmployeeService) {
+  //snackbar variables
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  durationInSeconds = 2;
+  constructor(private service:EmployeeService, private snackbar:MatSnackBar) {
   }
 myName:string="Muhammad Osama Iftikhar"
   myEmail:string="osama@abc.com"
@@ -25,8 +31,16 @@ myName:string="Muhammad Osama Iftikhar"
   updateSetting()
   {
     this.service.updateProfileSetting(this.updateProfileSettingForm).subscribe({
-      next:value => console.log(value),
-      error:err => console.log(err)
+      next:value => this.snackbar.open("Information Updated", 'Close', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        duration: this.durationInSeconds * 1000,
+      }),
+      error:err => this.snackbar.open("Please fill the form", 'Close', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        duration: this.durationInSeconds * 1000,
+      })
     })
   }
 

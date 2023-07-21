@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {AdminService} from "../../services/admin.service";
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
 
 export interface leave {
   name: string,
@@ -15,17 +16,20 @@ export interface leave {
   styleUrls: ['./leave-management.component.css']
 })
 export class LeaveManagementComponent implements OnInit  {
-leaves:any
-  constructor(public dialog: MatDialog, private service:AdminService) {}
-acceptedData = {
-  applicationId: "",
-  status: "Accepted"
-}
-
-  rejectedData = {
+  //snackbar variables
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  durationInSeconds = 2;
+  leaves:any
+  constructor(public dialog: MatDialog, private service:AdminService, private snackbar:MatSnackBar) {}
+  acceptedData = {
     applicationId: "",
-    status: "Rejected"
+    status: "Accepted"
   }
+    rejectedData = {
+      applicationId: "",
+      status: "Rejected"
+    }
 ngOnInit()
 {
   this.service.getEmployeeLeaves().subscribe({
@@ -42,16 +46,32 @@ ngOnInit()
  {
    this.acceptedData.applicationId = applicationId
    this.service.approveLeave(this.acceptedData).subscribe({
-     next: value => {console.log(value)},
-     error: err => {console.log(err)}
+     next: value => this.snackbar.open("Leave Accepted", 'Close', {
+       horizontalPosition: this.horizontalPosition,
+       verticalPosition: this.verticalPosition,
+       duration: this.durationInSeconds * 1000,
+     }),
+     error: err => this.snackbar.open("An error occurred", 'Close', {
+       horizontalPosition: this.horizontalPosition,
+       verticalPosition: this.verticalPosition,
+       duration: this.durationInSeconds * 1000,
+     })
    })
  }
  rejectedLeave( applicationId:string)
  {
    this.rejectedData.applicationId = applicationId
    this.service.approveLeave(this.rejectedData).subscribe({
-     next: value => {console.log(value)},
-     error: err => {console.log(err)}
+     next: value =>this.snackbar.open("Leave Rejected", 'Close', {
+       horizontalPosition: this.horizontalPosition,
+       verticalPosition: this.verticalPosition,
+       duration: this.durationInSeconds * 1000,
+     }),
+     error: err => this.snackbar.open("An error occurred", 'Close', {
+       horizontalPosition: this.horizontalPosition,
+       verticalPosition: this.verticalPosition,
+       duration: this.durationInSeconds * 1000,
+     })
    })
  }
 }

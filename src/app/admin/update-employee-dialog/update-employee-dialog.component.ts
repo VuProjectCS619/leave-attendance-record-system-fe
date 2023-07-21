@@ -2,6 +2,7 @@ import {Component, Inject} from '@angular/core';
 import {AdminService} from "../../services/admin.service";
 import {IUpdateEmployee} from "../../interfaces/dtos";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-update-employee-dialog',
@@ -9,8 +10,11 @@ import {MAT_DIALOG_DATA} from "@angular/material/dialog";
   styleUrls: ['./update-employee-dialog.component.css']
 })
 export class UpdateEmployeeDialogComponent {
-
-  constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public empData: string) { }
+  //snackbar variables
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  durationInSeconds = 2;
+  constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public empData: string, private snackbar:MatSnackBar) { }
 
   updateEmployeeForm:IUpdateEmployee =
     {
@@ -35,12 +39,16 @@ export class UpdateEmployeeDialogComponent {
   updateEmployee()
   {
     this.service.updateEmployee(this.updateEmployeeForm, this.empData).subscribe({
-      next:value =>{
-        console.log(value)
-        this.getEmployeeList()
-
-      },
-      error:err => console.log(err)
+      next:value => this.snackbar.open("Updated Successfully", 'Close', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        duration: this.durationInSeconds * 1000,
+      }),
+      error:err => this.snackbar.open("An error occurred", 'Close', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        duration: this.durationInSeconds * 1000,
+      })
     })
   }
 }

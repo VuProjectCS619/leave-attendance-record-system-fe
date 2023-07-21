@@ -1,6 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {AdminService} from "../../services/admin.service";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-delete-employee-confirmation-dialog',
@@ -8,9 +9,12 @@ import {MAT_DIALOG_DATA} from "@angular/material/dialog";
   styleUrls: ['./delete-employee-confirmation-dialog.component.css']
 })
 export class DeleteEmployeeConfirmationDialogComponent {
-  empName:string = "Muhammad Osama Iftikhar"
+  //snackbar variables
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  durationInSeconds = 2;
 
-  constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public empData:any) {}
+  constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public empData:any, private snackbar:MatSnackBar) {}
 
   getEmployeeList(){
     this.service.getEmployee().subscribe({
@@ -26,10 +30,19 @@ export class DeleteEmployeeConfirmationDialogComponent {
   {
     this.service.deleteEmployee(this.empData).subscribe({
       next:value => {
-        console.log(value)
+        this.snackbar.open("Deleted Successfully", 'Close', {
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+          duration: this.durationInSeconds * 1000,
+        })
         this.getEmployeeList()
+
       },
-      error:err => console.log(err)
+      error:err => this.snackbar.open("An error occurred", 'Close', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        duration: this.durationInSeconds * 1000,
+      })
     })
   }
 }
