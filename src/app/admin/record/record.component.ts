@@ -9,8 +9,10 @@ import {AdminService} from "../../services/admin.service";
   styleUrls: ['./record.component.css']
 })
 export class RecordComponent implements  OnInit{
-  employeeLeaveRecord:any
-  userId:any
+  employeeLeaveRecord:any // to get leave record
+  user:any // to get employee record -> fetching id from user
+  employeeAttendanceRecord:any // to get attendance record
+
   constructor(private service:AdminService) {}
   ngOnInit()
   {
@@ -26,7 +28,7 @@ export class RecordComponent implements  OnInit{
 
     this.service.getEmployee().subscribe({
       next:value => {
-        this.userId = value.id
+        this.user = value
       },
       error:err => {
         console.log(err)
@@ -38,6 +40,7 @@ export class RecordComponent implements  OnInit{
     this.service.getEmployeeAttendanceRecord(id).subscribe({
       next:value => {
         console.log(value)
+        this.employeeAttendanceRecord = value
       },
       error:err => {
         console.log(err)

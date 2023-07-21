@@ -49,16 +49,30 @@
             <mat-form-field>
               <mat-label>Employee's</mat-label>
               <mat-select>
-                <mat-option *ngFor="let employee of employeeLeaveRecord"  [value]="employee['EmployeeId']">
-                  {{employee["EmployeeName"]}}
+                <mat-option *ngFor="let employee of user"
+                            (click)="getAttendance(employee.id)"
+                            [value]="employee.id">
+                            {{employee.name}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
-            <div class="self-end" *ngFor="let employee of employeeLeaveRecord">
-            <mat-card-actions>
-               <button mat-raised-button color="primary" (click)="getAttendance(employee['EmployeeId'])">Get Attendance</button>
-            </mat-card-actions>
-            </div>
+              <div >
+                <mat-expansion-panel *ngFor="let attendance of employeeAttendanceRecord"  >
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      {{attendance["attendanceDate"]|date:"mediumDate"}}
+                    </mat-panel-title>
+                    <mat-panel-description class="text-fuchsia-800">
+                      {{attendance["attendanceDate"]|date:"EEEE"}}
+                    </mat-panel-description>
+                  </mat-expansion-panel-header >
+                  <div class="flex flex-col gap-4">
+                    <p class="font-mono text-sm text-fuchsia-800">TIME IN:{{" "}}<span class="text-red-800">{{attendance["loginTime"]|date:"shortTime"}}</span> </p>
+                    <p class="font-mono text-sm text-fuchsia-800">TIME OUT:{{" "}} <span class="text-red-800 ">{{attendance["logoutTime"]|date:"shortTime"}}</span></p>
+                    <p class="font-mono text-sm text-fuchsia-800">WORKING HOURS:{{" "}} <span class="text-red-800 ">{{attendance["workingHours"]|number}}</span></p>
+                  </div>
+                </mat-expansion-panel>
+              </div>
           </div>
         </mat-card>
       </div>

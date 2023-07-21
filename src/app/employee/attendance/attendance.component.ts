@@ -16,14 +16,17 @@ export class AttendanceComponent {
   timeOut:any
   constructor(private service:EmployeeService) {
   }
-  public token = localStorage.getItem("auth_token")
+  attendance ={
+    loginTime: "",
+    logoutTime:"",
 
+  }
   logTimeIn()
   {
     this.service.logTimeIn().subscribe({
       next:value => {
         console.log(value)
-         localStorage.setItem("timeIn",value.loginTime )
+         this.attendance.loginTime = value.loginTime
 
       },
       error:err => console.log(err)
@@ -34,7 +37,7 @@ export class AttendanceComponent {
     this.service.logTimeOut().subscribe({
       next:value => {
         console.log(value)
-        localStorage.setItem("timeIn",value.loginOut )
+        this.attendance.logoutTime = value.logoutTime
       },
       error:err => console.log(err)
     })

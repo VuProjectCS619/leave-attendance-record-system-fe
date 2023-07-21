@@ -2,9 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {AdminService} from "../../services/admin.service";
 
-
-
-
 export interface leave {
   name: string,
   employeeID: string,
