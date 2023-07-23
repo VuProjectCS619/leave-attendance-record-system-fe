@@ -49,14 +49,14 @@
             <mat-form-field>
               <mat-label>Employee's</mat-label>
               <mat-select>
-                <mat-option *ngFor="let employee of user"
-                            (click)="getAttendance(employee.id)"
-                            [value]="employee.id">
-                            {{employee.name}}
+                <mat-option *ngFor="let employee of employeeLeaveRecord"
+                            (click)="getAttendance(employee['EmployeeId'])"
+                            [value]="employee['EmployeeId']">
+                            {{employee["EmployeeName"]}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
-              <div >
+              <div *ngIf="employeeAttendanceRecord">
                 <mat-expansion-panel *ngFor="let attendance of employeeAttendanceRecord"  >
                   <mat-expansion-panel-header>
                     <mat-panel-title>
@@ -73,6 +73,9 @@
                   </div>
                 </mat-expansion-panel>
               </div>
+            <mat-card-subtitle   *ngIf="!employeeAttendanceRecord">
+              <p>No Record Found</p>
+            </mat-card-subtitle>
           </div>
         </mat-card>
       </div>

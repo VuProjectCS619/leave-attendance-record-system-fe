@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
-import {ViewRecordDialogComponent} from "../view-record-dialog/view-record-dialog.component";
 import {AdminService} from "../../services/admin.service";
 
 @Component({
@@ -26,14 +24,6 @@ export class RecordComponent implements  OnInit{
         }
       })
 
-    this.service.getEmployee().subscribe({
-      next:value => {
-        this.user = value
-      },
-      error:err => {
-        console.log(err)
-      }
-    })
   }
   getAttendance(id:any)
   {

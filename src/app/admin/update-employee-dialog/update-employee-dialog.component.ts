@@ -44,7 +44,7 @@ export class UpdateEmployeeDialogComponent {
         verticalPosition: this.verticalPosition,
         duration: this.durationInSeconds * 1000,
       }),
-      error:err => this.snackbar.open("An error occurred", 'Close', {
+      error:err => this.snackbar.open("Please fill the form", 'Close', {
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
         duration: this.durationInSeconds * 1000,

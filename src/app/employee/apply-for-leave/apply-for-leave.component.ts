@@ -42,16 +42,22 @@ constructor(private service:EmployeeService, private snackbar:MatSnackBar) {}
   {
     this.service.applyForLeave(this.applyLeaveForm).subscribe({
 
-      next:value => this.snackbar.open("Successfully Applied", 'Close', {
-        horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,
-        duration: this.durationInSeconds * 1000,
-      }),
-      error:err => this.snackbar.open("Please Fill the form", 'Close', {
+      next:value => {
+        this.snackbar.open("Successfully Applied", 'Close', {
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+          duration: this.durationInSeconds * 1000,
+        })
+      },
+      error:err => {
+        this.snackbar.open("Please fill the form", 'Close', {
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
         duration: this.durationInSeconds * 1000,
       })
+      }
+
+
     })
   }
 

@@ -15,7 +15,6 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatTableModule} from "@angular/material/table";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatDialogModule} from "@angular/material/dialog";
-import { ViewRecordDialogComponent } from './view-record-dialog/view-record-dialog.component';
 import { UpdateEmployeeDialogComponent } from './update-employee-dialog/update-employee-dialog.component';
 import { DeleteEmployeeConfirmationDialogComponent } from './delete-employee-confirmation-dialog/delete-employee-confirmation-dialog.component';
 import { RestrictNegativeNumericValueDirective } from './restrict-negative-numeric-value.directive';
@@ -32,7 +31,6 @@ import {MatListModule} from "@angular/material/list";
         EmployeeManagementComponent,
         LeaveManagementComponent,
         RecordComponent,
-        ViewRecordDialogComponent,
         UpdateEmployeeDialogComponent,
         DeleteEmployeeConfirmationDialogComponent,
         RestrictNegativeNumericValueDirective,

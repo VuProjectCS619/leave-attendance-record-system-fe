@@ -27,7 +27,7 @@ export class LoginComponent {
   // check if email == admin go to admin dashboard else employee
   loggedIn(){
 
-    if(this.loginForm.email === "admin@xyz.com" && this.loginForm.password === "password" )
+    if(this.loginForm.email === "admin@gmail.com" && this.loginForm.password === "password" )
     {
       this.snackbar.open("Logged In", 'Close', {
         horizontalPosition: this.horizontalPosition,

@@ -9,7 +9,7 @@
               <!--Name -->
               <mat-form-field class="w-full" appearance="fill">
                 <mat-label>Name</mat-label>
-                <input [(ngModel)]="updateEmployeeForm.name" matInput placeholder="John Doe" >
+                <input [(ngModel)]="updateEmployeeForm.name"  matInput placeholder="John Doe" >
               </mat-form-field>
               <!--Update Password-->
               <mat-form-field class="w-full" appearance="fill">
@@ -52,8 +52,9 @@
             </mat-form-field>
           </div>
           <!--Button -->
-          <div mat-dialog-actions  >
-            <button (click)="updateEmployee()"  mat-button mat-dialog-close color="primary">UPDATE</button>
+          <div mat-dialog-actions  class="flex gap-2" >
+            <button (click)="updateEmployee()"  mat-dialog-close  mat-button color="accent">UPDATE</button>
+            <button  mat-button mat-dialog-close color="primary">CANCEL</button>
           </div>
         </div>
   </div>
