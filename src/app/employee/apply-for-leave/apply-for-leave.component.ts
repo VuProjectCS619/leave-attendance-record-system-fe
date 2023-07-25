@@ -20,8 +20,6 @@ constructor(private service:EmployeeService, private snackbar:MatSnackBar) {}
   applyLeaveForm:IApplyForLeave =
   {
     leaveType: "",
-    // hh: "",
-    // mm:"",
     descriptionLeave: "",
     fromDate: "",
     reason: "",

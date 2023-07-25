@@ -8,8 +8,8 @@ import {AdminService} from "../../services/admin.service";
 })
 export class RecordComponent implements  OnInit{
   employeeLeaveRecord:any // to get leave record
-  user:any // to get employee record -> fetching id from user
   employeeAttendanceRecord:any // to get attendance record
+  item:any
 
   constructor(private service:AdminService) {}
   ngOnInit()
@@ -31,6 +31,19 @@ export class RecordComponent implements  OnInit{
       next:value => {
         console.log(value)
         this.employeeAttendanceRecord = value
+      },
+      error:err => {
+        console.log(err)
+      }
+    })
+  }
+
+  getWorkingHour(id:any)
+  {
+    this.service.getEmployeeWorkingHours(id).subscribe({
+      next:value => {
+        console.log(value.WokedHours)
+        this.item = value.WokedHours
       },
       error:err => {
         console.log(err)

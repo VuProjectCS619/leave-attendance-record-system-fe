@@ -18,6 +18,10 @@ export class EmployeeService {
   {
     return this.http.get("attendance")
   }
+  getWorkingHour():Observable<any>
+  {
+    return this.http.get("attendance/workinghours")
+  }
   getAttendanceRecord(id:any)
   {
     return this.http.get(`/, ${id}`);

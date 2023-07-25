@@ -5,9 +5,19 @@
   <!--Tabs-->
   <mat-tab-group dynamicHeight>
     <!--Tab 1 Leave Request-->
-    <mat-tab label="LEAVE REQUEST">
+    <mat-tab label="LEAVE REQUESTS">
       <!-- Card -->
       <div class="flex gap-4 flex-wrap p-10 ">
+<!--        <mat-form-field>-->
+<!--          <mat-label>Employee's</mat-label>-->
+<!--          <mat-select>-->
+<!--            <mat-option *ngFor="let employee of leaves"-->
+<!--                        (click)="getLeaveRequestById(employee['employeeId'])"-->
+<!--                        [value]="employee['employeeId']">-->
+<!--              {{employee["employeeName"]}}-->
+<!--            </mat-option>-->
+<!--          </mat-select>-->
+<!--        </mat-form-field>-->
         <mat-card class="w-96 h-auto shadow-xl p-4 " *ngFor="let employeeLeaveReq of leaves">
           <div class="flex flex-col gap-4">
             <mat-card-title>Leave Day/s: {{employeeLeaveReq["appliedLeaveDays"]}}</mat-card-title>

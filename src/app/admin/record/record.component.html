@@ -78,6 +78,30 @@
             </mat-card-subtitle>
           </div>
         </mat-card>
+<!--    Working Hour    -->
+        <mat-card class="w-96 h-auto shadow-xl p-4" >
+          <div class="flex flex-col gap-4">
+            <mat-card-title>Working Hours (Overall)</mat-card-title>
+            <mat-form-field>
+              <mat-label>Employee's</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let employee of employeeLeaveRecord"
+                            (click)="getWorkingHour(employee['EmployeeId'])"
+                            [value]="employee['EmployeeId']">
+                  {{employee["EmployeeName"]}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div *ngIf="item">
+              <div>
+                <mat-card-subtitle>Working Hours: {{item}} </mat-card-subtitle>
+              </div>
+            </div>
+            <mat-card-subtitle *ngIf="!item">
+              <p>No Record Found</p>
+            </mat-card-subtitle>
+          </div>
+        </mat-card>
       </div>
 
     </mat-tab>

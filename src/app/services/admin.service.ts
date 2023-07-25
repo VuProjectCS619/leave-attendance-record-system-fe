@@ -17,6 +17,11 @@ export class AdminService {
   {
     return this.http.get(`admin/${id}/attendance`);
   }
+  getEmployeeWorkingHours(id:string):Observable<any>
+  {
+    return this.http.get(`admin/${id}/workinghours`);
+
+  }
   getEmployeeLeaveRecord():Observable<any>
   {
     return this.http.get("admin/leave-records");
@@ -34,9 +39,9 @@ export class AdminService {
   {
     return this.http.delete(`employee/${id}`);
   }
-  getEmployeeLeaves():Observable<any>
+  getEmployeeLeaves(id?:string):Observable<any>
   {
-    return this.http.get("admin/leave-applications")
+    return this.http.get("admin/leave-applications",)
   }
   approveLeave(data:any):Observable<any>
   {

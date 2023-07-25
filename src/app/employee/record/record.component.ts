@@ -11,6 +11,7 @@ import {EmployeeService} from "../../services/employee.service";
 export class RecordComponent implements OnInit{
 
   recordAttendance:any
+  item:any
 
   recordLeaves ={
     allowedCasualLeaves:0,
@@ -38,6 +39,10 @@ ngOnInit()
     error:err => {
       console.log(err)
     }
+  })
+  this.service.getWorkingHour().subscribe({
+    next:value => this.item = value.WokedHours,
+    error:err => console.log(err)
   })
 
   this.service.getLeaveRecord().subscribe({
