@@ -32,7 +32,6 @@ export class EmployeeManagementComponent implements OnInit {
       this.service.getEmployee().subscribe({
         next:value =>
         {
-          console.log(value)
           this.empData = value
         },
         error:err => console.log(err),

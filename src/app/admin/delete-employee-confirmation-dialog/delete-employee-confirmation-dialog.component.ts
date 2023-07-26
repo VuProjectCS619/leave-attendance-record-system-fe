@@ -16,16 +16,6 @@ export class DeleteEmployeeConfirmationDialogComponent {
 
   constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public empData:any, private snackbar:MatSnackBar) {}
 
-  getEmployeeList(){
-    this.service.getEmployee().subscribe({
-      next:value =>
-      {
-        console.log(value)
-      },
-      error:err => console.log(err),
-
-    })
-  }
   deleteEmp()
   {
     this.service.deleteEmployee(this.empData).subscribe({
@@ -35,7 +25,6 @@ export class DeleteEmployeeConfirmationDialogComponent {
           verticalPosition: this.verticalPosition,
           duration: this.durationInSeconds * 1000,
         })
-        this.getEmployeeList()
 
       },
       error:err => this.snackbar.open("An error occurred", 'Close', {

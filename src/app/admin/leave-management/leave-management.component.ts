@@ -34,7 +34,6 @@ ngOnInit()
 {
   this.service.getEmployeeLeaves().subscribe({
     next:value => {
-      console.log(value)
       this.leaves =value
     },
     error:err => {
@@ -42,19 +41,6 @@ ngOnInit()
     }
   })
 }
-
-// getLeaveRequestById(id:string)
-// {
-//   this.service.getEmployeeLeaves(id).subscribe({
-//     next:value => {
-//       console.log(value)
-//       this.leaves =value
-//     },
-//     error:err => {
-//       console.log(err)
-//     }
-//   })
-// }
  acceptLeave( applicationId:string)
  {
    this.acceptedData.applicationId = applicationId

@@ -16,7 +16,6 @@ export class RecordComponent implements  OnInit{
   {
       this.service.getEmployeeLeaveRecord().subscribe({
         next:value => {
-          console.log(value)
           this.employeeLeaveRecord = value
         },
         error: err => {
@@ -29,7 +28,6 @@ export class RecordComponent implements  OnInit{
   {
     this.service.getEmployeeAttendanceRecord(id).subscribe({
       next:value => {
-        console.log(value)
         this.employeeAttendanceRecord = value
       },
       error:err => {

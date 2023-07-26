@@ -21,7 +21,6 @@ export class AttendanceComponent {
 
   constructor(private service:EmployeeService, private snackbar:MatSnackBar) {
   }
-
   logTimeIn()
   {
     this.service.logTimeIn().subscribe({

@@ -39,9 +39,9 @@ export class AdminService {
   {
     return this.http.delete(`employee/${id}`);
   }
-  getEmployeeLeaves(id?:string):Observable<any>
+  getEmployeeLeaves():Observable<any>
   {
-    return this.http.get("admin/leave-applications",)
+    return this.http.get("admin/leave-applications")
   }
   approveLeave(data:any):Observable<any>
   {

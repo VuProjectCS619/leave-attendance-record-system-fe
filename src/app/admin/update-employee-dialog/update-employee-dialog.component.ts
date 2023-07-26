@@ -27,15 +27,7 @@ export class UpdateEmployeeDialogComponent {
       allowedCompensatoryLeaves: 0,
       allowedEarnedLeaves: 0
     }
-  getEmployeeList(){
-    this.service.getEmployee().subscribe({
-      next:value =>
-      {
-        console.log(value)
-      },
-      error:err => console.log(err),
-    })
-  }
+
   updateEmployee()
   {
     this.service.updateEmployee(this.updateEmployeeForm, this.empData).subscribe({

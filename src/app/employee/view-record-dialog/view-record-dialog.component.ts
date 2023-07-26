@@ -10,39 +10,5 @@ import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 export class ViewRecordDialogComponent {
 
   constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public data:any) {}
- attendanceRecord = [
-   {
-     date: new Date(),
-     day: new Date(),
-     TimeLog:{
-       timeIn:new Date(),
-       timeOut:new Date()
-     }
-   },
-   {
-     date: new Date(),
-     day: new Date(),
-     TimeLog:{
-       timeIn:new Date(),
-       timeOut:new Date()
-     }
-   },
-   {
-     date: new Date(),
-     day: new Date(),
-     TimeLog:{
-       timeIn:new Date(),
-       timeOut:new Date()
-     }
-   },
-   {
-     date: new Date(),
-     day: new Date(),
-     TimeLog:{
-       timeIn:new Date(),
-       timeOut:new Date()
-     }
-   },
 
- ]
 }

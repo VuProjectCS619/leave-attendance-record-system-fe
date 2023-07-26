@@ -33,7 +33,6 @@ ngOnInit()
 {
   this.service.getAttendance().subscribe({
     next:value => {
-      console.log(value)
       this.recordAttendance = value
     },
     error:err => {
@@ -47,8 +46,6 @@ ngOnInit()
 
   this.service.getLeaveRecord().subscribe({
     next:value => {
-      console.log(value)
-      // this.recordLeaves = value.allowedCasualLeaves
       this.recordLeaves.allowedCasualLeaves = value.allowedCasualLeaves
       this.recordLeaves.allowedCompensatoryLeaves = value.allowedCompensatoryLeaves
       this.recordLeaves.allowedEarnedLeaves = value.allowedEarnedLeaves
