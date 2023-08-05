@@ -26,7 +26,7 @@ constructor(private service:EmployeeService, private snackbar:MatSnackBar) {}
     toDate: ""
   }
 
-  user: IAddEmployee = JSON.parse(localStorage.getItem("user") || "")
+  user = JSON.parse(localStorage.getItem("user") || "")
   allowedCasualLeaves:number  = this.user ? this.user.allowedCasualLeaves : 0
   allowedCompensatoryLeaves:number  = this.user ? this.user.allowedCompensatoryLeaves : 0
   allowedEarnedLeaves:number  = this.user ? this.user.allowedEarnedLeaves : 0

@@ -17,9 +17,6 @@ export interface IAddEmployee
   allowedEarnedLeaves: number,
   allowedCasualLeaves: number,
   allowedCompensatoryLeaves: number
-  consumedCasualLeaves: number;
-  consumedCompensatoryLeaves: number;
-  consumedEarnedLeaves: number;
 }
 export interface IUpdateEmployee
 {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IAddEmployee, ILogin} from "../../interfaces/dtos";
 
 @Component({
@@ -6,7 +6,7 @@ import {IAddEmployee, ILogin} from "../../interfaces/dtos";
   templateUrl: './side-nav-employee.component.html',
   styleUrls: ['./side-nav-employee.component.css']
 })
-export class SideNavEmployeeComponent {
+export class SideNavEmployeeComponent implements OnInit{
   user: IAddEmployee = JSON.parse(localStorage.getItem("user") || "")
   greeting:string  = this.user ? this.user.name : ""
   logOut(){
@@ -24,5 +24,9 @@ export class SideNavEmployeeComponent {
   // Function to set the selected option
   setSelectedOption(option: any) {
     this.options.forEach(opt => (opt.active = opt === option));
+  }
+
+  ngOnInit() {
+    this.setSelectedOption(this.options[0])
   }
 }

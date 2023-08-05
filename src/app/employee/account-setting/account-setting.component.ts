@@ -14,19 +14,18 @@ export class AccountSettingComponent {
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   durationInSeconds = 2;
-  constructor(private service:EmployeeService, private snackbar:MatSnackBar) {
-  }
-myName:string="Muhammad Osama Iftikhar"
-  myEmail:string="osama@abc.com"
-  mySalary:number=100000
-  myDesignation:string="Angular Developer"
-  myContact:string="+923136784434"
+  constructor(private service:EmployeeService, private snackbar:MatSnackBar) {}
+
+  user = JSON.parse(localStorage.getItem("user") || "")
+  userName :string = this.user? this.user.name: ""
+  userPassword :string = this.user? this.user.password: ""
+  userContact :string = this.user? this.user.contact: ""
 
   updateProfileSettingForm:IUpdateProfileSetting =
     {
-      name: "",
-      password: "",
-      contact:""
+      name: this.userName,
+      password: this.userPassword,
+      contact:this.userContact
     }
   updateSetting()
   {

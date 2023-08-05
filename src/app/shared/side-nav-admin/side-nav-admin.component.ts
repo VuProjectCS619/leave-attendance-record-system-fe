@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'side-nav-admin',
   templateUrl: './side-nav-admin.component.html',
   styleUrls: ['./side-nav-admin.component.css']
 })
-export class SideNavAdminComponent {
+export class SideNavAdminComponent implements OnInit{
   options = [
     { name: 'Add an Employee', active: false, path:"/admin/add-employee", icon:"note_add" },
     { name: 'Employee Management ', active: false, path:"/admin/employee-management", icon:"supervised_user_circle" },
@@ -17,5 +17,9 @@ export class SideNavAdminComponent {
   // Function to set the selected option
   setSelectedOption(option: any) {
     this.options.forEach(opt => (opt.active = opt === option));
+  }
+
+  ngOnInit() {
+    this.setSelectedOption(this.options[0])
   }
 }

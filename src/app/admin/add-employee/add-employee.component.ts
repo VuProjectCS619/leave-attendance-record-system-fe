@@ -25,19 +25,18 @@ export class AddEmployeeComponent {
       allowedCasualLeaves: 0,
       allowedCompensatoryLeaves: 0,
       allowedEarnedLeaves: 0,
-      consumedCasualLeaves: 0,
-      consumedCompensatoryLeaves: 0,
-      consumedEarnedLeaves: 0,
     }
 
     addEmployee()
     {
      this.service.addEmployee(this.addEmployeeForm).subscribe({
-       next:value => this.snackbar.open("Added Successfully", 'Close', {
-         horizontalPosition: this.horizontalPosition,
-         verticalPosition: this.verticalPosition,
-         duration: this.durationInSeconds * 1000,
-       }),
+       next:value =>{
+         this.snackbar.open("Added Successfully", 'Close', {
+           horizontalPosition: this.horizontalPosition,
+           verticalPosition: this.verticalPosition,
+           duration: this.durationInSeconds * 1000,
+         })
+       },
        error:err => this.snackbar.open("Please fill the form", 'Close', {
          horizontalPosition: this.horizontalPosition,
          verticalPosition: this.verticalPosition,

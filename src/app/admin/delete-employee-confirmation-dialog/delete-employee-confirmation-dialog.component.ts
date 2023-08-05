@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {AdminService} from "../../services/admin.service";
-import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
 
 @Component({
@@ -14,12 +14,13 @@ export class DeleteEmployeeConfirmationDialogComponent {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   durationInSeconds = 2;
 
-  constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public empData:any, private snackbar:MatSnackBar) {}
+  constructor(private service:AdminService, private dialogRef:MatDialogRef<any>,@Inject(MAT_DIALOG_DATA) public empData:any, private snackbar:MatSnackBar) {}
 
   deleteEmp()
   {
     this.service.deleteEmployee(this.empData).subscribe({
       next:value => {
+        this.dialogRef.close(true)
         this.snackbar.open("Deleted Successfully", 'Close', {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,

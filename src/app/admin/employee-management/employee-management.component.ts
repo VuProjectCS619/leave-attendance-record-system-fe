@@ -16,27 +16,46 @@ export class EmployeeManagementComponent implements OnInit {
   empData:any // getting values here from api
   constructor(public dialog: MatDialog, public service:AdminService) {}
 
-  updateEmpDialog(data:string) {
-     this.dialog.open(UpdateEmployeeDialogComponent,{
+  updateEmpDialog(data:any) {
+     const dialogRef = this.dialog.open(UpdateEmployeeDialogComponent,{
       data,
     });
+     dialogRef.afterClosed().subscribe({
+       next:value => {
+         if (value){
+           this.getEmployeeList()
+         }
+       }
+     })
   }
   openDeleteDialog(data:string) {
-    this.dialog.open(DeleteEmployeeConfirmationDialogComponent,{
+    const dialogRef = this.dialog.open(DeleteEmployeeConfirmationDialogComponent,{
        data,
     });
+    dialogRef.afterClosed().subscribe({
+      next:value => {
+        if (value){
+          this.getEmployeeList()
+        }
+      }
+    })
   }
 
+  getEmployeeList(){
+    this.service.getEmployee().subscribe({
+      next:value =>
+      {
+        this.empData = value
+      },
+      error:err => console.log(err)
+
+    })
+  }
   ngOnInit()
   {
-      this.service.getEmployee().subscribe({
-        next:value =>
-        {
-          this.empData = value
-        },
-        error:err => console.log(err),
-
-      })
+    this.getEmployeeList()
   }
 
+
 }
+

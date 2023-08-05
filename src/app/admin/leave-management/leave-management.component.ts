@@ -32,6 +32,10 @@ export class LeaveManagementComponent implements OnInit  {
     }
 ngOnInit()
 {
+  this.getEmployeeLeaves()
+}
+
+getEmployeeLeaves(){
   this.service.getEmployeeLeaves().subscribe({
     next:value => {
       this.leaves =value
@@ -45,11 +49,14 @@ ngOnInit()
  {
    this.acceptedData.applicationId = applicationId
    this.service.approveLeave(this.acceptedData).subscribe({
-     next: value => this.snackbar.open("Leave Accepted", 'Close', {
-       horizontalPosition: this.horizontalPosition,
-       verticalPosition: this.verticalPosition,
-       duration: this.durationInSeconds * 1000,
-     }),
+     next: value => {
+       this.getEmployeeLeaves()
+       this.snackbar.open("Leave Accepted", 'Close', {
+         horizontalPosition: this.horizontalPosition,
+         verticalPosition: this.verticalPosition,
+         duration: this.durationInSeconds * 1000,
+       })
+     },
      error: err => this.snackbar.open("An error occurred", 'Close', {
        horizontalPosition: this.horizontalPosition,
        verticalPosition: this.verticalPosition,
@@ -61,11 +68,14 @@ ngOnInit()
  {
    this.rejectedData.applicationId = applicationId
    this.service.approveLeave(this.rejectedData).subscribe({
-     next: value =>this.snackbar.open("Leave Rejected", 'Close', {
-       horizontalPosition: this.horizontalPosition,
-       verticalPosition: this.verticalPosition,
-       duration: this.durationInSeconds * 1000,
-     }),
+     next: value =>{
+       this.getEmployeeLeaves()
+       this.snackbar.open("Leave Rejected", 'Close', {
+         horizontalPosition: this.horizontalPosition,
+         verticalPosition: this.verticalPosition,
+         duration: this.durationInSeconds * 1000,
+       })
+     },
      error: err => this.snackbar.open("An error occurred", 'Close', {
        horizontalPosition: this.horizontalPosition,
        verticalPosition: this.verticalPosition,
