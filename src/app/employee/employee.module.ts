@@ -23,6 +23,7 @@ import {AdminModule} from "../admin/admin.module";
 import { TwoDigitValDirective } from './two-digit-val.directive';
 import {MatListModule} from "@angular/material/list";
 import { MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatTableModule} from "@angular/material/table";
 
 
 
@@ -58,7 +59,8 @@ import { MatSnackBarModule} from "@angular/material/snack-bar";
         FormsModule,
         AdminModule,
         MatListModule,
-      MatSnackBarModule
+        MatSnackBarModule,
+        MatTableModule
 
     ]
 })

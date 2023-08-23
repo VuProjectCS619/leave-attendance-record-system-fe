@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {IApplyForLeave} from "../../interfaces/dtos";
 import {EmployeeService} from "../../services/employee.service";
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
-
-
 @Component({
   selector: 'app-apply-for-leave',
   templateUrl: './apply-for-leave.component.html',
@@ -65,9 +63,13 @@ constructor(private service:EmployeeService, private snackbar:MatSnackBar) {}
         duration: this.durationInSeconds * 1000,
       })
       }
-
-
     })
   }
-
+  data = [
+    {description: "Casual Leave", allowed: this.allowedCasualLeaves, consumed: this.consumedCasualLeaves, totalBalance: this.balanceCasualLeaves},
+    {description: "Compensatory Leave", allowed: this.allowedCompensatoryLeaves, consumed: this.consumedCompensatoryLeaves, totalBalance: this.balanceCompensatoryLeaves},
+    {description: "Earned Leave", allowed: this.allowedEarnedLeaves, consumed: this.consumedEarnedLeaves, totalBalance: this.balanceEarnedLeaves},
+  ];
+  displayedColumns: string[] = ['Description Type', 'Allowed Leaves', 'Consumed Leaves', 'Balance'];
+  dataSource = this.data;
 }
