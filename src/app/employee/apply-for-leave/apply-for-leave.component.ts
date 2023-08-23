@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {IAddEmployee, IApplyForLeave} from "../../interfaces/dtos";
+import {IApplyForLeave} from "../../interfaces/dtos";
 import {EmployeeService} from "../../services/employee.service";
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
 
@@ -9,7 +9,7 @@ import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition}
   templateUrl: './apply-for-leave.component.html',
   styleUrls: ['./apply-for-leave.component.css']
 })
-export class ApplyForLeaveComponent  implements OnInit{
+export class ApplyForLeaveComponent {
 constructor(private service:EmployeeService, private snackbar:MatSnackBar) {}
 //snackbar variables
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
@@ -36,6 +36,17 @@ constructor(private service:EmployeeService, private snackbar:MatSnackBar) {}
   balanceCasualLeaves:number = this.user.allowedCasualLeaves - this.user.consumedCasualLeaves
   balanceCompensatoryLeaves:number = this.user.allowedCompensatoryLeaves - this.user.consumedCompensatoryLeaves
   balanceEarnedLeaves:number = this.user.allowedEarnedLeaves - this.user.consumedEarnedLeaves
+  getLeaveStatus(){
+    this.service.getEmployeeLeaveStatus().subscribe({
+      next:value => {
+        console.log(value)
+        this.leaveStats = value
+      },
+      error:err => {
+        console.log(err)
+      }
+    })
+  }
   applyLeave()
   {
     this.service.applyForLeave(this.applyLeaveForm).subscribe({
@@ -58,18 +69,5 @@ constructor(private service:EmployeeService, private snackbar:MatSnackBar) {}
 
     })
   }
-
-  ngOnInit() {
-  this.service.getEmployeeLeaveStatus().subscribe({
-    next:value => {
-      console.log(value)
-      this.leaveStats = value
-    },
-    error:err => {
-      console.log(err)
-    }
-  })
-  }
-
 
 }

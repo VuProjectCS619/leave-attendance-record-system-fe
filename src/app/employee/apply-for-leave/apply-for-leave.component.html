@@ -3,7 +3,7 @@
     <p class=" text-lg font-bold text-fuchsia-800">Apply for Leave</p>
   </div>
   <!--Tabs-->
-  <mat-tab-group  dynamicHeight  >
+  <mat-tab-group  dynamicHeight  (click)="getLeaveStatus()">
     <!--Tab 1 Apply for leave-->
     <mat-tab label="APPLY FOR LEAVE" >
       <!-- Card -->
@@ -99,7 +99,7 @@
       </div>
     </mat-tab>
     <!-- Tab 2 leave Status     -->
-    <mat-tab label="LEAVE STATUS">
+    <mat-tab  label="LEAVE STATUS" >
       <!-- Card -->
       <div class="flex gap-4 flex-wrap p-10" >
         <mat-card class="w-96 h-auto shadow-xl p-4 flex-col gap-4 " *ngFor="let leave of leaveStats" >

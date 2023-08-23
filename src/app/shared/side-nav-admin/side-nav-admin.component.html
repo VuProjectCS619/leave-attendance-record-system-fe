@@ -12,6 +12,9 @@
           <mat-icon>{{option.icon}}</mat-icon> {{ option.name }}
         </div>
       </div>
+      <div class="ml-2 cursor-pointer px-4 flex items-center gap-4" (click)="logOut()">
+        <mat-icon>exit_to_app</mat-icon>Logout
+      </div>
     </mat-list>
   </mat-drawer>
   <!-- main content -->

@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {IAddEmployee, ILogin} from "../../interfaces/dtos";
+import {IAddEmployee} from "../../interfaces/dtos";
+import {Router} from "@angular/router";
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
+
 
 @Component({
   selector: 'side-nav-employee',
@@ -7,10 +10,24 @@ import {IAddEmployee, ILogin} from "../../interfaces/dtos";
   styleUrls: ['./side-nav-employee.component.css']
 })
 export class SideNavEmployeeComponent implements OnInit{
-  user: IAddEmployee = JSON.parse(localStorage.getItem("user") || "")
-  greeting:string  = this.user ? this.user.name : ""
+  constructor(private router:Router, private snackbar:MatSnackBar) {}
+
+  user: IAddEmployee = JSON.parse(localStorage.getItem("user") || "");
+  greeting:string  = this.user ? this.user.name : "";
+
+  //snackbar variables
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  durationInSeconds = 2;
   logOut(){
     localStorage.clear()
+    localStorage.removeItem("user");
+    this.router.navigate(['']);
+    this.snackbar.open("Logged out", 'Close', {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+      duration: this.durationInSeconds * 1000,
+    });
   }
 
   options = [
@@ -18,7 +35,6 @@ export class SideNavEmployeeComponent implements OnInit{
     { name: 'Apply for Leave', active: false, path:"/employee/apply-for-leave", icon:"time_to_leave" },
     { name: 'Leave/Attendance Record', active: false, path:"/employee/record", icon:"receipt" },
     { name: 'Account Settings', active: false, path:"/employee/account-setting", icon:"settings" },
-    { name: 'Logout', active: false, path:"", icon:"exit_to_app" }
   ];
 
   // Function to set the selected option
