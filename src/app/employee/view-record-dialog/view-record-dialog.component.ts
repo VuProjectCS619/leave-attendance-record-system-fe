@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
-import {AdminService} from "../../services/admin.service";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {EmployeeService} from "../../services/employee.service";
 
 @Component({
   selector: 'app-view-record-dialog',
@@ -9,6 +9,21 @@ import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 })
 export class ViewRecordDialogComponent {
 
-  constructor(private service:AdminService, @Inject(MAT_DIALOG_DATA) public data:any) {}
+  constructor(private service:EmployeeService, @Inject(MAT_DIALOG_DATA) public data:any) {}
 
+  dateForm = {
+    fromDate:"",
+    toDate:""
+  }
+
+  getAttendance(){
+    this.service.getAttendance(this.dateForm.fromDate, this.dateForm.toDate).subscribe({
+      next:value => {
+        console.log(value)
+      },
+      error:err => {
+        console.log(err)
+      }
+    })
+  }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient,HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -14,17 +14,23 @@ export class EmployeeService {
   {
     return this.http.get("user/leave-applications")
   }
-  getAttendance():Observable<any>
+  getAttendance(fromDate?: string, toDate?: string):Observable<any>
   {
-    return this.http.get("attendance")
+    // Creating an instance of HttpParams to set query parameters
+    let params = new HttpParams()
+    // Checking if fromDate and toDate are provided and add them to the params if they exist
+    if (fromDate) {
+      params = params.set('fromDate', fromDate);
+    }
+
+    if (toDate) {
+      params = params.set('toDate', toDate);
+    }
+    return this.http.get("attendance", { params })
   }
   getWorkingHour():Observable<any>
   {
     return this.http.get("attendance/workinghours")
-  }
-  getAttendanceRecord(id:any)
-  {
-    return this.http.get(`/, ${id}`);
   }
   getLeaveRecord():Observable<any>
   {
