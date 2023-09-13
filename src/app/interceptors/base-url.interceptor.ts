@@ -16,8 +16,8 @@ export class BaseUrlInterceptor implements HttpInterceptor {
     // cloned headers, updated with the authorization.// Clone the request and set the new header in one step.
     const authReq = request.clone({url : `${baseUrl}${request.url}`, setHeaders: { Authorization:  "bearer " + localStorage.getItem('auth_token') || "" } });
     // send cloned request with header to the next handler.
-    return next.handle(authReq);
     // console.log("request" , authReq)
+    return next.handle(authReq);
 
   }
 }

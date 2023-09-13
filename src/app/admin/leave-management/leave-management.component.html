@@ -30,11 +30,11 @@
             <!--Button -->
             <div class="flex w-full justify-end gap-2" >
               <button mat-raised-button color="primary"
-                      [disabled]="employeeLeaveReq.status === 'Accepted' || employeeLeaveReq.status === 'Rejected'"
+                      [ngClass]="{'hideBtn':employeeLeaveReq.status === 'Accepted' || employeeLeaveReq.status === 'Rejected'}"
                       (click)="acceptLeave(employeeLeaveReq.id)">ACCEPT
               </button>
               <button mat-raised-button color="warn"
-                      [disabled]="employeeLeaveReq.status === 'Rejected' || employeeLeaveReq.status === 'Accepted'"
+                      [ngClass]="{'hideBtn':employeeLeaveReq.status === 'Accepted' || employeeLeaveReq.status === 'Rejected'}"
                       (click)="rejectedLeave(employeeLeaveReq.id)">REJECT
               </button>
             </div>

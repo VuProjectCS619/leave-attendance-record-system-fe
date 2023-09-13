@@ -14,6 +14,7 @@ export class SideNavEmployeeComponent implements OnInit{
 
   user: IAddEmployee = JSON.parse(localStorage.getItem("user") || "");
   greeting:string  = this.user ? this.user.name : "";
+  contact:string = this.user ? this.user.contact : "";
 
   //snackbar variables
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';

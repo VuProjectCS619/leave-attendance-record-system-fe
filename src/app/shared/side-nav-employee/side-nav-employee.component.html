@@ -1,7 +1,9 @@
 <mat-drawer-container class="w-screen h-screen" autosize>
   <!-- drawer options -->
   <mat-drawer  mode="side" opened class="w-72 drawer-container">
-    <p class="text-lg font-semibold p-4">Company ABC</p>
+    <div class="flex justify-center mt-2">
+      <img class=" h-24 " src="./assets/vu.png" alt="">
+    </div>
     <mat-list>
       <div class="flex flex-col p-2 mt-2 mb-8 w-full"
            *ngFor="let option of options"
@@ -21,7 +23,7 @@
   <mat-drawer-content>
     <div class="sticky top-0 z-10 bg-white">
       <div class="flex gap-2 justify-between items-center p-1">
-        <p class="p-4 text-xl font-semibold">Welcome: {{greeting}}</p>
+        <p class="p-4 text-lg font-semibold">Welcome: {{greeting}} <span class="text-fuchsia-800 text-lg font-medium"> ({{contact}})</span></p>
         <!-- Show on small and medium screen -->
         <div class="show-icon mr-2">
           <button mat-button [matMenuTriggerFor]="menu"><mat-icon>tune</mat-icon></button>
