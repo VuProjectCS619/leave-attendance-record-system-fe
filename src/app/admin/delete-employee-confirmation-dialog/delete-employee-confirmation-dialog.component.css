@@ -1,0 +1,4 @@
+div[mat-dialog-content]{
+  @apply
+  text-blue-800
+}

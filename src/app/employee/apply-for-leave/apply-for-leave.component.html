@@ -1,15 +1,15 @@
 <div class=" flex flex-col gap-4">
   <div>
-    <p class=" text-lg font-bold text-fuchsia-800">Apply for Leave</p>
+    <p class="text-xl font-medium text-blue-800 underline">Apply for Leave</p>
   </div>
   <!--Tabs-->
   <mat-tab-group  dynamicHeight  (click)="getLeaveStatus()">
     <!--Tab 1 Apply for leave-->
     <mat-tab label="APPLY FOR LEAVE" >
       <!-- Card -->
-      <div class="flex flex-col gap-10 p-10 " >
+      <div class="flex flex-col gap-10 py-10 " >
         <!--  Table   -->
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="shadow-lg">
           <!-- Description Type Column -->
           <ng-container matColumnDef="Description Type">
             <th mat-header-cell *matHeaderCellDef></th>
@@ -38,7 +38,7 @@
           <div class="flex flex-col gap-1">
             <div class="flex flex-col gap-2">
               <mat-card-title >Apply For Leave</mat-card-title>
-              <mat-card-subtitle class="text-red-800 text-xs">Note: Check your Leave limit before applying for leave.</mat-card-subtitle>
+              <mat-card-subtitle class="text-red-800 text-xs">Note: Half Leave will be deducted as (.5) from yours leaves</mat-card-subtitle>
             </div>
             <div class="flex w-full justify-between gap-2">
               <!-- Date Picker-->
@@ -82,8 +82,8 @@
             </mat-form-field>
             <mat-card-actions>
               <!--Button -->
-              <div class="flex w-full justify-end " >
-                <button (click)="applyLeave()" mat-raised-button  color="primary">APPLY</button>
+              <div class="flex w-full justify-center " >
+                <button class="w-96" (click)="applyLeave()" mat-raised-button  color="primary">APPLY</button>
               </div>
             </mat-card-actions>
           </div>
@@ -93,7 +93,7 @@
     <!-- Tab 2 leave Status     -->
     <mat-tab  label="LEAVE STATUS" >
       <!-- Card -->
-      <div class="flex gap-4 flex-wrap p-10" >
+      <div class="flex gap-4 flex-wrap py-10" >
         <mat-card class="w-96 h-auto shadow-xl p-4 flex-col gap-4 " *ngFor="let leave of leaveStats" >
           <div class="flex flex-col gap-2">
             <mat-card-title >Leave Status</mat-card-title>

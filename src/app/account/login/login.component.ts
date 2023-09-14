@@ -15,7 +15,7 @@ export class LoginComponent {
   durationInSeconds = 2;
   leaves:any
   constructor(private service:AccountLoginService  , private route : Router, private snackbar:MatSnackBar) {}
-  empty = true
+  
   hide= true
 
   loginForm:ILogin =

@@ -1,10 +1,4 @@
-mat-card{
-  @apply
-  bg-gray-200
-}
-
-mat-expansion-panel{
+mat-card[customColor]{
   @apply
   bg-gray-100
-
 }

@@ -1,25 +1,25 @@
 <div class=" flex flex-col gap-4">
   <div>
-    <p class=" text-lg font-bold text-fuchsia-800">Leave/Attendance Record </p>
+    <p class="text-xl font-medium text-blue-800 underline">Leave/Attendance Record </p>
   </div>
   <!--Tabs-->
   <mat-tab-group  dynamicHeight  >
     <!--Tab 1 Leave Request-->
     <mat-tab label="LEAVE RECORD" >
     <!--   Table    -->
-      <div class="flex flex-col gap-2 flex-wrap p-10 " >
+      <div class="flex flex-col gap-2 flex-wrap py-10 " >
         <mat-accordion>
           <mat-expansion-panel *ngFor="let employee of employeeLeaveRecord" >
             <mat-expansion-panel-header>
               <mat-panel-title>
                 Name/Contact Number
               </mat-panel-title>
-              <mat-panel-description class="text-fuchsia-800">
+              <mat-panel-description class="text-blue-800">
                 {{employee["EmployeeName"]}}, {{employee["EmployeeContact"]}}
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <div class="flex gap-4 justify-center  p-10" >
-              <mat-card class="w-full h-auto shadow-xl p-4" >
+            <div class="flex gap-4 justify-center py-2" >
+              <mat-card customColor class="w-full h-auto shadow-xl p-4" >
                 <div class="flex flex-col gap-4">
                   <mat-card-title>Leave Record</mat-card-title>
                   <mat-divider></mat-divider>
@@ -42,7 +42,7 @@
     <!-- Tab 2 Add Leave     -->
     <mat-tab label="ATTENDANCE RECORD">
       <!-- Card -->
-      <div class="flex gap-4 flex-wrap p-10"   >
+      <div class="flex gap-4 flex-wrap py-10"   >
         <mat-card class="w-96 h-auto shadow-xl p-4" >
           <div class="flex flex-col gap-4">
             <mat-card-title>Attendance</mat-card-title>
@@ -62,19 +62,19 @@
                     <mat-panel-title>
                       {{attendance["attendanceDate"]|date:"mediumDate"}}
                     </mat-panel-title>
-                    <mat-panel-description class="text-fuchsia-800">
+                    <mat-panel-description class="text-blue-800">
                       {{attendance["attendanceDate"]|date:"EEEE"}}
                     </mat-panel-description>
                   </mat-expansion-panel-header >
                   <div class="flex flex-col gap-4">
-                    <p class="font-mono text-sm text-fuchsia-800">TIME IN:{{" "}}<span class="text-red-800">{{attendance["loginTime"]|date:"shortTime"}}</span> </p>
-                    <p class="font-mono text-sm text-fuchsia-800">TIME OUT:{{" "}} <span class="text-red-800 ">{{attendance["logoutTime"]|date:"shortTime"}}</span></p>
-                    <p class="font-mono text-sm text-fuchsia-800">WORKING HOURS:{{" "}} <span class="text-red-800 ">{{attendance["workingHours"]|number}}</span></p>
+                    <p class="font-mono text-sm text-blue-800">TIME IN:{{" "}}<span class="text-red-800">{{attendance["loginTime"]|date:"shortTime"}}</span> </p>
+                    <p class="font-mono text-sm text-blue-800">TIME OUT:{{" "}} <span class="text-red-800 ">{{attendance["logoutTime"]|date:"shortTime"}}</span></p>
+                    <p class="font-mono text-sm text-blue-800">WORKING HOURS:{{" "}} <span class="text-red-800 ">{{attendance["workingHours"]|number}}</span></p>
                   </div>
                 </mat-expansion-panel>
               </div>
             <mat-card-subtitle   *ngIf="!employeeAttendanceRecord">
-              <p>No Record Found</p>
+              <p class="text-blue-800">No Record Found</p>
             </mat-card-subtitle>
           </div>
         </mat-card>
@@ -94,19 +94,17 @@
             </mat-form-field>
             <div *ngIf="item">
               <div>
-                <mat-card-subtitle>Working Hours: {{item}} </mat-card-subtitle>
+                <mat-card-subtitle class="text-black">Working Hours: <span class="text-blue-800"> {{item}}</span>  </mat-card-subtitle>
               </div>
             </div>
             <mat-card-subtitle *ngIf="!item">
-              <p>No Record Found</p>
+              <p class="text-blue-800">No Record Found</p>
             </mat-card-subtitle>
           </div>
         </mat-card>
       </div>
-
     </mat-tab>
   </mat-tab-group>
-
 </div>
 
 

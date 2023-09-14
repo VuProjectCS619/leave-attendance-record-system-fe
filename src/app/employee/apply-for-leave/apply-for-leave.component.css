@@ -1,9 +1,0 @@
-mat-card{
-  @apply
-  bg-gray-200
-}
-
-table[mat-table]{
-  @apply
-  bg-gray-200
-}
