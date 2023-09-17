@@ -14,17 +14,17 @@ export class EmployeeService {
   {
     return this.http.get("user/leave-applications")
   }
-  getAttendance(fromDate?: string, toDate?: string):Observable<any>
+  getAttendance(fromDate?: Date, toDate?: Date):Observable<any>
   {
     // Creating an instance of HttpParams to set query parameters
     let params = new HttpParams()
     // Checking if fromDate and toDate are provided and add them to the params if they exist
     if (fromDate) {
-      params = params.set('fromDate', fromDate);
+      params = params.set('fromDate', fromDate.toString());
     }
 
     if (toDate) {
-      params = params.set('toDate', toDate);
+      params = params.set('toDate', toDate.toString());
     }
     return this.http.get("attendance", { params })
   }

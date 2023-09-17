@@ -11,6 +11,7 @@ import {AdminModule} from "./admin/admin.module";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {BaseUrlInterceptor} from "./interceptors/base-url.interceptor";
 import {FormsModule} from "@angular/forms";
+import {DatePipe} from "@angular/common";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {FormsModule} from "@angular/forms";
       provide: HTTP_INTERCEPTORS,
       useClass: BaseUrlInterceptor,
       multi: true,
-    }
+    },
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

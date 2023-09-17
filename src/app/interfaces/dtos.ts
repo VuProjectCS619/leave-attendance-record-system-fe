@@ -46,3 +46,8 @@ export interface IUpdateProfileSetting
   password:string
   contact:string
 }
+
+export interface IAttendanceDate{
+  fromDate:Date|string
+  toDate:Date|string
+}
