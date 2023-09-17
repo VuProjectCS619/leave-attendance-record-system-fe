@@ -42,6 +42,15 @@
             </div>
             <div class="flex w-full justify-between gap-2">
               <!-- Date Picker-->
+                <!-- From Date -->
+              <mat-form-field appearance="fill" class="w-full">
+                <mat-label>From Date</mat-label>
+                <input [(ngModel)]="applyLeaveForm.fromDate" matInput [matDatepicker]="fromPicker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="fromPicker"></mat-datepicker-toggle>
+                <mat-datepicker #fromPicker></mat-datepicker>
+              </mat-form-field>
+                <!-- To Date -->
               <mat-form-field appearance="fill" class="w-full">
                 <mat-label>To Date</mat-label>
                 <input [(ngModel)]="applyLeaveForm.toDate" matInput [matDatepicker]="toPicker">
@@ -49,13 +58,7 @@
                 <mat-datepicker-toggle matIconSuffix [for]="toPicker"></mat-datepicker-toggle>
                 <mat-datepicker #toPicker></mat-datepicker>
               </mat-form-field>
-              <mat-form-field appearance="fill" class="w-full">
-                  <mat-label>From Date</mat-label>
-                  <input [(ngModel)]="applyLeaveForm.fromDate" matInput [matDatepicker]="fromPicker">
-                  <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="fromPicker"></mat-datepicker-toggle>
-                <mat-datepicker #fromPicker></mat-datepicker>
-              </mat-form-field>
+
             </div>
             <div class="flex w-full justify-between gap-2">
                <!--Dropdown -->
@@ -100,7 +103,7 @@
             <mat-card-subtitle class="text-red-800">Note: In any case contact your admin for leave approval.</mat-card-subtitle>
           </div>
           <div class="flex flex-col gap-4">
-            <p class=" text-xs font-semibold">Applied for Leave:{{" "}}<span class="font-normal ">{{leave["toDate"]|date:"dd, MMMM, yyyy"}} - {{leave["fromDate"]|date:"dd, MMMM, yyyy"}}</span> </p>
+            <p class=" text-xs font-semibold">Applied for Leave:{{" "}}<span class="font-normal ">{{leave["fromDate"]|date:"dd, MMMM, yyyy"}} - {{leave["toDate"]|date:"dd, MMMM, yyyy"}}</span> </p>
             <p class=" text-xs font-semibold">Status:{{" "}}<span class="font-normal ">{{leave.status}}</span> </p>
             <p class=" text-xs font-semibold">Leave Type:{{" "}}<span class="font-normal ">{{leave["leaveType"]|uppercase}}</span> </p>
             <p class=" text-xs font-semibold">Reason:{{" "}}<span class="font-normal ">{{leave.reason}}</span> </p>
