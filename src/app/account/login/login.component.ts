@@ -15,14 +15,14 @@ export class LoginComponent {
   durationInSeconds = 2;
   leaves:any
   constructor(private service:AccountLoginService  , private route : Router, private snackbar:MatSnackBar) {}
-  
-  hide= true
 
+  hide= true
   loginForm:ILogin =
   {
     email: "",
     password: "",
   }
+
 
   // check if email == admin go to admin dashboard else employee
   loggedIn(){
@@ -58,7 +58,5 @@ export class LoginComponent {
         }
       })
     }
-
   }
-
 }

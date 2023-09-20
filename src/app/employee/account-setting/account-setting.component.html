@@ -13,20 +13,23 @@
         <div class="flex flex-col" >
         <mat-form-field appearance="fill">
           <mat-label>Update Name</mat-label>
-          <input [(ngModel)]="this.updateProfileSettingForm.name" matInput placeholder="John Doe" >
+          <input required [(ngModel)]="this.updateProfileSettingForm.name" matInput placeholder="John Doe" >
+          <mat-error *ngIf="updateProfileSettingForm.name == ''">Must enter a value</mat-error>
         </mat-form-field>
       </div>
         <div class="flex flex-col" >
           <mat-form-field appearance="fill">
             <mat-label>Update Contact</mat-label>
-            <input [(ngModel)]="this.updateProfileSettingForm.contact" matInput placeholder="012345678910" >
+            <input required [(ngModel)]="this.updateProfileSettingForm.contact" matInput placeholder="012345678910" >
+            <mat-error *ngIf="updateProfileSettingForm.contact == ''">Must enter a value</mat-error>
           </mat-form-field>
         </div>
         <!--Update Password-->
         <div class="flex flex-col" >
         <mat-form-field appearance="fill">
           <mat-label>Update Password</mat-label>
-          <input [(ngModel)]="this.updateProfileSettingForm.password" matInput placeholder="Secret">
+          <input required [(ngModel)]="this.updateProfileSettingForm.password" matInput placeholder="Secret">
+          <mat-error *ngIf="updateProfileSettingForm.password == ''">Must enter a value</mat-error>
         </mat-form-field>
         <mat-card-actions>
           <!--Button -->

@@ -4,56 +4,58 @@
           <div mat-dialog-content>Please fill any field you want to update.</div>
         </div>
         <!--Form -->
+    <form (ngSubmit)="updateEmployee()">
         <div class="flex flex-col px-5 ">
             <div class="flex justify-around gap-2">
               <!--Name -->
               <mat-form-field class="w-full" appearance="fill">
                 <mat-label>Name</mat-label>
-                <input [(ngModel)]="updateEmployeeForm.name"  matInput placeholder="John Doe" >
+                <input name="name" [(ngModel)]="updateEmployeeForm.name"  matInput placeholder="John Doe" >
               </mat-form-field>
               <!--Update Password-->
               <mat-form-field class="w-full" appearance="fill">
                 <mat-label>Password</mat-label>
-                <input [(ngModel)]="updateEmployeeForm.password" matInput placeholder="Secret">
+                <input name="pass" [(ngModel)]="updateEmployeeForm.password" matInput placeholder="Secret">
               </mat-form-field>
           </div>
           <div class="flex justify-around gap-2">
             <!--Contact Number -->
             <mat-form-field class="w-full" appearance="fill">
               <mat-label>Contact Number</mat-label>
-              <input [(ngModel)]="updateEmployeeForm.contact" matInput placeholder="00123243831">
+              <input name="contact" [(ngModel)]="updateEmployeeForm.contact" matInput placeholder="00123243831">
             </mat-form-field>
             <!--Designation -->
             <mat-form-field class="w-full" appearance="fill">
               <mat-label>Designation</mat-label>
-              <input [(ngModel)]="updateEmployeeForm.designation" matInput placeholder="Junior Developer">
+              <input  name="desg" [(ngModel)]="updateEmployeeForm.designation" matInput placeholder="Junior Developer">
             </mat-form-field>
           </div>
           <div class="flex justify-around gap-2">
             <!--Salary -->
             <mat-form-field class="w-full" appearance="fill">
               <mat-label>Salary</mat-label>
-              <input [(ngModel)]="updateEmployeeForm.salary" type="number" RestrictNegativeNumericValue matInput placeholder="10,00">
+              <input name="salary" [(ngModel)]="updateEmployeeForm.salary" type="number" RestrictNegativeNumericValue matInput placeholder="10,00">
             </mat-form-field>
             <mat-form-field class="w-full"  appearance="fill">
               <mat-label>Casual Leaves</mat-label>
-              <input type="number" [(ngModel)]="updateEmployeeForm.allowedCasualLeaves" RestrictNegativeNumericValue matInput placeholder="1">
+              <input name="cLeave" type="number" [(ngModel)]="updateEmployeeForm.allowedCasualLeaves" RestrictNegativeNumericValue matInput placeholder="1">
             </mat-form-field>
           </div>
           <div class="flex justify-around gap-2">
             <mat-form-field class="w-full"  appearance="fill">
               <mat-label>Compensatory Leaves</mat-label>
-              <input type="number" [(ngModel)]="updateEmployeeForm.allowedCompensatoryLeaves" RestrictNegativeNumericValue matInput placeholder="1">
+              <input name="comLeave" type="number" [(ngModel)]="updateEmployeeForm.allowedCompensatoryLeaves" RestrictNegativeNumericValue matInput placeholder="1">
             </mat-form-field>
             <mat-form-field class="w-full"  appearance="fill">
               <mat-label>Earned Leaves</mat-label>
-              <input type="number" [(ngModel)]="updateEmployeeForm.allowedEarnedLeaves" RestrictNegativeNumericValue matInput placeholder="1">
+              <input name="eLeave" type="number" [(ngModel)]="updateEmployeeForm.allowedEarnedLeaves" RestrictNegativeNumericValue matInput placeholder="1">
             </mat-form-field>
           </div>
           <!--Button -->
           <div mat-dialog-actions  class="flex gap-2" >
-            <button (click)="updateEmployee()"  mat-dialog-close  mat-button color="accent">UPDATE</button>
+            <button mat-dialog-close mat-button color="accent" type="submit">UPDATE</button>
             <button  mat-button mat-dialog-close color="primary">CANCEL</button>
           </div>
         </div>
+    </form>
   </div>

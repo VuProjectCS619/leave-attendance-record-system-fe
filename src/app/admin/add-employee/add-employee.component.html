@@ -10,63 +10,74 @@
         <mat-card-subtitle class="text-blue-800">Please fill the form to add an employee.</mat-card-subtitle>
       </mat-card-header>
       <mat-card-actions>
-        <!--Form -->
-        <div class="flex flex-col p-2 w-full">
-          <div class="flex justify-around gap-2">
-            <!--Name -->
-            <mat-form-field class="w-full" appearance="fill">
-              <mat-label>Name</mat-label>
-              <input [(ngModel)]="addEmployeeForm.name" matInput placeholder="John Doe" >
-            </mat-form-field>
-             <!--Email -->
-             <mat-form-field class="w-full" appearance="fill">
-              <mat-label>Email</mat-label>
-              <input [(ngModel)]="addEmployeeForm.email" matInput placeholder="johndoe@example.com" >
-            </mat-form-field>
-          </div>
-          <div class="flex justify-around gap-2">
-            <!--Create Password-->
-            <mat-form-field class="w-full" appearance="fill">
-              <mat-label>Create Password</mat-label>
-              <input [(ngModel)]="addEmployeeForm.password" matInput placeholder="Secret">
-            </mat-form-field>
-            <!--Contact Number -->
-            <mat-form-field class="w-full"  appearance="fill">
-              <mat-label>Contact Number</mat-label>
-              <input [(ngModel)]="addEmployeeForm.contact" matInput placeholder="00123243831">
-            </mat-form-field>
-          </div>
-          <div class="flex justify-around gap-2">
-            <!--Designation -->
-            <mat-form-field class="w-full"  appearance="fill">
-              <mat-label>Designation</mat-label>
-              <input [(ngModel)]="addEmployeeForm.designation" matInput placeholder="Junior Developer">
-            </mat-form-field>
-            <!--Salary -->
-            <mat-form-field class="w-full"  appearance="fill">
-              <mat-label>Salary</mat-label>
-              <input [(ngModel)]="addEmployeeForm.salary" type="number" RestrictNegativeNumericValue matInput placeholder="10,00">
-            </mat-form-field>
-          </div>
-          <div class="flex justify-around gap-2">
-            <mat-form-field class="w-full"  appearance="fill">
-              <mat-label>Casual Leaves</mat-label>
-              <input type="number" [(ngModel)]="addEmployeeForm.allowedCasualLeaves" RestrictNegativeNumericValue matInput placeholder="1">
-            </mat-form-field>
-            <mat-form-field class="w-full"  appearance="fill">
-              <mat-label>Compensatory Leaves</mat-label>
-              <input type="number" [(ngModel)]="addEmployeeForm.allowedCompensatoryLeaves" RestrictNegativeNumericValue matInput placeholder="1">
-            </mat-form-field>
-            <mat-form-field class="w-full"  appearance="fill">
-              <mat-label>Earned Leaves</mat-label>
-              <input type="number" [(ngModel)]="addEmployeeForm.allowedEarnedLeaves" RestrictNegativeNumericValue matInput placeholder="1">
-            </mat-form-field>
-          </div>
-            <!--Button -->
-            <div class="flex justify-center" >
-              <button class="w-96" mat-raised-button color="primary" (click)="addEmployee()" >ADD</button>
+          <!--Form -->
+          <form class="w-full" (ngSubmit)="addEmployee()">
+            <div class="flex flex-col p-2 w-full">
+            <div class="flex justify-around gap-2">
+              <!--Name -->
+              <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Name</mat-label>
+                <input name="name" required [(ngModel)]="addEmployeeForm.name" matInput placeholder="John Doe" >
+                <mat-error *ngIf="addEmployeeForm.name == ''">You must enter a value</mat-error>
+              </mat-form-field>
+               <!--Email -->
+               <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input name="email" required type="email" [(ngModel)]="addEmployeeForm.email" matInput placeholder="johndoe@example.com" >
+                 <mat-error *ngIf="addEmployeeForm.email == ''">You must enter a value</mat-error>
+               </mat-form-field>
             </div>
-        </div>
+            <div class="flex justify-around gap-2">
+              <!--Create Password-->
+              <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Create Password</mat-label>
+                <input name="pass" required [(ngModel)]="addEmployeeForm.password" matInput placeholder="Secret">
+                <mat-error *ngIf="addEmployeeForm.password == ''">Password shouldn't be empty</mat-error>
+              </mat-form-field>
+              <!--Contact Number -->
+              <mat-form-field class="w-full"  appearance="fill">
+                <mat-label>Contact Number</mat-label>
+                <input name="contact" required [(ngModel)]="addEmployeeForm.contact" matInput placeholder="00123243831">
+                <mat-error *ngIf="addEmployeeForm.contact == ''">You must enter a value</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="flex justify-around gap-2">
+              <!--Designation -->
+              <mat-form-field class="w-full"  appearance="fill">
+                <mat-label>Designation</mat-label>
+                <input name="desg" required [(ngModel)]="addEmployeeForm.designation" matInput placeholder="Junior Developer">
+                <mat-error *ngIf="addEmployeeForm.designation == ''">You must enter a value</mat-error>
+              </mat-form-field>
+              <!--Salary -->
+              <mat-form-field class="w-full"  appearance="fill">
+                <mat-label>Salary</mat-label>
+                <input name="salary" required [(ngModel)]="addEmployeeForm.salary" type="number" RestrictNegativeNumericValue matInput placeholder="10,00">
+                <mat-error *ngIf="addEmployeeForm.salary == null ">You must enter a value</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="flex justify-around gap-2">
+              <mat-form-field class="w-full"  appearance="fill">
+                <mat-label>Casual Leaves</mat-label>
+                <input name="cLeave" required type="number" [(ngModel)]="addEmployeeForm.allowedCasualLeaves" RestrictNegativeNumericValue matInput placeholder="1">
+                 <mat-error *ngIf="addEmployeeForm.allowedCasualLeaves == null">You must enter a value</mat-error>
+              </mat-form-field>
+              <mat-form-field class="w-full"  appearance="fill">
+                <mat-label>Compensatory Leaves</mat-label>
+                <input name="comLeave" required type="number" [(ngModel)]="addEmployeeForm.allowedCompensatoryLeaves" RestrictNegativeNumericValue matInput placeholder="1">
+                  <mat-error *ngIf="addEmployeeForm.allowedCompensatoryLeaves == null">You must enter a value</mat-error>
+              </mat-form-field>
+              <mat-form-field class="w-full"  appearance="fill">
+                <mat-label>Earned Leaves</mat-label>
+                <input name="eLeave" required type="number" [(ngModel)]="addEmployeeForm.allowedEarnedLeaves" RestrictNegativeNumericValue matInput placeholder="1">
+                  <mat-error *ngIf="addEmployeeForm.allowedEarnedLeaves == null">You must enter a value</mat-error>
+              </mat-form-field>
+            </div>
+              <!--Button -->
+              <div class="flex justify-center" >
+                <button class="w-96" mat-raised-button color="primary" type="submit">ADD</button>
+              </div>
+          </div>
+          </form>
       </mat-card-actions>
     </mat-card>
   </div>

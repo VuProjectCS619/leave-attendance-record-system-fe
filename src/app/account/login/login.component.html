@@ -20,25 +20,29 @@
         </mat-card-header>
         <mat-card-actions>
           <!--Form -->
-          <div class="flex flex-col p-2 w-full">
-            <!--ID -->
-            <mat-form-field appearance="fill">
-              <mat-label>Enter Your Email</mat-label>
-              <input [(ngModel)]="loginForm.email" matInput placeholder="johndoe@example.com"  >
-            </mat-form-field>
-            <!-- Password-->
-            <mat-form-field  appearance="fill" >
-              <mat-label>Enter your password</mat-label>
-              <input [(ngModel)]="loginForm.password" placeholder="*****" matInput [type]="hide ? 'password' : 'text'"  >
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-            </mat-form-field>
-            <!--Button -->
-            <div class="flex justify-end" >
-              <button mat-raised-button color="primary" type="button" (click)="loggedIn()">Sign In</button>
-            </div>
-          </div>
+            <form class="w-full" (ngSubmit)="loggedIn()">
+              <div class="flex flex-col p-2 w-full">
+                <!--ID -->
+                <mat-form-field appearance="fill">
+                  <mat-label>Enter Your Email</mat-label>
+                  <input required name="email" type="email" [(ngModel)]="loginForm.email" matInput placeholder="johndoe@example.com">
+                    <mat-error *ngIf="loginForm.email == ''">You must enter a value</mat-error>
+                </mat-form-field>
+                <!-- Password-->
+                <mat-form-field  appearance="fill" >
+                  <mat-label>Enter your password</mat-label>
+                  <input required name="pass" [(ngModel)]="loginForm.password" placeholder="*****" matInput [type]="hide ? 'password' : 'text'"  >
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                  <mat-error *ngIf="loginForm.password == '' ">Password shouldn't be empty</mat-error>
+                </mat-form-field>
+                <!--Button -->
+                <div class="flex justify-end" >
+                  <button mat-raised-button color="primary" type="submit" >Sign In</button>
+                </div>
+              </div>
+            </form>
         </mat-card-actions>
       </mat-card>
     </div>
