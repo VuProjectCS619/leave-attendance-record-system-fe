@@ -30,13 +30,17 @@ export class LeaveManagementComponent implements OnInit  {
       applicationId: "",
       status: "Rejected"
     }
+
+    leaveStatus = {
+      status: ""
+    }
 ngOnInit()
 {
   this.getEmployeeLeaves()
 }
 
-getEmployeeLeaves(){
-  this.service.getEmployeeLeaves().subscribe({
+getEmployeeLeaves(status?:string){
+  this.service.getEmployeeLeaves(status).subscribe({
     next:value => {
       this.leaves =value
     },

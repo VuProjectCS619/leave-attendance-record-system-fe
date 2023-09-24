@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient,HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -39,9 +39,15 @@ export class AdminService {
   {
     return this.http.delete(`employee/${id}`);
   }
-  getEmployeeLeaves():Observable<any>
+  getEmployeeLeaves(status?:string):Observable<any>
   {
-    return this.http.get("admin/leave-applications")
+    let params = new HttpParams();
+
+    if (status) {
+      params = params.set('status', status);
+    }
+
+    return this.http.get("admin/leave-applications", { params })
   }
   approveLeave(data:any):Observable<any>
   {

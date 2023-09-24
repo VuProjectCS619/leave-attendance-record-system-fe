@@ -44,15 +44,6 @@
             </div>
             <div class="flex w-full justify-between gap-2">
               <!-- Date Picker-->
-              <!-- From Date -->
-              <mat-form-field appearance="fill" class="w-full">
-                <mat-label>From Date</mat-label>
-                <input name="fromDate" required [(ngModel)]="applyLeaveForm.fromDate" matInput [matDatepicker]="fromPicker">
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-error *ngIf="applyLeaveForm.fromDate == ''">Must enter a value</mat-error>
-                <mat-datepicker-toggle matIconSuffix [for]="fromPicker"></mat-datepicker-toggle>
-                <mat-datepicker #fromPicker></mat-datepicker>
-              </mat-form-field>
               <!-- To Date -->
               <mat-form-field appearance="fill" class="w-full">
                 <mat-label>To Date</mat-label>
@@ -62,6 +53,16 @@
                 <mat-datepicker-toggle matIconSuffix [for]="toPicker"></mat-datepicker-toggle>
                 <mat-datepicker #toPicker></mat-datepicker>
               </mat-form-field>
+              <!-- From Date -->
+              <mat-form-field appearance="fill" class="w-full">
+                <mat-label>From Date</mat-label>
+                <input name="fromDate" required [(ngModel)]="applyLeaveForm.fromDate" matInput [matDatepicker]="fromPicker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-error *ngIf="applyLeaveForm.fromDate == ''">Must enter a value</mat-error>
+                <mat-datepicker-toggle matIconSuffix [for]="fromPicker"></mat-datepicker-toggle>
+                <mat-datepicker #fromPicker></mat-datepicker>
+              </mat-form-field>
+
             </div>
             <div class="flex w-full justify-between gap-2">
               <!--Dropdown -->
