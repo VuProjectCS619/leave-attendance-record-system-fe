@@ -65,10 +65,9 @@ export class RecordComponent implements OnInit{
     this.service.getLeaveRecord(formattedLeaveFromDate,formattedLeaveToDate).subscribe({
       next:value => {
         this.recordLeaves = value
-        console.log(value)
       },
       error:err => {
-        console.log(err)
+
       }
     })
   }
