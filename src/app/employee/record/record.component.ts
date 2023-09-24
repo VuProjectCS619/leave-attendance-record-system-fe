@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ViewRecordDialogComponent} from "../view-record-dialog/view-record-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
 import {EmployeeService} from "../../services/employee.service";
-import {IAttendanceDate,ILeaveRecordDate} from "../../interfaces/dtos";
+import {ILeaveRecordDate} from "../../interfaces/dtos";
 import {DatePipe} from "@angular/common";
 
 @Component({
