@@ -3,7 +3,6 @@
     <p class="text-xl font-medium text-blue-800 underline">Leave Request Management </p>
   </div>
     <!-- Status -->
-  <div>
     <mat-form-field class="w-full">
       <mat-label>Status</mat-label>
       <mat-select name="leaveStatus" [(ngModel)]="leaveStatus.status" >
@@ -13,7 +12,6 @@
         <mat-option value="Rejected" (click)="getEmployeeLeaves(leaveStatus.status)">Rejected</mat-option>
       </mat-select>
     </mat-form-field>
-  </div>
   <!-- Card -->
   <div class="flex gap-4 flex-wrap ">
     <div *ngIf="leaves == ''">
@@ -38,10 +36,9 @@
         <p class=" text-xs font-semibold">Leave Type:{{" "}}<span
           class="font-normal ">{{employeeLeaveReq["leaveType"]| uppercase}}</span>
         </p>
-
       </div>
       <mat-card-actions>
-        <!--Button -->
+        <!--Accept/Reject -->
         <div class="flex w-full justify-end gap-2" >
           <button mat-raised-button color="primary"
                   [ngClass]="{'hideBtn':employeeLeaveReq.status === 'Accepted' || employeeLeaveReq.status === 'Rejected'}"
@@ -59,5 +56,4 @@
       </mat-card-actions>
     </mat-card>
   </div>
-
 </div>

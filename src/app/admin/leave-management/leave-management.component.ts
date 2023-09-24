@@ -22,6 +22,7 @@ export class LeaveManagementComponent implements OnInit  {
   durationInSeconds = 2;
   leaves:any
   constructor(public dialog: MatDialog, private service:AdminService, private snackbar:MatSnackBar) {}
+
   acceptedData = {
     applicationId: "",
     status: "Accepted"
@@ -32,8 +33,11 @@ export class LeaveManagementComponent implements OnInit  {
     }
 
     leaveStatus = {
-      status: ""
+      status: "",
+      employeeId: ""
     }
+
+
 ngOnInit()
 {
   this.getEmployeeLeaves()

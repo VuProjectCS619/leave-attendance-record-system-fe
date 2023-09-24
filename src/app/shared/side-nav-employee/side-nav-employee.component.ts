@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {IAddEmployee} from "../../interfaces/dtos";
 import {Router} from "@angular/router";
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
 
@@ -12,7 +11,7 @@ import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition}
 export class SideNavEmployeeComponent implements OnInit{
   constructor(private router:Router, private snackbar:MatSnackBar) {}
 
-  user: IAddEmployee = JSON.parse(localStorage.getItem("user") || "");
+  user= JSON.parse(localStorage.getItem("user") || "");
   greeting:string  = this.user ? this.user.name : "";
   contact:string = this.user ? this.user.contact : "";
 
