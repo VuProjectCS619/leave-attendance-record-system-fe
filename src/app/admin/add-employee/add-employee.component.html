@@ -55,7 +55,10 @@
                 <mat-error *ngIf="addEmployeeForm.salary == null ">You must enter a value</mat-error>
               </mat-form-field>
             </div>
-            <div class="flex justify-around gap-2">
+              <div>
+                <mat-card-subtitle class="text-blue-800">Add leaves (Yearly).</mat-card-subtitle>
+              </div>
+            <div class="flex justify-around gap-2 mt-2">
               <mat-form-field class="w-full"  appearance="fill">
                 <mat-label>Casual Leaves</mat-label>
                 <input name="cLeave" required type="number" [(ngModel)]="addEmployeeForm.allowedCasualLeaves" RestrictNegativeNumericValue matInput placeholder="1">

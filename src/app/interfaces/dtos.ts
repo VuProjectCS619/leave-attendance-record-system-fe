@@ -51,3 +51,7 @@ export interface IAttendanceDate{
   fromDate:Date|string
   toDate:Date|string
 }
+export interface ILeaveRecordDate{
+  fromDate:Date|string
+  toDate:Date|string
+}

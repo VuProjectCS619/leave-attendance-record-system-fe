@@ -32,9 +32,19 @@ export class EmployeeService {
   {
     return this.http.get("attendance/workinghours")
   }
-  getLeaveRecord():Observable<any>
+  getLeaveRecord(fromDate?: Date, toDate?: Date):Observable<any>
   {
-    return this.http.get("user/leave-records");
+    let params = new HttpParams()
+
+    if (fromDate) {
+      params = params.set('fromDate', fromDate.toString());
+    }
+
+    if (toDate) {
+      params = params.set('toDate', toDate.toString());
+    }
+
+    return this.http.get("leave/accepted",{params});
   }
 
   applyForLeave(form:any):Observable<any>
